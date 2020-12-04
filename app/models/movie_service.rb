@@ -9,6 +9,7 @@ class MovieService
 
   private
   def movie_data
+    puts ENV.keys
     connection.get("/3/movie/#{@uuid}?api_key=#{ENV['MDB_API_KEY']}")
   end
 
