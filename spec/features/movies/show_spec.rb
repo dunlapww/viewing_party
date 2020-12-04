@@ -12,7 +12,6 @@ describe 'movies_show' do
     end
 
     it "I see a button to 'create viewing party'" do
-      puts ENV.keys
       VCR.use_cassette('movie_detail_550') do
         movie_service = MovieService.new(550)
         visit "/movies/#{movie_service.uuid}"
