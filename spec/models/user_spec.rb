@@ -23,7 +23,7 @@ RSpec.describe User, type: :model do
         password: 'password',
         password_confirmation: 'password'
       )
-      error = ["Complexity requirement not met. Length should be 8-70 characters and include: 1 uppercase, 1 lowercase, 1 digit and 1 special character."]
+      error = ["Password needs to be 8-70 characters and include: 1 uppercase, 1 lowercase, 1 digit and 1 special character."]
       expect(bad_user.password_complexity).to eq(error)
     end
   end

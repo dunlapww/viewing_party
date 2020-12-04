@@ -1,5 +1,7 @@
 {
   "name": "viewing_party",
   "private": true,
-  "dependencies": {}
+  "devDependencies": {
+    "git-mob": "^1.1.0"
+  }
 }

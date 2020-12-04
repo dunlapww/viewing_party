@@ -63,7 +63,7 @@ RSpec.describe 'registration page' do
 
       click_button('Register')
 
-      expect(page).to have_content("Password Complexity requirement not met. Length should be 8-70 characters and include: 1 uppercase, 1 lowercase, 1 digit and 1 special character.")
+      expect(page).to have_content("Password needs to be 8-70 characters and include: 1 uppercase, 1 lowercase, 1 digit and 1 special character.")
       expect(current_path).to eq('/registration')
     end
   end
