@@ -16,7 +16,13 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(session[:user_id])
+    @user = current_user
+  end
+
+  def addfriend
+    user = current_user
+    friend = User.find_by(email: params['friend_email'])
+    Friendship.new(user_id: user.id, friend_id: friend.id)
   end
 
   private
