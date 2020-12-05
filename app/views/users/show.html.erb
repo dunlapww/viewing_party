@@ -11,12 +11,15 @@
   <% end %>
 
   <h2>Friends</h2>
-  <ul>
-    <% @user.friends.each do |friend| %>
-      <li><%= friend.email %></li>
-    <% end %>
-  </ul>
-
+  <% if @user.friends.empty? %>
+    <p>We can't find any friends, add one!</p>
+  <% else %>
+    <ul>
+      <% @user.friends.each do |friend| %>
+        <li><%= friend.email %></li>
+      <% end %>
+    </ul>
+  <% end %>
 </section>
 
 <section class='viewing-parties'></section>

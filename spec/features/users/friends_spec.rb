@@ -29,6 +29,11 @@ describe 'Friends' do
       expect(friendship.user_id).to eq(@user.id)
       expect(friendship.friend_id).to eq(@friend.id)
     end
+
+    it 'If I have no friends, it tells me. Sad.' do
+      expect(page).to_not have_content(@friend.email)
+      expect(page).to have_content("We can't find any friends, add one!")
+    end
   end
 
 end
