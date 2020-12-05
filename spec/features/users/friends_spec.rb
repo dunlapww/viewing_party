@@ -34,6 +34,13 @@ describe 'Friends' do
       expect(page).to_not have_content(@friend.email)
       expect(page).to have_content("We can't find any friends, add one!")
     end
+
+    it 'I cannot add a friend if they are not in the DB' do
+      fill_in :friend_email, with: 'nothere@example.com'
+      click_on 'Add Friend'
+
+      expect(page).to have_content("Your friend isn't here yet! Tell them!")
+    end
   end
 
 end
