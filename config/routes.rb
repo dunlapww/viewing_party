@@ -16,4 +16,9 @@ Rails.application.routes.draw do
 
   #movies
   get '/movies/:uuid', to: 'movie_services#show'
+
+  #search
+  get '/discover', to: 'search#new'
+  get '/results', to: 'search#show'
+
 end
