@@ -16,7 +16,19 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(session[:user_id])
+    @user = current_user
+  end
+
+  def addfriend
+    user = current_user
+    friend = User.find_by(email: params['friend_email'])
+    if !friend.nil?
+      Friendship.create!(user_id: user.id, friend_id: friend.id)
+      redirect_to '/dashboard'
+    else
+      flash[:error] = "Your friend isn't here yet! Tell them!"
+      redirect_to '/dashboard'
+    end
   end
 
   private
