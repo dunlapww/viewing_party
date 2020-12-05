@@ -16,4 +16,8 @@ Rails.application.routes.draw do
 
   #movies
   get '/movies/:uuid', to: 'movie_services#show'
+  
+  #viewing_parties
+  post "/movies/:uuid/viewing-party/new", to: 'viewing_parties#new'
+  
 end
