@@ -9,6 +9,11 @@ RSpec.describe User, type: :model do
     it { should have_secure_password }
   end
 
+  describe 'relationships' do
+    it { should have_many :friendships }
+    it { should have_many(:friends).through(:friendships) }
+  end
+
   describe 'instance methods' do
     it ".password_complexity" do
       user = User.new(

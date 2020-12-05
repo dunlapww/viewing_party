@@ -14,13 +14,15 @@ describe 'dashboard' do
       click_on "Login"
       visit '/dashboard'
     end
+    
     it "I see a button called 'Discover Movies'" do
       expect(page).to have_button "Discover Movies"
     end
+
     it "I see a friends section" do
       expect(page).to have_css('.friends')
     end
-    
+
     it "I can see a viewing parties section" do
       expect(page).to have_css('.viewing-parties')
     end
