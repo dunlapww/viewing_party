@@ -12,7 +12,7 @@ describe 'movies_show' do
     end
 
     it "I see a button to 'create viewing party'" do
-      VCR.use_cassette('movie_detail_550') do
+      VCR.use_cassette('movie_detail_550_m_request') do
         movie_service = MovieService.new(550)
         visit "/movies/#{movie_service.uuid}"
         expect(page).to have_button 'Create Viewing Party'
@@ -20,7 +20,7 @@ describe 'movies_show' do
     end
     
     it "when I click on Create Viewing Party i'm redirected to movies/:id/viewing-party/new" do
-      VCR.use_cassette('movie_detail_550') do
+      VCR.use_cassette('movie_detail_550_vp_request') do
         movie_service = MovieService.new(550)
         visit "/movies/#{movie_service.uuid}"
         click_on 'Create Viewing Party'
@@ -29,7 +29,7 @@ describe 'movies_show' do
     end
 
     it "shows movie details" do
-      VCR.use_cassette('movie_detail_550') do
+      VCR.use_cassette('movie_detail_550_m_request') do
         movie_service = MovieService.new(550)
         visit "/movies/#{movie_service.uuid}"
         expect(page).to have_content(movie_service.data[:title])
