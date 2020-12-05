@@ -12,13 +12,17 @@ describe 'Discover Page (/discover)' do
       visit '/discover'
     end
     it "I can search for the top 40 movies" do
-      click_button 'Discover Top 40'
-      expect(current_path).to eq '/results'
+      VCR.use_cassette('movies_top_40') do
+        click_button 'Discover Top 40'
+        expect(current_path).to eq '/results'
+      end
     end
     it "I can search for a movie by title" do
-      fill_in :search, with: "Fight Club"
-      click_on 'Search'
-      expect(current_path).to eq '/results'
+      VCR.use_cassette('movie_search_fight_club') do
+        fill_in :search, with: "Fight Club"
+        click_on 'Search'
+        expect(current_path).to eq '/results'
+      end
     end
   end
 end
