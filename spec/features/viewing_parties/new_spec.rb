@@ -22,6 +22,32 @@ describe 'from the viewing party page' do
       expect(page).to have_content(movie_service.data[:original_title])
     end
   end
+  it 'I see a field to enter the party duration that is defaulted to the movie runtime in minutes' do
+    VCR.use_cassette('movie_detail_550_vp_request') do
+      movie_service = MovieService.new(550)
+      visit "/movies/#{movie_service.uuid}"
+      click_on 'Create Viewing Party'
+      expect(find_field('party_duration').value).to eq "#{movie_service.data[:runtime]}"
+    end
+  end
+  it 'I see a date field to enter a viewing party date' do
+    VCR.use_cassette('movie_detail_550_vp_request') do
+      movie_service = MovieService.new(550)
+      visit "/movies/#{movie_service.uuid}"
+      click_on 'Create Viewing Party'
+      page.find_field('party_date')
+      #fill_in :party_date, with: "12/05/2020"
+    end
+  end
+  it 'I see a time select field to enter a viewing party time' do
+    VCR.use_cassette('movie_detail_550_vp_request') do
+      movie_service = MovieService.new(550)
+      visit "/movies/#{movie_service.uuid}"
+      click_on 'Create Viewing Party'
+      page.find_field(:party_time)
+    end
+  end
+  
 end
 
 
