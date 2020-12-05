@@ -17,7 +17,6 @@ describe 'Discover Page (/discover)' do
     end
     it "I can search for a movie by title" do
       fill_in :search, with: "Fight Club"
-      save_and_open_page
       click_on 'Search'
       expect(current_path).to eq '/results'
     end
