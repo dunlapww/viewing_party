@@ -22,7 +22,8 @@ class UsersController < ApplicationController
   def addfriend
     user = current_user
     friend = User.find_by(email: params['friend_email'])
-    Friendship.new(user_id: user.id, friend_id: friend.id)
+    Friendship.create!(user_id: user.id, friend_id: friend.id)
+    redirect_to '/dashboard'
   end
 
   private

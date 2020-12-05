@@ -3,11 +3,20 @@
 <%= button_to "Discover Movies", "/movies" %>
 
 <section class='friends'>
+  <h2>Add a friend</h2>
   <%= form_tag '/dashboard', method: :post do %>
     <%= label_tag :friend_email %>
     <%= text_field_tag :friend_email, 'friend@email.com' %>
     <%= submit_tag 'Add Friend' %>
   <% end %>
+
+  <h2>Friends</h2>
+  <ul>
+    <% @user.friends.each do |friend| %>
+      <li><%= friend.email %></li>
+    <% end %>
+  </ul>
+
 </section>
 
 <section class='viewing-parties'></section>
