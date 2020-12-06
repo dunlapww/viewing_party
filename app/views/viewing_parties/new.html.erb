@@ -1,6 +1,6 @@
 <h3><%= "Movie title: #{@movie.data[:original_title]}" %></h3>
 <p>
-<%= form_with model: @viewing_party, local: true do |f| %>
+<%= form_with model: @viewing_party, url: create_vp_path, local: true do |f| %>
 
   <%= f.label :movie_title, "Movie Title" %>
   <%= f.text_field :movie_title, value: @movie.data[:original_title], readonly: true %>
@@ -19,5 +19,7 @@
     <%= f.check_box friend.email %>
     <%= f.label friend.email %><br>
   <% end %>
+
+  <%= submit_tag 'Create Viewing Party' %>
 <% end%>
 </p>

@@ -1,4 +1,6 @@
 require 'rails_helper'
+require 'time'
+require 'date'
 
 describe 'from the viewing party page' do
   describe 'as a registered user' do
@@ -68,12 +70,32 @@ describe 'from the viewing party page' do
       VCR.use_cassette('movie_detail_550_vp_request') do
         movie_service = MovieService.new(550)
         visit "/movies/#{movie_service.uuid}"
-        # binding.pry
         click_on 'Create Viewing Party'
-        save_and_open_page
         expect(page).to have_content('My Friends:')
         check "#{@friend1.email}"
         check "#{@friend2.email}"
+      end
+    end
+
+    it 'can make a viewing party by pressing a "Create Viewing Party" button' do
+      VCR.use_cassette('movie_detail_550_vp_request_generate') do
+        movie_service = MovieService.new(550)
+        visit "/movies/#{movie_service.uuid}"
+        click_on 'Create Viewing Party'
+
+        fill_in :party_duration, with: 200
+        fill_in :party_date, with: Date.current
+        # fill_in :party_time, with: Time.new(2020, 01, 02, 12)
+        # binding.pry
+        fill_in :party_time, with: Time.now
+        check "#{@friend1.email}"
+        check "#{@friend2.email}"
+
+        click_on 'Create Viewing Party'
+        vp = ViewingParty.last
+        expect(current_path).to eq('/dashboard')
+        expect(page).to have_content('You have successfully created a Party!!')
+        expect(page).to have_content("#{vp.movie.title} - #{vp.date}")
       end
     end
   end
