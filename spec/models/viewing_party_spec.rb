@@ -5,6 +5,7 @@ RSpec.describe ViewingParty, type: :model do
     it { should belong_to :movie }
     it { should belong_to :user }
     it { should have_many :attendees }
+    it { should have_many(:friends).through(:attendees) }
   end
 
   describe 'validations' do
