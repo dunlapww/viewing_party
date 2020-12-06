@@ -14,5 +14,10 @@
   <%= f.label :party_time, "Party Time:" %>
   <%= f.time_field :party_time%>
   <br>
+  <p>My Friends: </p>
+  <% current_user.friends.each do |friend| %>
+    <%= f.check_box friend.email %>
+    <%= f.label friend.email %><br>
+  <% end %>
 <% end%>
 </p>
