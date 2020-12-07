@@ -85,8 +85,6 @@ describe 'from the viewing party page' do
 
         fill_in :party_duration, with: 200
         fill_in :party_date, with: Date.current
-        # fill_in :party_time, with: Time.new(2020, 01, 02, 12)
-        # binding.pry
         fill_in :party_time, with: Time.now
         check "#{@friend1.email}"
         check "#{@friend2.email}"
@@ -107,39 +105,66 @@ describe 'from the viewing party page' do
         expect(page).to have_content("#{vp.movie.title} on #{vp.date.strftime('%m/%d/%y')}")
       end
     end
+
+    it 'can not make a viewing party when data is missing' do
+      VCR.use_cassette('movie_detail_550_vp_request_generate') do
+        movie_service = MovieService.new(550)
+        visit "/movies/#{movie_service.uuid}"
+        click_on 'Create Viewing Party'
+
+        check "#{@friend1.email}"
+        check "#{@friend2.email}"
+
+        click_on 'Create Viewing Party'
+
+        expect(page).to have_content("Date can't be blank and Time can't be blank")
+      end
+    end
+
+    it 'can not make a viewing party when you do not have attendees' do
+      VCR.use_cassette('movie_detail_550_vp_request_generate') do
+        movie_service = MovieService.new(550)
+        visit "/movies/#{movie_service.uuid}"
+        click_on 'Create Viewing Party'
+
+        fill_in :party_duration, with: 200
+        fill_in :party_date, with: Date.current
+        fill_in :party_time, with: Time.now
+
+        click_on 'Create Viewing Party'
+
+        expect(page).to have_content("You need friends. Add some! Seriously.")
+      end
+    end
+
+    it 'can not make a viewing party without friends' do
+      @loser_user = User.create(
+        email: 'loser@example.com',
+        password: '1234**USAusa',
+        password_confirmation: '1234**USAusa'
+      )
+
+      click_on 'Logout'
+
+      visit "/login"
+      fill_in 'email', with: 'loser@example.com'
+      fill_in 'password', with: '1234**USAusa'
+      click_on "Login"
+
+      VCR.use_cassette('movie_detail_550_vp_request_generate') do
+        movie_service = MovieService.new(550)
+        visit "/movies/#{movie_service.uuid}"
+        click_on 'Create Viewing Party'
+
+        fill_in :party_duration, with: 200
+        fill_in :party_date, with: Date.current
+        fill_in :party_time, with: Time.now
+        expect(page).to have_content('You have no friends. Please add some on your dashboard before you make a party.')
+
+        click_on 'Create Viewing Party'
+
+        expect(page).to have_content("You need friends. Add some! Seriously.")
+      end
+    end
   end
 end
-
-
-
-# @movie_service = MovieService.new(550)
-# movie_data = File.read('spec/fixtures/movie_550.json')
-# reviews = File.read('spec/fixtures/reviews_550.json')
-# credits = File.read('spec/fixtures/credits_550.json')
-
-# stub_request(:get, "https://api.themoviedb.org/3/movie/550?api_key=b01584c01dccf4323b39564e5363856b").
-#    with(
-#      headers: {
-#  	  'Accept'=>'*/*',
-#  	  'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-#  	  'User-Agent'=>'Faraday v1.0.1'
-#      }).
-#    to_return(status: 200, body: movie_data, headers: {})
-
-# stub_request(:get, "https://api.themoviedb.org/3/movie/#{@uuid}/reviews?api_key=#{ENV['MDB_API_KEY']}").
-#    with(
-#      headers: {
-#  	  'Accept'=>'*/*',
-#  	  'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-#  	  'User-Agent'=>'Faraday v1.0.1'
-#      }).
-#    to_return(status: 200, body: reviews, headers: {})
-
-# stub_request(:get, "https://api.themoviedb.org/3/movie/#{@uuid}/credits?api_key=#{ENV['MDB_API_KEY']}").
-#    with(
-#      headers: {
-#  	  'Accept'=>'*/*',
-#  	  'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-#  	  'User-Agent'=>'Faraday v1.0.1'
-#      }).
-#    to_return(status: 200, body: credits, headers: {})
