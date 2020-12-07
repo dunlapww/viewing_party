@@ -34,7 +34,7 @@
     <% end %>
 
   <h2>Viewing Parties: Attendee</h2>
-  <% @user.viewing_parties.each do |vp| %>
+  <% @user.attendee_parties.each do |vp| %>
     <p><%= vp.movie.title %> on <%= vp.date.strftime('%m/%d/%y') %> at <%= vp.time.strftime('%I:%M %p') %></p>
   <% end %>
 </section>
