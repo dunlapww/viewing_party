@@ -15,8 +15,8 @@ class ViewingPartiesController < ApplicationController
   private
 
   def friends(params)
-    params.select do |k, v|
-      v == '1'
+    params.select do |_email, invite|
+      invite == '1'
     end.keys
   end
 
