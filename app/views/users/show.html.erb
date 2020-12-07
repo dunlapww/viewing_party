@@ -22,4 +22,19 @@
   <% end %>
 </section>
 
-<section class='viewing-parties'></section>
+<section class='viewing-parties'>
+  <h2>Viewing Parties: Host</h2>
+    <% @user.viewing_parties.each do |vp| %>
+      <p><%= vp.movie.title %> on <%= vp.date.strftime('%m/%d/%y') %> at <%= vp.time.strftime('%I:%M %p') %></p>
+      <ul>
+      <% vp.friends.each do |friend| %>
+        <li><%= friend.email %></li>
+      <% end %>
+      </ul>
+    <% end %>
+
+  <h2>Viewing Parties: Attendee</h2>
+  <% @user.viewing_parties.each do |vp| %>
+    <p><%= vp.movie.title %> on <%= vp.date.strftime('%m/%d/%y') %> at <%= vp.time.strftime('%I:%M %p') %></p>
+  <% end %>
+</section>
