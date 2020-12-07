@@ -94,8 +94,18 @@ describe 'from the viewing party page' do
         click_on 'Create Viewing Party'
         vp = ViewingParty.last
         expect(current_path).to eq('/dashboard')
-        expect(page).to have_content('You have successfully created a Party!!')
-        expect(page).to have_content("#{vp.movie.title} - #{vp.date}")
+        expect(page).to have_content('You have successfully created a party!!')
+        expect(page).to have_content("#{vp.movie.title} on #{vp.date.strftime('%m/%d/%y')}")
+
+        # click_on 'Logout'
+        #
+        # visit "/login"
+        # fill_in 'email', with: 'friend1@example.com'
+        # fill_in 'password', with: '1234**USAusa'
+        # click_on "Login"
+        #
+        # expect(page).to have_content("#{vp.movie.title} on #{vp.date.strftime('%m/%d/%y')}")
+        # save_and_open_page
       end
     end
   end
