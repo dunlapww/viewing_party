@@ -47,5 +47,5 @@ describe 'movies_show' do
         expect(page).to have_css('.actor', count:10)
       end
     end
-  end 
+  end
 end
