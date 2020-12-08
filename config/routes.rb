@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :welcome, :path => '/', only: :index, as: 'welcome'
+  resources :welcome, :path => '/', only: :index
 
   scope controller: :users do
     get '/registration' => :new, as: 'users'
