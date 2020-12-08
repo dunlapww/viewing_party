@@ -30,21 +30,22 @@ describe 'dashboard' do
     end
 
     it "I can click on a button called 'Discover Movies'" do
-      click_on "Discover Movies"
+      click_on 'Discover Movies'
       expect(current_path).to eq(discover_path)
     end
 
-    it "I see a friends section" do
+    it 'I see a friends section' do
       expect(page).to have_css('.friends')
     end
 
-    it "I can see a viewing parties section" do
+    it 'I can see a viewing parties section' do
       expect(page).to have_css('.viewing-parties')
     end
 
-    it "I can see the parties where I am the host" do
+    it 'I can see the parties where I am the host' do
       VCR.use_cassette('movie_detail_550_vp_request_generate') do
         movie_service = MovieService.new(550)
+        # visit movie_details_path
         visit "/movies/#{movie_service.uuid}"
         click_on 'Create Viewing Party'
 
@@ -62,13 +63,13 @@ describe 'dashboard' do
       end
     end
 
-    it "I can see the parties where I am an attendee" do
+    it 'I can see the parties where I am an attendee' do
       click_on 'Logout'
 
       visit login_path
       fill_in 'email', with: 'friend1@example.com'
       fill_in 'password', with: '1234**USAusa'
-      click_on "Login"
+      click_on 'Login'
 
       VCR.use_cassette('movie_detail_550_vp_request_generate') do
         movie_service = MovieService.new(550)
@@ -96,7 +97,7 @@ describe 'dashboard' do
       end
     end
 
-    it "I can see a welcome message" do
+    it 'I can see a welcome message' do
       expect(page).to have_content("Welcome #{@user.email}!")
     end
   end
