@@ -9,10 +9,10 @@ class ViewingPartiesController < ApplicationController
     vp = viewing_party(params)
     if vp.save && !friends(params).empty?
       attendees(vp, params)
-      flash[:success] = "You have successfully created a party!!"
+      flash[:success] = 'You have successfully created a party!!'
       redirect_to dashboard_path
     elsif friends(params).empty?
-      flash.now[:error] = "You need friends. Add some! Seriously."
+      flash.now[:error] = 'You need friends. Add some! Seriously.'
       render :new
     else
       flash.now[:error] = vp.errors.full_messages.to_sentence
