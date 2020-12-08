@@ -11,7 +11,7 @@ describe 'logout' do
       visit login_path
       fill_in 'email', with: 'testing@example.com'
       fill_in 'password', with: '1234**USAusa'
-      click_on 'Login'
+      click_button 'Login'
     end
 
     it "when I click 'logout' I'm returned to the welcome page" do
