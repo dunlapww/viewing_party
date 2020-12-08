@@ -45,5 +45,12 @@ describe 'Discover Page' do
         expect(page).to have_content("Your search for 'jmkls' returned 0 results")
       end
     end    
+    it 'when the user searches for a word that has fewer than 20 results, it returns the proper count' do
+      VCR.use_cassette('hello_dolly_search') do
+        fill_in :search, with: 'hello dolly'
+        click_on 'Search'
+        expect(page).to have_content("Your search for 'hello dolly' returned 5 results")
+      end
+    end    
   end
 end
