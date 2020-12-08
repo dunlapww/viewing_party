@@ -9,7 +9,7 @@ describe 'login' do
           password: '1234**USAusa',
           password_confirmation: '1234**USAusa'
         )
-        visit root_path
+        visit welcome_index_path
       end
       it 'I can login' do
         click_on 'Login'
