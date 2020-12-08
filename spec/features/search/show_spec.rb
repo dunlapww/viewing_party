@@ -30,9 +30,13 @@ describe 'Discover Page' do
         expect(page).to have_content('Vote Average: 8.4')
         expect(page).to have_css('.movie', count: 40)
       end
-      #what if no search results
     end
-    it 'when a user clicks search and has not entered any keywords, it returns the results for a search for an empty string'
+    it 'when a user clicks search and has not entered any keywords, it returns the results for a search for an empty string' do
+      VCR.use_cassette('movies_empty_search') do
+        click_on 'Search'
+        expect(page).to have_content("Your search for "" returned 0 results")
+      end
+    end
     it 'when the user searches for a word that has no results, it returns a message to that end'
     it "when a user searches by keyword, it returns a message that says 'search results for: '<words>'"
     
