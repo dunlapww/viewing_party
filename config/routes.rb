@@ -17,6 +17,10 @@ Rails.application.routes.draw do
   #movies
   get '/movies/:uuid', to: 'movie_services#show'
 
+  #viewing_parties
+  get '/movies/:uuid/viewing-party/new', to: 'viewing_parties#new'
+  post '/movies/:uuid/viewing-party', to: 'viewing_parties#create', as: 'create_vp'
+
   #search
   get '/discover', to: 'search#new'
   get '/results', to: 'search#show'

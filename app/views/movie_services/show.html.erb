@@ -1,6 +1,6 @@
 <h1><%= @movie.data[:title] %></h1>
 
-<%= button_to 'Create Viewing Party', '/viewing-party/new'%>
+<%= button_to 'Create Viewing Party', "/movies/#{@movie.uuid}/viewing-party/new", method: :get %>
 <%= @movie.data[:vote_average] %>
 
 <%= film_length(@movie.data[:runtime]) %>
