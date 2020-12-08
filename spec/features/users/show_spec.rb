@@ -22,16 +22,16 @@ describe 'dashboard' do
       @user.friends << @friend2
       @friend1.friends << @user
 
-      visit "/login"
+      visit login_path
       fill_in 'email', with: 'testing@example.com'
       fill_in 'password', with: '1234**USAusa'
       click_on "Login"
-      visit '/dashboard'
+      visit dashboard_path
     end
 
     it "I can click on a button called 'Discover Movies'" do
       click_on "Discover Movies"
-      expect(current_path).to eq('/discover')
+      expect(current_path).to eq(discover_path)
     end
 
     it "I see a friends section" do
@@ -65,7 +65,7 @@ describe 'dashboard' do
     it "I can see the parties where I am an attendee" do
       click_on 'Logout'
 
-      visit "/login"
+      visit login_path
       fill_in 'email', with: 'friend1@example.com'
       fill_in 'password', with: '1234**USAusa'
       click_on "Login"
@@ -85,7 +85,7 @@ describe 'dashboard' do
 
         click_on 'Logout'
 
-        visit "/login"
+        visit login_path
         fill_in 'email', with: 'testing@example.com'
         fill_in 'password', with: '1234**USAusa'
         click_on "Login"
