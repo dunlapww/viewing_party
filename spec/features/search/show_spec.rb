@@ -27,8 +27,8 @@ describe 'Discover Page' do
       VCR.use_cassette('movies_top_40') do
         click_on 'Discover Top 40'
         expect(page).to have_link('Fight Club')
-        expect(page).to have_content("Vote Average: 8.4")
-        expect(page).to have_css(".movie", count: 40)
+        expect(page).to have_content('Vote Average: 8.4')
+        expect(page).to have_css('.movie', count: 40)
       end
       #what if no search results
     end
