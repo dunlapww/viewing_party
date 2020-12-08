@@ -1,10 +1,10 @@
 <h1>Welcome <%= @user.email %>!</h1>
 
-<%= button_to "Discover Movies", "/discover", method: :get %>
+<%= button_to "Discover Movies", discover_path, method: :get %>
 
 <section class='friends'>
   <h2>Add a friend</h2>
-  <%= form_tag '/dashboard', method: :post do %>
+  <%= form_tag dashboard_path, method: :post do %>
     <%= label_tag :friend_email %>
     <%= text_field_tag :friend_email, 'friend@email.com' %>
     <%= submit_tag 'Add Friend' %>

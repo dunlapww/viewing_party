@@ -23,16 +23,16 @@ describe 'from the viewing party page' do
       @user.friends << @friend1
       @user.friends << @friend2
 
-      visit "/login"
+      visit login_path
       fill_in 'email', with: 'testing@example.com'
       fill_in 'password', with: '1234**USAusa'
-      click_on "Login"
+      click_on 'Login'
     end
 
     it 'I see the movie title' do
       VCR.use_cassette('movie_detail_550_vp_request') do
         movie_service = MovieService.new(550)
-        visit "/movies/#{movie_service.uuid}"
+        visit movie_path(550)
         click_on 'Create Viewing Party'
         expect(page).to have_content(movie_service.data[:original_title])
       end
@@ -41,7 +41,7 @@ describe 'from the viewing party page' do
     it 'I see a field to enter the party duration that is defaulted to the movie runtime in minutes' do
       VCR.use_cassette('movie_detail_550_vp_request') do
         movie_service = MovieService.new(550)
-        visit "/movies/#{movie_service.uuid}"
+        visit movie_path(550)
         click_on 'Create Viewing Party'
         expect(find_field('party_duration').value).to eq "#{movie_service.data[:runtime]}"
       end
@@ -50,7 +50,7 @@ describe 'from the viewing party page' do
     it 'I see a date field to enter a viewing party date' do
       VCR.use_cassette('movie_detail_550_vp_request') do
         movie_service = MovieService.new(550)
-        visit "/movies/#{movie_service.uuid}"
+        visit movie_path(550)
         click_on 'Create Viewing Party'
         page.find_field('party_date')
         #fill_in :party_date, with: "12/05/2020"
@@ -60,7 +60,7 @@ describe 'from the viewing party page' do
     it 'I see a time select field to enter a viewing party time' do
       VCR.use_cassette('movie_detail_550_vp_request') do
         movie_service = MovieService.new(550)
-        visit "/movies/#{movie_service.uuid}"
+        visit movie_path(550)
         click_on 'Create Viewing Party'
         page.find_field(:party_time)
       end
@@ -69,7 +69,7 @@ describe 'from the viewing party page' do
     it 'can see a checkbox next to each friend visible' do
       VCR.use_cassette('movie_detail_550_vp_request') do
         movie_service = MovieService.new(550)
-        visit "/movies/#{movie_service.uuid}"
+        visit movie_path(550)
         click_on 'Create Viewing Party'
         expect(page).to have_content('My Friends:')
         check "#{@friend1.email}"
@@ -80,7 +80,7 @@ describe 'from the viewing party page' do
     it 'can make a viewing party by pressing a "Create Viewing Party" button' do
       VCR.use_cassette('movie_detail_550_vp_request_generate') do
         movie_service = MovieService.new(550)
-        visit "/movies/#{movie_service.uuid}"
+        visit movie_path(550)
         click_on 'Create Viewing Party'
 
         fill_in :party_duration, with: 200
@@ -97,10 +97,10 @@ describe 'from the viewing party page' do
 
         click_on 'Logout'
 
-        visit "/login"
+        visit login_path
         fill_in 'email', with: 'friend1@example.com'
         fill_in 'password', with: '1234**USAusa'
-        click_on "Login"
+        click_on 'Login'
 
         expect(page).to have_content("#{vp.movie.title} on #{vp.date.strftime('%m/%d/%y')}")
       end
@@ -109,7 +109,7 @@ describe 'from the viewing party page' do
     it 'can not make a viewing party when data is missing' do
       VCR.use_cassette('movie_detail_550_vp_request_generate') do
         movie_service = MovieService.new(550)
-        visit "/movies/#{movie_service.uuid}"
+        visit movie_path(550)
         click_on 'Create Viewing Party'
 
         check "#{@friend1.email}"
@@ -124,7 +124,7 @@ describe 'from the viewing party page' do
     it 'can not make a viewing party when you do not have attendees' do
       VCR.use_cassette('movie_detail_550_vp_request_generate') do
         movie_service = MovieService.new(550)
-        visit "/movies/#{movie_service.uuid}"
+        visit movie_path(550)
         click_on 'Create Viewing Party'
 
         fill_in :party_duration, with: 200
@@ -146,14 +146,14 @@ describe 'from the viewing party page' do
 
       click_on 'Logout'
 
-      visit "/login"
+      visit login_path
       fill_in 'email', with: 'loser@example.com'
       fill_in 'password', with: '1234**USAusa'
-      click_on "Login"
+      click_on 'Login'
 
       VCR.use_cassette('movie_detail_550_vp_request_generate') do
         movie_service = MovieService.new(550)
-        visit "/movies/#{movie_service.uuid}"
+        visit movie_path(550)
         click_on 'Create Viewing Party'
 
         fill_in :party_duration, with: 200
