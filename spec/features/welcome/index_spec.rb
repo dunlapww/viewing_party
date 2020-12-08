@@ -14,8 +14,11 @@ RSpec.describe 'welcome page' do
       expect(page).to have_content('A place to get your friends together to watch a movie.')
     end
 
-    it 'I see a button to login' do
+    it 'I see a button and link to login' do
       expect(page).to have_button('Login')
+      within('.main-nav') do
+        expect(page).to have_link('Login')
+      end
     end
 
     it 'I see a link to register' do

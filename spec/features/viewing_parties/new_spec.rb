@@ -26,7 +26,7 @@ describe 'from the viewing party page' do
       visit login_path
       fill_in 'email', with: 'testing@example.com'
       fill_in 'password', with: '1234**USAusa'
-      click_on 'Login'
+      click_button 'Login'
     end
 
     it 'I see the movie title' do
@@ -100,7 +100,7 @@ describe 'from the viewing party page' do
         visit login_path
         fill_in 'email', with: 'friend1@example.com'
         fill_in 'password', with: '1234**USAusa'
-        click_on 'Login'
+        click_button 'Login'
 
         expect(page).to have_content("#{vp.movie.title} on #{vp.date.strftime('%m/%d/%y')}")
       end
@@ -149,7 +149,7 @@ describe 'from the viewing party page' do
       visit login_path
       fill_in 'email', with: 'loser@example.com'
       fill_in 'password', with: '1234**USAusa'
-      click_on 'Login'
+      click_button 'Login'
 
       VCR.use_cassette('movie_detail_550_vp_request_generate') do
         movie_service = MovieService.new(550)

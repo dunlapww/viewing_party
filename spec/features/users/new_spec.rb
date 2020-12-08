@@ -6,6 +6,12 @@ RSpec.describe 'registration page' do
       visit registration_path
     end
 
+    it 'I see a link to login on the page' do
+      within '.current-user' do
+        expect(page).to have_link('Already a user? Login!')
+      end
+    end
+
     it 'I can register as a new user' do
       fill_in 'user[email]', with: 'testing@example.com'
       fill_in 'user[password]', with: '1234**USAusa'

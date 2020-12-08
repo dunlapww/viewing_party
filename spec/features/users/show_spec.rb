@@ -25,7 +25,7 @@ describe 'dashboard' do
       visit login_path
       fill_in 'email', with: 'testing@example.com'
       fill_in 'password', with: '1234**USAusa'
-      click_on 'Login'
+      click_button 'Login'
       visit dashboard_path
     end
 
@@ -36,6 +36,12 @@ describe 'dashboard' do
 
     it 'I see a friends section' do
       expect(page).to have_css('.friends')
+    end
+
+    it 'I cannot see a login link in the nav' do
+      within('.main-nav') do
+        expect(page).to_not have_link('Login')
+      end
     end
 
     it 'I can see a viewing parties section' do
@@ -68,7 +74,7 @@ describe 'dashboard' do
       visit login_path
       fill_in 'email', with: 'friend1@example.com'
       fill_in 'password', with: '1234**USAusa'
-      click_on 'Login'
+      click_button 'Login'
 
       VCR.use_cassette('movie_detail_550_vp_request_generate') do
         movie_service = MovieService.new(550)
@@ -88,7 +94,7 @@ describe 'dashboard' do
         visit login_path
         fill_in 'email', with: 'testing@example.com'
         fill_in 'password', with: '1234**USAusa'
-        click_on 'Login'
+        click_button 'Login'
 
         within('.attendee-parties') do
           expect(page).to have_content("#{vp.movie.title} on #{vp.date.strftime('%m/%d/%y')}")
