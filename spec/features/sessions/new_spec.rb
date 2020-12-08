@@ -47,4 +47,21 @@ describe 'login' do
       end
     end
   end
+
+  describe 'As a logged in user' do
+    before :each do
+      @user = User.create(
+        email: 'testing@example.com',
+        password: '1234**USAusa',
+        password_confirmation: '1234**USAusa'
+      )
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
+    end
+
+    it 'I get redirect to the dashboard if I visit the login page' do
+      visit login_path
+
+      expect(current_path).to eq(dashboard_path)
+    end
+  end
 end
