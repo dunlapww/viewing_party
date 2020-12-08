@@ -1,13 +1,4 @@
 class MovieService
-  # attr_reader :uuid, :data, :reviews, :cast
-  # def initialize(uuid)
-  #   @uuid = uuid
-  #   @data = parse_data(movie_data)
-  #   @reviews = parse_data(review_data)
-  #   @cast = parse_data(cast_data)
-  # end
-
-  # private
   def self.movie_data(uuid)
     response = connection.get("/3/movie/#{uuid}?api_key=#{ENV['MDB_API_KEY']}")
     parse_data(response)
