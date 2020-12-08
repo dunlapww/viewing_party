@@ -25,18 +25,45 @@ RSpec.describe MovieService do
         end
       end
     describe '#review_data' do
-      xit 'can return review data' do
-        VCR.use_cassette('movie_detail_550_movie_service') do
-          results = MovieService.review_data(550)
-          expect(results).to be_a Hash
+      it 'can return review data' do
+        VCR.use_cassette('movie_detail_550_movie_service_review') do
+          review = MovieService.review_data(550)
+          expect(review).to be_a Hash
+
+          expect(review).to have_key :id
+          expect(review[:id]).to be_a Integer
+
+          expect(review).to have_key :page
+          expect(review[:page]).to be_a Integer
+
+          expect(review[:results][0]).to have_key :author
+          expect(review[:results][0][:author]).to be_a String
+
+          expect(review[:results][0]).to have_key :content
+          expect(review[:results][0][:content]).to be_a String
+
+          expect(review[:results][0]).to have_key :url
+          expect(review[:results][0][:url]).to be_a String
         end
       end
     end
     describe '#cast_data' do
-      xit 'can return cast data' do
-        VCR.use_cassette('movie_detail_550_movie_service') do
-          results = MovieService.cast_data(550)
-          expect(results).to be_a Hash
+      it 'can return cast data' do
+        VCR.use_cassette('movie_detail_550_movie_service_cast') do
+          cast = MovieService.cast_data(550)
+          expect(cast).to be_a Hash
+
+          expect(cast).to have_key :id
+          expect(cast[:id]).to be_a Integer
+
+          expect(cast).to have_key :cast
+          expect(cast[:cast]).to be_a Array
+
+          expect(cast[:cast][0]).to have_key :name
+          expect(cast[:cast][0][:name]).to be_a String
+
+          expect(cast[:cast][0]).to have_key :character
+          expect(cast[:cast][0][:character]).to be_a String
         end
       end
     end
