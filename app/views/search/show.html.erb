@@ -9,7 +9,7 @@
 <br>
 <% @movies.results.each do |movie| %>
   <p class="movie">
-    Movie Title: <%= link_to "#{movie[:original_title]}",  movie_details_path('uuid') %><br>
+    Movie Title: <%= link_to "#{movie[:original_title]}",  movie_path('uuid') %><br>
     Vote Average: <%= movie[:vote_average] %><br>
   </p>
 

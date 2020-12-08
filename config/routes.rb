@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   end
 
   scope controller: :movie_services do
-    get '/movies/:uuid' => :show, as: 'movie_details'
+    get '/movies/:uuid' => :show, as: 'movie'
   end
 
   scope controller: :viewing_parties do

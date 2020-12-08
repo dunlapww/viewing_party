@@ -14,7 +14,7 @@ describe 'movies_show' do
     it "I see a button to 'create viewing party'" do
       VCR.use_cassette('movie_detail_550_m_request') do
         movie_service = MovieService.new(550)
-        visit movie_details_path(550)
+        visit movie_path(550)
         expect(page).to have_button 'Create Viewing Party'
       end
     end
@@ -22,7 +22,7 @@ describe 'movies_show' do
     it "when I click on Create Viewing Party i'm redirected to movies/:id/viewing-party/new" do
       VCR.use_cassette('movie_detail_550_vp_request') do
         movie_service = MovieService.new(550)
-        visit movie_details_path(550)
+        visit movie_path(550)
         click_on 'Create Viewing Party'
         expect(current_path).to eq(new_vp_path(550))
       end
@@ -31,7 +31,7 @@ describe 'movies_show' do
     it "shows movie details" do
       VCR.use_cassette('movie_detail_550_m_request') do
         movie_service = MovieService.new(550)
-        visit movie_details_path(550)
+        visit movie_path(550)
         expect(page).to have_content(movie_service.data[:title])
         expect(page).to have_content(movie_service.data[:vote_average])
         expect(page).to have_content('2:19')
