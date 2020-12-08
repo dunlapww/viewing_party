@@ -18,7 +18,7 @@ describe 'movies_show' do
         expect(page).to have_button 'Create Viewing Party'
       end
     end
-    
+
     it "when I click on Create Viewing Party i'm redirected to movies/:id/viewing-party/new" do
       VCR.use_cassette('movie_detail_550_vp_request') do
         movie_service = MovieService.new(550)
@@ -47,26 +47,5 @@ describe 'movies_show' do
         expect(page).to have_css('.actor', count:10)
       end
     end
-      #single movie endpoint (movie_data):
-        #movie title: movie_data[:original_title]
-        #vote average: movie_data[:vote_average]
-        #run_time (display in hours mins): movie_data[:runtime]
-        #assoc genres: movie_data[:genres]
-        #summary description: movie_data[:overview]
-
-      #credits endpoint - top 10 actors (cast_data):
-        #cast_data[:cast].each do |actor|
-          #actor_name: actor[:name]
-          #actor_character: actor[:character]
-        #end
-
-      #reviews endpoint (review_data):
-        #total reviews: review_data[:total_results]
-        #review_data[:results].each do |review|
-          #rating: review[:author_details][:rating]
-          #author: review[:author]
-          #contents: review[:content]
-        #end
-
-  end
+  end 
 end
