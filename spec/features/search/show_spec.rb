@@ -29,16 +29,21 @@ describe 'Discover Page' do
         expect(page).to have_link('Fight Club')
         expect(page).to have_content('Vote Average: 8.4')
         expect(page).to have_css('.movie', count: 40)
+        expect(page).to have_content("Top 40 Movies:")
       end
     end
     it 'when a user clicks search and has not entered any keywords, it returns the results for a search for an empty string' do
-      VCR.use_cassette('movies_empty_search') do
+      VCR.use_cassette('movies_empty_feature_search') do
         click_on 'Search'
-        expect(page).to have_content("Your search for "" returned 0 results")
+        expect(page).to have_content("Your search for '' returned 0 results")
       end
     end
-    it 'when the user searches for a word that has no results, it returns a message to that end'
-    it "when a user searches by keyword, it returns a message that says 'search results for: '<words>'"
-    
+    it 'when the user searches for a word that has no results, it returns a message to that end' do
+      VCR.use_cassette('movies_jmkls_feature_search') do
+        fill_in :search, with: 'jmkls'
+        click_on 'Search'
+        expect(page).to have_content("Your search for 'jmkls' returned 0 results")
+      end
+    end    
   end
 end
