@@ -14,9 +14,9 @@ class MovieSearch
     results.flatten
   end
   def connection
-    Faraday.new("https://api.themoviedb.org")
+    Faraday.new('https://api.themoviedb.org')
   end
-  
+
   def keyword_search(search_terms, page)
     connection.get("/3/search/movie?api_key=#{ENV['MDB_API_KEY']}&query=#{search_terms}&page=#{page}")
   end

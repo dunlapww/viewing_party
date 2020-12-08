@@ -13,11 +13,11 @@ describe 'Friends' do
         password: '1234**USAusa',
         password_confirmation: '1234**USAusa'
       )
-      visit "/login"
+      visit login_path
       fill_in 'email', with: 'testing@example.com'
       fill_in 'password', with: '1234**USAusa'
       click_button 'Login'
-      visit '/dashboard'
+      visit dashboard_path
     end
 
     it 'I can add a friend that exists' do

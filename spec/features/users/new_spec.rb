@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'registration page' do
   describe 'As a visitor' do
     before(:each) do
-      visit '/registration'
+      visit registration_path
     end
 
     it 'I see a link to login on the page' do
@@ -19,7 +19,7 @@ RSpec.describe 'registration page' do
 
       click_button('Register')
 
-      expect(current_path).to eq('/dashboard')
+      expect(current_path).to eq(dashboard_path)
     end
 
     it 'I cannot register with a used email' do
@@ -36,7 +36,7 @@ RSpec.describe 'registration page' do
       click_button('Register')
 
       expect(page).to have_content('Email has already been taken')
-      expect(current_path).to eq('/registration')
+      expect(current_path).to eq(registration_path)
       expect(find_field(:email).value).to eq(nil)
     end
 
@@ -48,7 +48,7 @@ RSpec.describe 'registration page' do
       click_button('Register')
 
       expect(page).to have_content("Email can't be blank")
-      expect(current_path).to eq('/registration')
+      expect(current_path).to eq(registration_path)
     end
 
     it 'I cannot register if passwords do not match' do
@@ -59,7 +59,7 @@ RSpec.describe 'registration page' do
       click_button('Register')
 
       expect(page).to have_content("Password confirmation doesn't match Password")
-      expect(current_path).to eq('/registration')
+      expect(current_path).to eq(registration_path)
     end
 
     it 'I cannot register if the password is not strong enough' do
@@ -70,7 +70,7 @@ RSpec.describe 'registration page' do
       click_button('Register')
 
       expect(page).to have_content("Password needs to be 8-70 characters and include: 1 uppercase, 1 lowercase, 1 digit and 1 special character.")
-      expect(current_path).to eq('/registration')
+      expect(current_path).to eq(registration_path)
     end
   end
 end
