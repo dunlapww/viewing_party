@@ -41,6 +41,20 @@ describe 'Friends' do
 
       expect(page).to have_content("Your friend isn't here yet! Tell them!")
     end
-  end
 
+    it 'My friend sees me as a friend on their dashboard after I add them' do
+      fill_in :friend_email, with: 'friend@example.com'
+      click_on 'Add Friend'
+
+      click_on 'Logout'
+
+      visit "/login"
+      fill_in 'email', with: 'friend@example.com'
+      fill_in 'password', with: '1234**USAusa'
+      click_on "Login"
+      visit '/dashboard'
+
+      expect(page).to have_content(@user.email)
+    end
+  end
 end

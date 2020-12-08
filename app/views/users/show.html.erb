@@ -11,11 +11,14 @@
   <% end %>
 
   <h2>Friends</h2>
-  <% if @user.friends.empty? %>
+  <% if @user.friends.empty? && @user.inverse_friends.empty?  %>
     <p>We can't find any friends, add one!</p>
   <% else %>
     <ul>
       <% @user.friends.each do |friend| %>
+        <li><%= friend.email %></li>
+      <% end %>
+      <% @user.inverse_friends.each do |friend| %>
         <li><%= friend.email %></li>
       <% end %>
     </ul>
