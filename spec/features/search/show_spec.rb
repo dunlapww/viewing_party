@@ -32,5 +32,9 @@ describe '/discover' do
       end
       #what if no search results
     end
+    it 'when a user clicks search and has not entered any keywords, it returns the results for a search for an empty string'
+    it 'when the user searches for a word that has no results, it returns a message to that end'
+    it "when a user searches by keyword, it returns a message that says 'search results for: '<words>'"
+    
   end
 end
