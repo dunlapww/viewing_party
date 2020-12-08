@@ -1,6 +1,6 @@
 <h1>Welcome <%= @user.email %>!</h1>
 
-<%= button_to "Discover Movies", "/movies" %>
+<%= button_to "Discover Movies", "/discover" %>
 
 <section class='friends'>
   <h2>Add a friend</h2>
@@ -24,17 +24,29 @@
 
 <section class='viewing-parties'>
   <h2>Viewing Parties: Host</h2>
-    <% @user.viewing_parties.each do |vp| %>
-      <p><%= vp.movie.title %> on <%= vp.date.strftime('%m/%d/%y') %> at <%= vp.time.strftime('%I:%M %p') %></p>
-      <ul>
-      <% vp.friends.each do |friend| %>
-        <li><%= friend.email %></li>
+    <div class="host-parties">
+      <% if @user.viewing_parties.empty? %>
+        <p>No parties yet!</p>
+      <% else %>
+        <% @user.viewing_parties.each do |vp| %>
+          <p><%= vp.movie.title %> on <%= vp.date.strftime('%m/%d/%y') %> at <%= vp.time.strftime('%I:%M %p') %></p>
+          <ul>
+          <% vp.friends.each do |friend| %>
+            <li><%= friend.email %></li>
+          <% end %>
+          </ul>
+        <% end %>
       <% end %>
-      </ul>
-    <% end %>
+    </div>
 
   <h2>Viewing Parties: Attendee</h2>
-  <% @user.attendee_parties.each do |vp| %>
-    <p><%= vp.movie.title %> on <%= vp.date.strftime('%m/%d/%y') %> at <%= vp.time.strftime('%I:%M %p') %></p>
-  <% end %>
+    <div class="attendee-parties">
+      <% if @user.attendee_parties.empty? %>
+        <p>No parties yet!</p>
+      <% else %>
+        <% @user.attendee_parties.each do |vp| %>
+          <p><%= vp.movie.title %> on <%= vp.date.strftime('%m/%d/%y') %> at <%= vp.time.strftime('%I:%M %p') %></p>
+        <% end %>
+      <% end %>
+    </div>
 </section>
