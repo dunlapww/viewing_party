@@ -11,11 +11,14 @@
   <% end %>
 
   <h2>Friends</h2>
-  <% if @user.friends.empty? %>
+  <% if @user.friends.empty? && @user.inverse_friends.empty?  %>
     <p>We can't find any friends, add one!</p>
   <% else %>
     <ul>
       <% @user.friends.each do |friend| %>
+        <li><%= friend.email %></li>
+      <% end %>
+      <% @user.inverse_friends.each do |friend| %>
         <li><%= friend.email %></li>
       <% end %>
     </ul>
@@ -41,10 +44,10 @@
 
   <h2>Viewing Parties: Attendee</h2>
     <div class="attendee-parties">
-      <% if @user.attendee_parties.empty? %>
+      <% if @user.parties.empty? %>
         <p>No parties yet!</p>
       <% else %>
-        <% @user.attendee_parties.each do |vp| %>
+        <% @user.parties.each do |vp| %>
           <p><%= vp.movie.title %> on <%= vp.date.strftime('%m/%d/%y') %> at <%= vp.time.strftime('%I:%M %p') %></p>
         <% end %>
       <% end %>
