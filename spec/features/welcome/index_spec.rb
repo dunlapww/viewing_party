@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'welcome page' do
   describe 'As a visitor' do
     before(:each) do
-      visit '/'
+      visit welcome_index_path
     end
 
     it 'I can see a welcome message' do
