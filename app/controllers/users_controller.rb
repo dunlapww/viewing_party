@@ -16,6 +16,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    render file: 'public/404' unless current_user
     @user = current_user
   end
 
