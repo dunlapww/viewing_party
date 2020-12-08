@@ -25,7 +25,7 @@ describe 'dashboard' do
       visit login_path
       fill_in 'email', with: 'testing@example.com'
       fill_in 'password', with: '1234**USAusa'
-      click_on "Login"
+      click_on 'Login'
       visit dashboard_path
     end
 
@@ -45,8 +45,7 @@ describe 'dashboard' do
     it 'I can see the parties where I am the host' do
       VCR.use_cassette('movie_detail_550_vp_request_generate') do
         movie_service = MovieService.new(550)
-        # visit movie_details_path
-        visit "/movies/#{movie_service.uuid}"
+        visit movie_details_path(550)
         click_on 'Create Viewing Party'
 
         fill_in :party_duration, with: 200
@@ -73,7 +72,7 @@ describe 'dashboard' do
 
       VCR.use_cassette('movie_detail_550_vp_request_generate') do
         movie_service = MovieService.new(550)
-        visit "/movies/#{movie_service.uuid}"
+        visit movie_details_path(550)
         click_on 'Create Viewing Party'
 
         fill_in :party_duration, with: 200
@@ -89,7 +88,7 @@ describe 'dashboard' do
         visit login_path
         fill_in 'email', with: 'testing@example.com'
         fill_in 'password', with: '1234**USAusa'
-        click_on "Login"
+        click_on 'Login'
 
         within('.attendee-parties') do
           expect(page).to have_content("#{vp.movie.title} on #{vp.date.strftime('%m/%d/%y')}")
