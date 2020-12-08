@@ -21,10 +21,12 @@ class UsersController < ApplicationController
   end
 
   def addfriend
-    user = current_user
     friend = User.find_by(email: params['friend_email'])
-    if !friend.nil?
-      Friendship.create!(user_id: user.id, friend_id: friend.id)
+    if !friend.nil? && Friendship.find_by(user_id: current_user.id, friend_id: friend.id)
+      flash[:notice] = "You are already friends!"
+      redirect_to dashboard_path
+    elsif !friend.nil?
+      Friendship.create!(user_id: current_user.id, friend_id: friend.id)
       redirect_to dashboard_path
     else
       flash[:error] = "Your friend isn't here yet! Tell them!"
