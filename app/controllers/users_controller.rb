@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     user = User.new(user_params)
     if user.save
       session[:user_id] = user.id
-      redirect_to '/dashboard'
+      redirect_to dashboard_path
     else
       flash.now[:error] = user.errors.full_messages.to_sentence
       user.email = nil if User.find_by(email: user.email)
@@ -24,10 +24,10 @@ class UsersController < ApplicationController
     friend = User.find_by(email: params['friend_email'])
     if !friend.nil?
       Friendship.create!(user_id: user.id, friend_id: friend.id)
-      redirect_to '/dashboard'
+      redirect_to dashboard_path
     else
       flash[:error] = "Your friend isn't here yet! Tell them!"
-      redirect_to '/dashboard'
+      redirect_to dashboard_path
     end
   end
 
