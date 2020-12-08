@@ -51,30 +51,5 @@ RSpec.describe User, type: :model do
       error = ["Password needs to be 8-70 characters and include: 1 uppercase, 1 lowercase, 1 digit and 1 special character."]
       expect(bad_user.password_complexity).to eq(error)
     end
-
-    # it ".attendee_parties" do
-    #   fightclub = Movie.create!(title: 'Fight Club', uuid: 550)
-    #   dantesinferno = Movie.create!(title: "Dante's Inferno", uuid: 540)
-    #   vp = @user.viewing_parties.create!(
-    #     movie_id: fightclub.id,
-    #     duration: 200,
-    #     date: Date.today,
-    #     time: Time.now
-    #   )
-    #   dante_vp = @user.viewing_parties.create!(
-    #     movie_id: dantesinferno.id,
-    #     duration: 210,
-    #     date: Date.today,
-    #     time: Time.now
-    #   )
-    #   vp.attendees.create!(friend_id: @friend1.id)
-    #   vp.attendees.create!(friend_id: @friend2.id)
-    #   dante_vp.attendees.create!(friend_id: @friend1.id)
-    #
-    #   expect(@friend1.attendee_parties).to eq([vp, dante_vp])
-    #   expect(@friend2.attendee_parties).to eq([vp])
-    #   expect(@user.attendee_parties).to eq([])
-    #
-    # end
   end
 end
