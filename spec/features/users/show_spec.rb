@@ -22,11 +22,17 @@ describe 'dashboard' do
       @user.friends << @friend2
       @friend1.friends << @user
 
+      VCR.insert_cassette('movie_detail_550_vp_request_generate')
+
       visit login_path
       fill_in 'email', with: 'testing@example.com'
       fill_in 'password', with: '1234**USAusa'
       click_button 'Login'
       visit dashboard_path
+    end
+
+    after :each do
+      VCR.eject_cassette
     end
 
     it "I can click on a button called 'Discover Movies'" do
@@ -49,22 +55,19 @@ describe 'dashboard' do
     end
 
     it 'I can see the parties where I am the host' do
-      VCR.use_cassette('movie_detail_550_vp_request_generate') do
-        movie_service = MovieService.new(550)
-        visit movie_path(550)
-        click_on 'Create Viewing Party'
+      visit movie_path(550)
+      click_on 'Create Viewing Party'
 
-        fill_in :party_duration, with: 200
-        fill_in :party_date, with: Date.current
-        fill_in :party_time, with: Time.now
-        check "#{@friend1.email}"
-        check "#{@friend2.email}"
+      fill_in :party_duration, with: 200
+      fill_in :party_date, with: Date.current
+      fill_in :party_time, with: Time.now
+      check "#{@friend1.email}"
+      check "#{@friend2.email}"
 
-        click_on 'Create Viewing Party'
-        vp = ViewingParty.last
-        within('.host-parties') do
-          expect(page).to have_content("#{vp.movie.title} on #{vp.date.strftime('%m/%d/%y')}")
-        end
+      click_on 'Create Viewing Party'
+      vp = ViewingParty.last
+      within('.host-parties') do
+        expect(page).to have_content("#{vp.movie.title} on #{vp.date.strftime('%m/%d/%y')}")
       end
     end
 
@@ -76,29 +79,26 @@ describe 'dashboard' do
       fill_in 'password', with: '1234**USAusa'
       click_button 'Login'
 
-      VCR.use_cassette('movie_detail_550_vp_request_generate') do
-        movie_service = MovieService.new(550)
-        visit movie_path(550)
-        click_on 'Create Viewing Party'
+      visit movie_path(550)
+      click_on 'Create Viewing Party'
 
-        fill_in :party_duration, with: 200
-        fill_in :party_date, with: Date.current
-        fill_in :party_time, with: Time.now
-        check "#{@user.email}"
+      fill_in :party_duration, with: 200
+      fill_in :party_date, with: Date.current
+      fill_in :party_time, with: Time.now
+      check "#{@user.email}"
 
-        click_on 'Create Viewing Party'
-        vp = ViewingParty.last
+      click_on 'Create Viewing Party'
+      vp = ViewingParty.last
 
-        click_on 'Logout'
+      click_on 'Logout'
 
-        visit login_path
-        fill_in 'email', with: 'testing@example.com'
-        fill_in 'password', with: '1234**USAusa'
-        click_button 'Login'
+      visit login_path
+      fill_in 'email', with: 'testing@example.com'
+      fill_in 'password', with: '1234**USAusa'
+      click_button 'Login'
 
-        within('.attendee-parties') do
-          expect(page).to have_content("#{vp.movie.title} on #{vp.date.strftime('%m/%d/%y')}")
-        end
+      within('.attendee-parties') do
+        expect(page).to have_content("#{vp.movie.title} on #{vp.date.strftime('%m/%d/%y')}")
       end
     end
 
