@@ -1,6 +1,6 @@
-<%= button_to "Discover Top 40", "/results", method: :get%>
+<%= button_to "Discover Top 40", results_path, method: :get%>
 
-<%= form_tag '/results', method: :get, local: true do %>
+<%= form_tag results_path, method: :get, local: true do %>
   <%= label_tag :search %>
   <%= search_field_tag :search %>
   <%= submit_tag 'Search' %>
@@ -12,5 +12,5 @@
     Movie Title: <%= link_to "#{movie[:original_title]}", "/movies/#{movie[:id]}" %><br>
     Vote Average: <%= movie[:vote_average] %><br>
   </p>
-  
+
 <% end%>
