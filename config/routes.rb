@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
 
   #movies
-  get '/movies/:uuid', to: 'movie_services#show', as: 'movie_services'
+  get '/movies/:uuid', to: 'movie_services#show'
 
   #viewing_parties
   get '/movies/:uuid/viewing-party/new', to: 'viewing_parties#new'
