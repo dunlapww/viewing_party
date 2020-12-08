@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   end
 
   scope controller: :viewing_parties do
-    get '/movies/:uuid/viewing-party/new' => :new
+    get '/movies/:uuid/viewing-party/new' => :new, as: 'new_vp'
     post '/movies/:uuid/viewing-party' => :create, as: 'create_vp'
   end
 
