@@ -7,10 +7,10 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
-  
-  <body>
-    <nav>
 
+  <body>
+    <nav class="main-nav">
+      <%= link_to "Login", "/login" unless current_user %>
       <%= link_to "Logout", "/logout", method: :delete if current_user %>
     </nav>
     <main>
