@@ -9,41 +9,41 @@ describe 'login' do
           password: '1234**USAusa',
           password_confirmation: '1234**USAusa'
         )
-        visit "/"
+        visit root_path
       end
       it 'I can login' do
         click_on 'Login'
-        expect(current_path).to eq("/login")
+        expect(current_path).to eq(login_path)
 
         fill_in 'email', with: 'testing@example.com'
         fill_in 'password', with: '1234**USAusa'
 
         click_on "Login"
-        expect(current_path).to eq("/dashboard")
+        expect(current_path).to eq(dashboard_path)
       end
 
       it 'I cannot login with invalid email' do
         click_on 'Login'
-        expect(current_path).to eq("/login")
+        expect(current_path).to eq(login_path)
 
         fill_in 'email', with: 'user@example.com'
         fill_in 'password', with: '1234**USAusa'
 
-        click_on "Login"
-        expect(page).to have_content("Your email or password was incorrect!")
-        expect(current_path).to eq("/login")
+        click_on 'Login'
+        expect(page).to have_content('Your email or password was incorrect!')
+        expect(current_path).to eq(login_path)
       end
 
       it 'I cannot login with invalid password' do
         click_on 'Login'
-        expect(current_path).to eq("/login")
+        expect(current_path).to eq(login_path)
 
         fill_in 'email', with: 'testing@example.com'
         fill_in 'password', with: 'password'
 
-        click_on "Login"
-        expect(page).to have_content("Your email or password was incorrect!")
-        expect(current_path).to eq("/login")
+        click_on 'Login'
+        expect(page).to have_content('Your email or password was incorrect!')
+        expect(current_path).to eq(login_path)
       end
     end
   end
