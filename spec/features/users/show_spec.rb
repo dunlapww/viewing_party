@@ -44,8 +44,8 @@ describe 'dashboard' do
 
     it 'I can see the parties where I am the host' do
       VCR.use_cassette('movie_detail_550_vp_request_generate') do
-        movie_service = MovieService.new(550)
-        visit movie_path(550)
+        movie_detail = MovieFacade.movie_details(550)
+        visit movie_path(movie_detail.movie_id)
         click_on 'Create Viewing Party'
 
         fill_in :party_duration, with: 200
@@ -71,8 +71,8 @@ describe 'dashboard' do
       click_on 'Login'
 
       VCR.use_cassette('movie_detail_550_vp_request_generate') do
-        movie_service = MovieService.new(550)
-        visit movie_path(550)
+        movie_detail = MovieFacade.movie_details(550)
+        visit movie_path(movie_detail.movie_id)
         click_on 'Create Viewing Party'
 
         fill_in :party_duration, with: 200
