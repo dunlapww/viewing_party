@@ -91,11 +91,12 @@ RSpec.describe MovieService do
     describe '#top_rated' do
       it 'can return top_rated data' do
         VCR.use_cassette('top_rated_movies') do
-          top_rated = MovieService.top_rated
+          page = 1
+          top_rated = MovieService.top_rated(page)
           expect(top_rated).to be_a Hash
           expect(top_rated[:results].count).to eq(20)
 
-          dantes = top_rated[:results].first 
+          dantes = top_rated[:results].first
           expect(dantes).to have_key :original_title
           expect(dantes[:original_title]).to be_a String
 
