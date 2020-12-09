@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-describe 'dashboard' do
-  describe 'as a logged in user' do
+RSpec.describe 'Dashboard' do
+  describe 'As a logged in user' do
     before :each do
       @user = User.create(
         email: 'testing@example.com',

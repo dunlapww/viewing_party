@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'registration page' do
+RSpec.describe 'Registration page' do
   describe 'As a visitor' do
     before(:each) do
       visit registration_path

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'Friends' do
+RSpec.describe 'Friends Section' do
   describe 'As a logged in user' do
     before :each do
       @user = User.create!(
@@ -57,7 +57,7 @@ describe 'Friends' do
     it 'I cannot add myself as a friend' do
       fill_in :friend_email, with: @user.email
       click_on 'Add Friend'
-      
+
       expect(page).to have_content("You are already friends!")
     end
 

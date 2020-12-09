@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe MovieSearch, type: :model do
+RSpec.describe MovieSearch, type: :model do
   describe 'instance methods' do
     it 'results' do
       VCR.use_cassette('movie_empty_search_model') do
