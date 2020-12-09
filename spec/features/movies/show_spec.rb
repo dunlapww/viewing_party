@@ -13,35 +13,42 @@ describe 'movies_show' do
 
     it "I see a button to 'create viewing party'" do
       VCR.use_cassette('movie_detail_550_m_request') do
-        movie_service = MovieService.new(550)
-        visit movie_path(550)
+        movie_detail = MovieFacade.movie_details(550)
+
+        visit movie_path(movie_detail.movie_id)
         expect(page).to have_button 'Create Viewing Party'
       end
     end
 
     it "when I click on Create Viewing Party i'm redirected to movies/:id/viewing-party/new" do
       VCR.use_cassette('movie_detail_550_vp_request') do
-        movie_service = MovieService.new(550)
-        visit movie_path(550)
+        movie_detail = MovieFacade.movie_details(550)
+
+        visit movie_path(movie_detail.movie_id)
         click_on 'Create Viewing Party'
-        expect(current_path).to eq(new_vp_path(550))
+        expect(current_path).to eq(new_vp_path(movie_detail.movie_id))
       end
     end
 
     it "shows movie details" do
       VCR.use_cassette('movie_detail_550_m_request') do
-        movie_service = MovieService.new(550)
-        visit movie_path(550)
-        expect(page).to have_content(movie_service.data[:title])
-        expect(page).to have_content(movie_service.data[:vote_average])
+        movie_detail = MovieFacade.movie_details(550)
+        cast = MovieFacade.cast_details(550)
+        cast_member = cast.first
+        reviews = MovieFacade.review_details(550)
+        review = reviews.second
+
+        visit movie_path(movie_detail.movie_id)
+        expect(page).to have_content(movie_detail.title)
+        expect(page).to have_content(movie_detail.vote_average)
         expect(page).to have_content('2:19')
-        expect(page).to have_content(movie_service.data[:genres].first[:name])
-        expect(page).to have_content(movie_service.data[:overview])
-        expect(page).to have_content(movie_service.cast[:cast].first[:name])
-        expect(page).to have_content(movie_service.cast[:cast].first[:character])
-        expect(page).to have_content(movie_service.reviews[:total_results])
-        expect(page).to have_content(movie_service.reviews[:results].second[:author_details][:rating])
-        expect(page).to have_content(movie_service.reviews[:results].first[:author])
+        expect(page).to have_content(movie_detail.genres.first[:name])
+        expect(page).to have_content(movie_detail.summary)
+        expect(page).to have_content(cast_member.name)
+        expect(page).to have_content(cast_member.character)
+        expect(page).to have_content(reviews.count)
+        expect(page).to have_content(review.rating)
+        expect(page).to have_content(review.author)
         expect(page).to have_text('Pretty awesome movie. I')
         expect(page).to have_css('.actor', count:10)
       end
