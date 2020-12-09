@@ -4,6 +4,10 @@ class TopMovieSet
     @results = consolidate_results
   end
 
+  def count
+    @results.count
+  end
+
   private
 
   def consolidate_results
