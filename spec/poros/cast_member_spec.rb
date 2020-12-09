@@ -3,9 +3,6 @@ require 'rails_helper'
 RSpec.describe CastMember do
   it 'exists' do
       member = {
-          "id": 550,
-          "cast": [
-              {
                   "adult": false,
                   "gender": 2,
                   "id": 819,
@@ -19,8 +16,6 @@ RSpec.describe CastMember do
                   "credit_id": "52fe4250c3a36847f80149f3",
                   "order": 0
                 }
-              ]
-            }
       cast_member = CastMember.new(member)
       expect(cast_member).to be_a CastMember
       expect(cast_member.name).to eq('Edward Norton')
