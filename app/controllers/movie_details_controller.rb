@@ -3,6 +3,5 @@ class MovieDetailsController < ApplicationController
     @movie_detail = MovieFacade.movie_details(params[:uuid])
     @cast = MovieFacade.cast_details(params[:uuid])
     @reviews = MovieFacade.review_details(params[:uuid])
-    # binding.pry
   end
 end
