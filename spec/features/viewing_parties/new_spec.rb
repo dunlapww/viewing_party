@@ -27,8 +27,6 @@ RSpec.describe 'Create New Viewing Party' do
       fill_in 'email', with: 'testing@example.com'
       fill_in 'password', with: '1234**USAusa'
       click_button 'Login'
-      visit movie_path(550)
-      click_on 'Create Viewing Party'
     end
 
 
@@ -98,7 +96,7 @@ RSpec.describe 'Create New Viewing Party' do
         check "#{@friend1.email}"
         check "#{@friend2.email}"
 
-        click_on 'Create Viewing Party'
+        click_button 'Create Viewing Party'
         vp = ViewingParty.last
         expect(current_path).to eq('/dashboard')
         expect(page).to have_content('You have successfully created a party!!')
@@ -109,7 +107,7 @@ RSpec.describe 'Create New Viewing Party' do
         visit login_path
         fill_in 'email', with: 'friend1@example.com'
         fill_in 'password', with: '1234**USAusa'
-        click_on 'Login'
+        click_button 'Login'
 
         expect(page).to have_content("#{vp.movie.title} on #{vp.date.strftime('%m/%d/%y')}")
       end
@@ -134,30 +132,35 @@ RSpec.describe 'Create New Viewing Party' do
     end
 
     it 'has default date of today' do
-      check "#{@friend1.email}"
-      check "#{@friend2.email}"
-      fill_in :party_time, with: Time.now
-      click_on 'Create Viewing Party'
-      expect(page).to have_content("Fight Club on #{Date.today.strftime('%m/%d/%y')}")
-    end
-
-    it 'can not make a viewing party when you do not have attendees' do
-      VCR.use_cassette('movie_detail_550_vp_request_generate') do
+      VCR.use_cassette('default_date') do
         movie_detail = MovieFacade.movie_details(550)
 
         visit movie_path(movie_detail.movie_id)
         click_on 'Create Viewing Party'
+
+        check "#{@friend1.email}"
+        check "#{@friend2.email}"
+        fill_in :party_time, with: Time.now
+        click_on 'Create Viewing Party'
+        expect(page).to have_content("Fight Club on #{Date.today.strftime('%m/%d/%y')}")
       end
     end
 
     it 'I cannot make a viewing party when you do not have attendees' do
-      fill_in :party_duration, with: 200
-      fill_in :party_date, with: Date.current
-      fill_in :party_time, with: Time.now
+      VCR.use_cassette('no_attendees') do
+        movie_detail = MovieFacade.movie_details(550)
 
-      click_on 'Create Viewing Party'
+        visit movie_path(movie_detail.movie_id)
+        click_on 'Create Viewing Party'
+        
+        fill_in :party_duration, with: 200
+        fill_in :party_date, with: Date.current
+        fill_in :party_time, with: Time.now
 
-      expect(page).to have_content("You need friends. Add some! Seriously.")
+        click_on 'Create Viewing Party'
+
+        expect(page).to have_content("You need friends. Add some! Seriously.")
+      end
     end
   end
 
@@ -165,6 +168,7 @@ RSpec.describe 'Create New Viewing Party' do
     it 'I cannot make a viewing party without friends' do
       VCR.use_cassette('movie_detail_550_vp_request_generate') do
         movie_detail = MovieFacade.movie_details(550)
+
         @loser_user = User.create(
           email: 'loser@example.com',
           password: '1234**USAusa',
@@ -174,7 +178,7 @@ RSpec.describe 'Create New Viewing Party' do
         fill_in 'email', with: 'loser@example.com'
         fill_in 'password', with: '1234**USAusa'
         click_button 'Login'
-        
+
         visit movie_path(movie_detail.movie_id)
         click_on 'Create Viewing Party'
 
