@@ -8,7 +8,7 @@ class CastMember
     @name = cast_member[:name]
     @character = cast_member[:character]
     @picture = cast_member[:profile_path]
-    @gender = format_gender(cast_member[:gender]) #this is a number and will need to be formatted
+    @gender = format_gender(cast_member[:gender]) 
     @id = cast_member[:id]
   end
 
