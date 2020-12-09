@@ -119,13 +119,24 @@ RSpec.describe 'Create New Viewing Party' do
       expect(page).to have_content("#{vp.movie.title} on #{vp.date.strftime('%m/%d/%y')}")
     end
 
-    it 'I cannot make a viewing party when data is missing' do
+    it 'can not make a viewing party when data is missing' do
+      fill_in :party_date, with: nil
+      fill_in :party_time, with: nil
       check "#{@friend1.email}"
       check "#{@friend2.email}"
 
       click_on 'Create Viewing Party'
 
-      expect(page).to have_content("Date can't be blank and Time can't be blank")
+      expect(page).to have_content("Date can't be blank, Date is not included in the list, and Time can't be blank")
+    end
+    
+    it 'has default date of today' do
+      check "#{@friend1.email}"
+      check "#{@friend2.email}"
+      fill_in :party_time, with: Time.now
+      click_on 'Create Viewing Party'
+      expect(page).to have_content("Fight Club on #{Date.today.strftime('%m/%d/%y')}")
+
     end
 
     it 'I cannot make a viewing party when you do not have attendees' do
