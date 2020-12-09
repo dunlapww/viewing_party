@@ -7,6 +7,13 @@
 <% end%>
 <br>
 <br>
+
+<% if @search %>
+  <%= "Your search for #{@search} returned #{@movies.count} results:" %><br>
+<% else %>
+  <%= "Top 40 Movies:" %><br>
+<% end %>
+
 <% @movies.results.each do |movie| %>
   <p class="movie">
     Movie Title: <%= link_to "#{movie[:original_title]}",  movie_path('uuid') %><br>
