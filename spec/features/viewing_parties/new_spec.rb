@@ -165,20 +165,5 @@ describe 'Create New Viewing Party' do
       expect(page).to have_content("You need friends. Add some! Seriously.")
       VCR.eject_cassette
     end
-    it 'cannot schedule parties in the past' do
-      VCR.use_cassette('movie_detail_550_vp_request_generate') do
-        movie_service = MovieService.new(550)
-        visit "/movies/#{movie_service.uuid}"
-        click_on 'Create Viewing Party'
-        fill_in :party_duration, with: 200
-        fill_in :party_date, with: Date.current
-        fill_in :party_time, with: Time.now
-        check "#{@friend1.email}"
-        check "#{@friend2.email}"
-
-        click_on 'Create Viewing Party'
-
-      end
-    end
   end
 end
