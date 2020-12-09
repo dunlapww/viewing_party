@@ -19,8 +19,6 @@ RSpec.describe Review do
       first_review = Review.new(review)
       expect(first_review).to be_a Review
       expect(first_review.author).to eq('Goddard')
-      expect(first_review.review_id).to eq('5b1c13b9c3a36848f2026384')
       expect(first_review.content).to eq('Pretty awesome movie.  It shows what one crazy person can convince other crazy people to do.  Everyone needs something to believe in.  I recommend Jesus Christ, but they want Tyler Durden.')
-      expect(first_review.url).to eq('https://www.themoviedb.org/review/5b1c13b9c3a36848f2026384')
   end
 end
