@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     delete '/logout' => :destroy
   end
 
-  scope controller: :movie_services do
+  scope controller: :movie_details do
     get '/movies/:uuid' => :show, as: 'movie'
   end
 
