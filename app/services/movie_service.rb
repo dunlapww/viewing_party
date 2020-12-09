@@ -14,8 +14,8 @@ class MovieService
     parse_data(response)
   end
 
-  def self.top_rated(uuid)
-    response = connection.get("/3/movie/#{uuid}")
+  def self.top_rated
+    response = connection.get("/3/movie/top_rated?api_key=#{ENV['MDB_API_KEY']}&language=en-US&page=1")
     parse_data(response)
   end
 
