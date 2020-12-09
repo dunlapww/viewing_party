@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe '/discover' do
+describe 'Discover Page' do
   describe 'As a registered user' do
     before :each do
       @user = User.create(
@@ -9,15 +9,15 @@ describe '/discover' do
         password_confirmation: '1234**USAusa'
       )
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
-      visit '/discover'
+      visit discover_path
     end
     it 'when I do a keyword search, I see the top 40 search results' do
       VCR.use_cassette('movie_search_fight_club') do
-        fill_in :search, with: "Fight Club"
+        fill_in :search, with: 'Fight Club'
         click_on 'Search'
         expect(page).to have_button('Discover Top 40')
         expect(page).to have_field(:search)
-        expect(current_path).to eq '/results'
+        expect(current_path).to eq results_path
         expect(page).to have_link('Fight Club')
         expect(page).to have_content("Vote Average: 8.4")
         expect(page).to have_css(".movie", count: 22)
@@ -27,10 +27,30 @@ describe '/discover' do
       VCR.use_cassette('movies_top_40') do
         click_on 'Discover Top 40'
         expect(page).to have_link('Fight Club')
-        expect(page).to have_content("Vote Average: 8.4")
-        expect(page).to have_css(".movie", count: 40)
+        expect(page).to have_content('Vote Average: 8.4')
+        expect(page).to have_css('.movie', count: 40)
+        expect(page).to have_content("Top 40 Movies:")
       end
-      #what if no search results
     end
+    it 'when a user clicks search and has not entered any keywords, it returns the results for a search for an empty string' do
+      VCR.use_cassette('movies_empty_feature_search') do
+        click_on 'Search'
+        expect(page).to have_content("Your search for '' returned 0 results")
+      end
+    end
+    it 'when the user searches for a word that has no results, it returns a message to that end' do
+      VCR.use_cassette('movies_jmkls_feature_search') do
+        fill_in :search, with: 'jmkls'
+        click_on 'Search'
+        expect(page).to have_content("Your search for 'jmkls' returned 0 results")
+      end
+    end    
+    it 'when the user searches for a word that has fewer than 20 results, it returns the proper count' do
+      VCR.use_cassette('hello_dolly_search') do
+        fill_in :search, with: 'hello dolly'
+        click_on 'Search'
+        expect(page).to have_content("Your search for 'hello dolly' returned 5 results")
+      end
+    end    
   end
 end

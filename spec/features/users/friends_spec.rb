@@ -13,11 +13,11 @@ describe 'Friends' do
         password: '1234**USAusa',
         password_confirmation: '1234**USAusa'
       )
-      visit "/login"
+      visit login_path
       fill_in 'email', with: 'testing@example.com'
       fill_in 'password', with: '1234**USAusa'
-      click_on "Login"
-      visit '/dashboard'
+      click_button 'Login'
+      visit dashboard_path
     end
 
     it 'I can add a friend that exists' do
@@ -51,7 +51,7 @@ describe 'Friends' do
       visit "/login"
       fill_in 'email', with: 'friend@example.com'
       fill_in 'password', with: '1234**USAusa'
-      click_on "Login"
+      click_button 'Login'
       visit '/dashboard'
 
       expect(page).to have_content(@user.email)

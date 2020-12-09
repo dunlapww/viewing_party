@@ -1,28 +1,31 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :welcome, :path => '/', only: :index
 
-  root 'welcome#index'
+  scope controller: :users do
+    get '/registration' => :new, as: 'users'
+    post '/registration' => :create
+    get '/dashboard' => :show
+    post '/dashboard' => :addfriend
+  end
 
-  #users
-  get '/registration', to: 'users#new', as: 'users'
-  post '/registration', to: 'users#create'
-  get '/dashboard', to: 'users#show'
-  post '/dashboard', to: 'users#addfriend'
+  scope controller: :sessions do
+    get '/login' => :new
+    post '/login' => :create
+    delete '/logout' => :destroy
+  end
 
-  #sessions
-  get '/login', to: 'sessions#new', as: 'login'
-  post '/login', to: 'sessions#create'
-  delete '/logout', to: 'sessions#destroy'
+  scope controller: :movie_services do
+    get '/movies/:uuid' => :show, as: 'movie'
+  end
 
-  #movies
-  get '/movies/:uuid', to: 'movie_services#show'
+  scope controller: :viewing_parties do
+    get '/movies/:uuid/viewing-party/new' => :new, as: 'new_vp'
+    post '/movies/:uuid/viewing-party' => :create, as: 'create_vp'
+  end
 
-  #viewing_parties
-  get '/movies/:uuid/viewing-party/new', to: 'viewing_parties#new'
-  post '/movies/:uuid/viewing-party', to: 'viewing_parties#create', as: 'create_vp'
-
-  #search
-  get '/discover', to: 'search#new'
-  get '/results', to: 'search#show'
-
+  scope controller: :search do
+    get '/discover' => :new
+    get '/results/' => :show
+  end
 end

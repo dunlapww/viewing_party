@@ -21,7 +21,7 @@ class MovieService
   end
 
   def connection
-    Faraday.new("https://api.themoviedb.org")
+    Faraday.new('https://api.themoviedb.org')
   end
 
   def parse_data(response)

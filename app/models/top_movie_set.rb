@@ -4,6 +4,10 @@ class TopMovieSet
     @results = consolidate_results
   end
 
+  def count
+    @results.count
+  end
+
   private
 
   def consolidate_results
@@ -12,9 +16,9 @@ class TopMovieSet
     results.flatten
   end
   def connection
-    Faraday.new("https://api.themoviedb.org")
+    Faraday.new('https://api.themoviedb.org')
   end
-  
+
   def keyword_search(page)
     connection.get("/3/movie/top_rated?api_key=#{ENV['MDB_API_KEY']}&page=#{page}")
   end
