@@ -25,10 +25,13 @@ describe 'Discover Page' do
     end
     it 'when I click top 40, I see the top 40 search results' do
       VCR.use_cassette('movies_top_40') do
+        movie_details = SearchFacade.top_rated(1)
+        movie_detail = movie_details.first
+    
         click_on 'Discover Top 40'
-        expect(page).to have_link('Fight Club')
-        expect(page).to have_content('Vote Average: 8.4')
-        expect(page).to have_css('.movie', count: 40)
+        expect(page).to have_link(movie_detail.title)
+        expect(page).to have_content("Vote Average: #{movie_detail.vote_average}")
+        expect(page).to have_css('.movie', count: 20)
       end
       #what if no search results
     end
