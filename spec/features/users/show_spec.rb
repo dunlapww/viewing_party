@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-describe 'dashboard' do
-  describe 'as a logged in user' do
+RSpec.describe 'Dashboard' do
+  describe 'As a logged in user' do
     before :each do
       @user = User.create(
         email: 'testing@example.com',
@@ -20,7 +20,6 @@ describe 'dashboard' do
       )
       @user.friends << @friend1
       @user.friends << @friend2
-      @friend1.friends << @user
 
       VCR.insert_cassette('movie_detail_550_vp_request_generate')
 
@@ -57,7 +56,7 @@ describe 'dashboard' do
     it 'I can see the parties where I am the host' do
       visit movie_path(550)
       click_on 'Create Viewing Party'
-
+      save_and_open_page
       fill_in :party_duration, with: 200
       fill_in :party_date, with: Date.current
       fill_in :party_time, with: Time.now

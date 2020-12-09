@@ -2,7 +2,7 @@ require 'rails_helper'
 require 'time'
 require 'date'
 
-describe 'Create New Viewing Party' do
+RSpec.describe 'Create New Viewing Party' do
   describe 'As a registered user' do
     before :each do
       @user = User.create(
@@ -54,7 +54,7 @@ describe 'Create New Viewing Party' do
       page.find_field(:party_time)
     end
 
-    it 'can see a checkbox next to each friend visible' do
+    it 'I can see a checkbox next to each friend' do
       expect(page).to have_content('My Friends:')
       check "#{@friend1.email}"
       check "#{@friend2.email}"
@@ -96,7 +96,7 @@ describe 'Create New Viewing Party' do
       VCR.eject_cassette
     end
 
-    it 'can make a viewing party by pressing a "Create Viewing Party" button' do
+    it 'I can make a viewing party by pressing a "Create Viewing Party" button' do
       fill_in :party_duration, with: 200
       fill_in :party_date, with: Date.current
       fill_in :party_time, with: Time.now
@@ -139,7 +139,7 @@ describe 'Create New Viewing Party' do
 
     end
 
-    it 'can not make a viewing party when you do not have attendees' do
+    it 'I cannot make a viewing party when you do not have attendees' do
       fill_in :party_duration, with: 200
       fill_in :party_date, with: Date.current
       fill_in :party_time, with: Time.now
@@ -151,7 +151,7 @@ describe 'Create New Viewing Party' do
   end
 
   describe 'As a user with no friends' do
-    it 'can not make a viewing party without friends' do
+    it 'I cannot make a viewing party without friends' do
       @loser_user = User.create(
         email: 'loser@example.com',
         password: '1234**USAusa',
