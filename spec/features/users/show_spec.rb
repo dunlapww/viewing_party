@@ -56,7 +56,6 @@ RSpec.describe 'Dashboard' do
     it 'I can see the parties where I am the host' do
       visit movie_path(550)
       click_on 'Create Viewing Party'
-      save_and_open_page
       fill_in :party_duration, with: 200
       fill_in :party_date, with: Date.current
       fill_in :party_time, with: Time.now
