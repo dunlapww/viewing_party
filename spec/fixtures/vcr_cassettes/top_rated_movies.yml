@@ -40,13 +40,15 @@ http_interactions:
       Vary:
       - Accept-Encoding
       X-Cache:
-      - Miss from cloudfront
+      - Hit from cloudfront
       Via:
-      - 1.1 2ad801a60bd36fbeb6a62fab7eabe330.cloudfront.net (CloudFront)
+      - 1.1 0dfe6f02dbba7c39906cae47653ae6b3.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       X-Amz-Cf-Id:
-      - 8Ru0Kr_G9mUJCR3cZWADHmiMxkal6lXqJZtRp7E5GBJqAkhUwwlSMw==
+      - Uf_QssyJLJdI0qtBgYXRj8EqEku5SQbvT_KwXjCtH1MdzpGvqad4KQ==
+      Age:
+      - '1204'
     body:
       encoding: UTF-8
       string: '{"page":1,"results":[{"adult":false,"backdrop_path":"/fQq1FWp1rC89xDrRMuyFJdFUdMd.jpg","genre_ids":[],"id":761053,"original_language":"en","original_title":"Gabriel''s
@@ -156,5 +158,5 @@ http_interactions:
         the tale of American founding father Alexander Hamilton, this filmed version
         of the original Broadway smash hit is the story of America then, told by America
         now.","popularity":28.792,"poster_path":"/h1B7tW0t399VDjAcWJh8m87469b.jpg","release_date":"2020-07-03","title":"Hamilton","video":false,"vote_average":8.5,"vote_count":522}],"total_pages":405,"total_results":8093}'
-  recorded_at: Wed, 09 Dec 2020 05:17:48 GMT
+  recorded_at: Wed, 09 Dec 2020 05:37:52 GMT
 recorded_with: VCR 6.0.0
