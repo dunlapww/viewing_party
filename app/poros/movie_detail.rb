@@ -2,19 +2,24 @@ class MovieDetail
   attr_reader :title,
               :vote_average,
               :runtime,
-              :description,
               :poster,
-              :movie_id,
+              :uuid,
               :summary,
               :genres
   def initialize(movie_data)
     @title = movie_data[:original_title]
     @vote_average = movie_data[:vote_average]
     @runtime = movie_data[:runtime]
-    @description = movie_data[:overview]
     @poster = movie_data[:poster_path]
-    @movie_id = movie_data[:id]
+    @uuid = movie_data[:id]
     @summary = movie_data[:overview]
-    @genres = movie_data[:genres]
+    @genres = genre_names(movie_data[:genres])
+  end
+
+  private
+  def genre_names(data)
+    data.map do |genre|
+      genre[:name]
+    end
   end
 end
