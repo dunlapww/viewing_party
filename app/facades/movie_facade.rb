@@ -5,15 +5,15 @@ class MovieFacade
 
   def self.cast_details(uuid)
     results =  MovieService.cast_data(uuid)
-    results[:cast].map do |movie_detail|
-      CastMember.new(movie_detail)
+    results[:cast].map do |cast_detail|
+      CastMember.new(cast_detail)
     end
   end
 
   def self.review_details(uuid)
     results =  MovieService.review_data(uuid)
-    results[:results].map do |movie_detail|
-      Review.new(movie_detail)
+    results[:results].map do |review_detail|
+      Review.new(review_detail)
     end
   end
 end
