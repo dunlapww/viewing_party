@@ -9,6 +9,7 @@ RSpec.describe SearchService do
           page = 1
           results = SearchService.search(movie_title, page)
           expect(results).to be_a Array
+          expect(results.count).to be_between(0, 20)
 
           expect(results.first).to have_key :id
           expect(results.first[:id]).to be_a Integer
