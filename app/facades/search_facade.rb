@@ -10,10 +10,12 @@ class SearchFacade
   end
 
   def self.parse
-    @movie_details = @json.map do |movie_detail|
-      if movie_detail[0] == :id
-        return MovieDetail.new(movie_detail[1])
-      end
-    end
+    # binding.pry
+    # movie_details = @json.map do |movie_detail|
+    #   if movie_detail[0] == :id
+    #     return MovieDetail.new(movie_detail[1])
+    #   end
+    # end
+    MovieDetail.new(@json)
   end
 end

@@ -7,8 +7,8 @@ class MovieFacade
     details[:review_data] = MovieService.review_data(uuid)
     return details
   end
-  
-  Movie.new(MovieService.movie_data(uuid)
+
+  # Movie.new(MovieService.movie_data(uuid)
 
   # cast poro
   # review poro
