@@ -14,8 +14,8 @@ class MovieService
     parse_data(response)
   end
 
-  def self.top_rated
-    response = connection.get("/3/movie/top_rated?api_key=#{ENV['MDB_API_KEY']}&language=en-US&page=1")
+  def self.top_rated(page)
+    response = connection.get("/3/movie/top_rated?api_key=#{ENV['MDB_API_KEY']}&language=en-US&page=#{page}")
     parse_data(response)
   end
 
