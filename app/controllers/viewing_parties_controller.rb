@@ -1,11 +1,11 @@
 class ViewingPartiesController < ApplicationController
 
   def new
-    @movie = MovieService.new(params[:uuid])
+    @movie = MovieFacade.movie_details(params[:uuid])
   end
 
   def create
-    @movie = MovieService.new(params[:uuid])
+    @movie = MovieFacade.movie_details(params[:uuid])
     vp = viewing_party(params)
     if vp.save && !friends(params).empty?
       attendees(vp, params)
