@@ -54,7 +54,7 @@ RSpec.describe 'Dashboard' do
     end
 
     it 'I can see the parties where I am the host' do
-      VCR.use_cassette('movie_detail_550_vp_request_generate') do
+      VCR.use_cassette('movie_detail_550_vp_request_generate_2') do
         movie_detail = MovieFacade.movie_details(550)
         visit movie_path(movie_detail.movie_id)
         click_on 'Create Viewing Party'
@@ -74,7 +74,7 @@ RSpec.describe 'Dashboard' do
     end
 
     it 'I can see the parties where I am an attendee' do
-      VCR.use_cassette('movie_detail_550_vp_request_generate') do
+      VCR.use_cassette('movie_detail_550_vp_request_generate_3') do
         movie_detail = MovieFacade.movie_details(550)
         click_on 'Logout'
 
@@ -103,7 +103,7 @@ RSpec.describe 'Dashboard' do
 
         within('.attendee-parties') do
           expect(page).to have_content("#{vp.movie.title} on #{vp.date.strftime('%m/%d/%y')}")
-        end 
+        end
       end
     end
 
