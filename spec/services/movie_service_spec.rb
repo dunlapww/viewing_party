@@ -88,27 +88,5 @@ RSpec.describe MovieService do
         end
       end
     end
-    describe '#top_rated' do
-      it 'can return top_rated data' do
-        VCR.use_cassette('top_rated_movies') do
-          top_rated = SearchService.top_forty
-          expect(top_rated).to be_a Hash
-          expect(top_rated[:results].count).to eq(20)
-
-          dantes = top_rated[:results].first
-          expect(dantes).to have_key :original_title
-          expect(dantes[:original_title]).to be_a String
-
-          expect(dantes).to have_key :id
-          expect(dantes[:id]).to be_a Integer
-
-          expect(dantes).to have_key :vote_average
-          expect(dantes[:vote_average]).to be_a(Integer).or be_a Float
-
-          expect(dantes).to have_key :poster_path
-          expect(dantes[:poster_path]).to be_a String
-        end
-      end
-    end
   end
 end
