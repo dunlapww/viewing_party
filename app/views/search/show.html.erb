@@ -6,7 +6,7 @@
   <%= submit_tag 'Search' %>
 <% end%>
 <br>
-<% @movies_details.each do |movie| %>
+<% @movie_details.each do |movie| %>
   <p class="movie">
     Movie Title: <%= link_to "#{movie.title}",  movie_path('uuid') %><br>
     Vote Average: <%= movie.vote_average %><br>
