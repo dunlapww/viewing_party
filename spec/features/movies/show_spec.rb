@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-describe 'movies_show' do
-  describe 'as a logged in user' do
+RSpec.describe 'Movie Details Page' do
+  describe 'As a logged in user' do
     before :each do
       @user = User.create(
         email: 'testing@example.com',
@@ -12,26 +12,24 @@ describe 'movies_show' do
     end
 
     it "I see a button to 'create viewing party'" do
-      VCR.use_cassette('movie_detail_550_m_request') do
+      VCR.use_cassette("movie_detail_550_m_request") do
         movie_detail = MovieFacade.movie_details(550)
-
         visit movie_path(movie_detail.movie_id)
         expect(page).to have_button 'Create Viewing Party'
       end
     end
 
     it "when I click on Create Viewing Party i'm redirected to movies/:id/viewing-party/new" do
-      VCR.use_cassette('movie_detail_550_vp_request') do
+      VCR.use_cassette("movie_detail_550_viewing_party_2") do
         movie_detail = MovieFacade.movie_details(550)
-
         visit movie_path(movie_detail.movie_id)
         click_on 'Create Viewing Party'
         expect(current_path).to eq(new_vp_path(movie_detail.movie_id))
       end
     end
 
-    it "shows movie details" do
-      VCR.use_cassette('movie_detail_550_m_request') do
+    it "I can see movie details" do
+      VCR.insert_cassette("movie_cast_reviews") do
         movie_detail = MovieFacade.movie_details(550)
         cast = MovieFacade.cast_details(550)
         cast_member = cast.first
@@ -49,8 +47,6 @@ describe 'movies_show' do
         expect(page).to have_content(reviews.count)
         expect(page).to have_content(review.rating)
         expect(page).to have_content(review.author)
-        expect(page).to have_text('Pretty awesome movie. I')
-        expect(page).to have_css('.actor', count:10)
       end
     end
   end

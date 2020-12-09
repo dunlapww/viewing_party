@@ -1,6 +1,7 @@
 class ViewingPartiesController < ApplicationController
 
   def new
+    render file: 'public/404' unless current_user
     @movie_detail = MovieFacade.movie_details(params[:uuid])
   end
 

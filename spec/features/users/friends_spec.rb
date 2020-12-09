@@ -1,14 +1,14 @@
 require 'rails_helper'
 
-describe 'Friends' do
+RSpec.describe 'Friends Section' do
   describe 'As a logged in user' do
     before :each do
-      @user = User.create(
+      @user = User.create!(
         email: 'testing@example.com',
         password: '1234**USAusa',
         password_confirmation: '1234**USAusa'
       )
-      @friend = User.create(
+      @friend = User.create!(
         email: 'friend@example.com',
         password: '1234**USAusa',
         password_confirmation: '1234**USAusa'
@@ -16,7 +16,7 @@ describe 'Friends' do
       visit login_path
       fill_in 'email', with: 'testing@example.com'
       fill_in 'password', with: '1234**USAusa'
-      click_on 'Login'
+      click_button 'Login'
       visit dashboard_path
     end
 
@@ -42,6 +42,32 @@ describe 'Friends' do
       expect(page).to have_content("Your friend isn't here yet! Tell them!")
     end
 
+    it 'I cannot add a friend twice' do
+      fill_in :friend_email, with: 'friend@example.com'
+      click_on 'Add Friend'
+
+      expect(page).to have_content(@friend.email)
+
+      fill_in :friend_email, with: 'friend@example.com'
+      click_on 'Add Friend'
+
+      expect(page).to have_content("You are already friends!")
+    end
+
+    it 'I cannot add myself as a friend' do
+      fill_in :friend_email, with: @user.email
+      click_on 'Add Friend'
+
+      expect(page).to have_content("You are already friends!")
+    end
+
+    it 'I cannot add a friend with no email' do
+      fill_in :friend_email, with: ' '
+      click_on 'Add Friend'
+
+      expect(page).to have_content("Your friend isn't here yet! Tell them!")
+    end
+
     it 'My friend sees me as a friend on their dashboard after I add them' do
       fill_in :friend_email, with: 'friend@example.com'
       click_on 'Add Friend'
@@ -51,7 +77,7 @@ describe 'Friends' do
       visit "/login"
       fill_in 'email', with: 'friend@example.com'
       fill_in 'password', with: '1234**USAusa'
-      click_on "Login"
+      click_button 'Login'
       visit '/dashboard'
 
       expect(page).to have_content(@user.email)

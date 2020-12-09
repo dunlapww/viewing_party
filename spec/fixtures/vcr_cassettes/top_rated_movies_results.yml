@@ -25,7 +25,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Wed, 09 Dec 2020 05:17:48 GMT
+      - Wed, 09 Dec 2020 22:02:57 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -40,21 +40,19 @@ http_interactions:
       Vary:
       - Accept-Encoding
       X-Cache:
-      - Hit from cloudfront
+      - Miss from cloudfront
       Via:
-      - 1.1 ec4d04f2befcd6652834fd368a8b671e.cloudfront.net (CloudFront)
+      - 1.1 788f6ff13e09a712f5227945fa34a519.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       X-Amz-Cf-Id:
-      - bwLd33xVIpF84Qq5JkVUgOeRQTDH239VMes2FCpoFuEei4-6DcXUEw==
-      Age:
-      - '1735'
+      - Pjz9RuoW2qcU84adoqW4Z1T9xYhnBvixQhmBvI4gsGtAMxitlSxAag==
     body:
       encoding: UTF-8
       string: '{"page":1,"results":[{"adult":false,"backdrop_path":"/fQq1FWp1rC89xDrRMuyFJdFUdMd.jpg","genre_ids":[],"id":761053,"original_language":"en","original_title":"Gabriel''s
         Inferno Part III","overview":"The final part of the film adaption of the erotic
         romance novel Gabriel''s Inferno written by an anonymous Canadian author under
-        the pen name Sylvain Reynard.","popularity":39.347,"poster_path":"/qtX2Fg9MTmrbgN1UUvGoCsImTM8.jpg","release_date":"2020-11-19","title":"Gabriel''s
+        the pen name Sylvain Reynard.","popularity":39.347,"poster_path":"/fYtHxTxlhzD4QWfEbrC1rypysSD.jpg","release_date":"2020-11-19","title":"Gabriel''s
         Inferno Part III","video":false,"vote_average":9.2,"vote_count":469},{"adult":false,"backdrop_path":"/jtAI6OJIWLWiRItNSZoWjrsUtmi.jpg","genre_ids":[10749],"id":724089,"original_language":"en","original_title":"Gabriel''s
         Inferno Part II","overview":"Professor Gabriel Emerson finally learns the
         truth about Julia Mitchell''s identity, but his realization comes a moment
@@ -134,7 +132,13 @@ http_interactions:
         drug-addled gangster''s moll and a washed-up boxer converge in this sprawling,
         comedic crime caper. Their adventures unfurl in three stories that ingeniously
         trip back and forth in time.","popularity":38.425,"poster_path":"/dRZpdpKLgN9nk57zggJCs1TjJb4.jpg","release_date":"1994-09-10","title":"Pulp
-        Fiction","video":false,"vote_average":8.5,"vote_count":20033},{"adult":false,"backdrop_path":"/6aNKD81RHR1DqUUa8kOZ1TBY1Lp.jpg","genre_ids":[35,18],"id":637,"original_language":"it","original_title":"La
+        Fiction","video":false,"vote_average":8.5,"vote_count":20033},{"adult":false,"backdrop_path":"/bx326cwBtDsfDcnTgFlK5dXkyaC.jpg","genre_ids":[10402,18,10749],"id":630566,"original_language":"en","original_title":"Clouds","overview":"Young
+        musician Zach Sobiech discovers his cancer has spread, leaving him just a
+        few months to live. With limited time, he follows his dream and makes an album,
+        unaware that it will soon be a viral music phenomenon.","popularity":129.419,"poster_path":"/2YvT3pdGngzpbAuxamTz4ZlabnT.jpg","release_date":"2020-10-09","title":"Clouds","video":false,"vote_average":8.5,"vote_count":447},{"adult":false,"backdrop_path":"/uWVkEo9PWHu9algZsiLPi6sRU64.jpg","genre_ids":[36,10402,18],"id":556574,"original_language":"en","original_title":"Hamilton","overview":"Presenting
+        the tale of American founding father Alexander Hamilton, this filmed version
+        of the original Broadway smash hit is the story of America then, told by America
+        now.","popularity":28.792,"poster_path":"/h1B7tW0t399VDjAcWJh8m87469b.jpg","release_date":"2020-07-03","title":"Hamilton","video":false,"vote_average":8.5,"vote_count":522},{"adult":false,"backdrop_path":"/6aNKD81RHR1DqUUa8kOZ1TBY1Lp.jpg","genre_ids":[35,18],"id":637,"original_language":"it","original_title":"La
         vita è bella","overview":"A touching story of an Italian book seller of Jewish
         ancestry who lives in his own little fairy tale. His creative and happy life
         would come to an abrupt halt when his entire family is deported to a concentration
@@ -146,17 +150,168 @@ http_interactions:
         broken fellowship struggle to save Gondor from Sauron''s forces. Meanwhile,
         Frodo and Sam take the ring closer to the heart of Mordor, the dark lord''s
         realm.","popularity":74.555,"poster_path":"/rCzpDGLbOoPwLjy3OAm5NUPOTrC.jpg","release_date":"2003-12-01","title":"The
-        Lord of the Rings: The Return of the King","video":false,"vote_average":8.5,"vote_count":16680},{"adult":false,"backdrop_path":"/bx326cwBtDsfDcnTgFlK5dXkyaC.jpg","genre_ids":[10402,18,10749],"id":630566,"original_language":"en","original_title":"Clouds","overview":"Young
-        musician Zach Sobiech discovers his cancer has spread, leaving him just a
-        few months to live. With limited time, he follows his dream and makes an album,
-        unaware that it will soon be a viral music phenomenon.","popularity":129.419,"poster_path":"/2YvT3pdGngzpbAuxamTz4ZlabnT.jpg","release_date":"2020-10-09","title":"Clouds","video":false,"vote_average":8.5,"vote_count":447},{"adult":false,"backdrop_path":"/7c9UVPPiTPltouxRVY6N9uugaVA.jpg","genre_ids":[35,18,10749],"id":13,"original_language":"en","original_title":"Forrest
+        Lord of the Rings: The Return of the King","video":false,"vote_average":8.5,"vote_count":16680},{"adult":false,"backdrop_path":"/7c9UVPPiTPltouxRVY6N9uugaVA.jpg","genre_ids":[35,18,10749],"id":13,"original_language":"en","original_title":"Forrest
         Gump","overview":"A man with a low IQ has accomplished great things in his
         life and been present during significant historic events—in each case, far
         exceeding what anyone imagined he could do. But despite all he has achieved,
         his one true love eludes him.","popularity":40.423,"poster_path":"/h5J4W4veyxMXDMjeNxZI46TsHOb.jpg","release_date":"1994-07-06","title":"Forrest
-        Gump","video":false,"vote_average":8.5,"vote_count":19382},{"adult":false,"backdrop_path":"/uWVkEo9PWHu9algZsiLPi6sRU64.jpg","genre_ids":[36,10402,18],"id":556574,"original_language":"en","original_title":"Hamilton","overview":"Presenting
-        the tale of American founding father Alexander Hamilton, this filmed version
-        of the original Broadway smash hit is the story of America then, told by America
-        now.","popularity":28.792,"poster_path":"/h1B7tW0t399VDjAcWJh8m87469b.jpg","release_date":"2020-07-03","title":"Hamilton","video":false,"vote_average":8.5,"vote_count":522}],"total_pages":405,"total_results":8093}'
-  recorded_at: Wed, 09 Dec 2020 05:46:43 GMT
+        Gump","video":false,"vote_average":8.5,"vote_count":19382}],"total_pages":405,"total_results":8093}'
+  recorded_at: Wed, 09 Dec 2020 22:02:57 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/top_rated?api_key=<DONT_USE_MY_API_KEY>&language=en-US&page=2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 09 Dec 2020 22:02:57 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=21600
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 a47d45d25cc354507eae77aba89ca253.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      X-Amz-Cf-Id:
+      - k1SW5tVMieFZ8gWDFdFHgm3Lp1Ic6ldS6nMld_qv6jJgurW_7pdkzQ==
+    body:
+      encoding: UTF-8
+      string: '{"page":2,"results":[{"adult":false,"backdrop_path":"/hkBaDkMWbLaf8B1lsWsKX7Ew3Xq.jpg","genre_ids":[18,28,80,53],"id":155,"original_language":"en","original_title":"The
+        Dark Knight","overview":"Batman raises the stakes in his war on crime. With
+        the help of Lt. Jim Gordon and District Attorney Harvey Dent, Batman sets
+        out to dismantle the remaining criminal organizations that plague the streets.
+        The partnership proves to be effective, but they soon find themselves prey
+        to a reign of chaos unleashed by a rising criminal mastermind known to the
+        terrified citizens of Gotham as the Joker.","popularity":53.964,"poster_path":"/qJ2tW6WMUDux911r6m7haRef0WH.jpg","release_date":"2008-07-16","title":"The
+        Dark Knight","video":false,"vote_average":8.5,"vote_count":23836},{"adult":false,"backdrop_path":"/hW7K0B5Yr3v499SrWQO71ShGtWa.jpg","genre_ids":[18,80],"id":311,"original_language":"en","original_title":"Once
+        Upon a Time in America","overview":"A former Prohibition-era Jewish gangster
+        returns to the Lower East Side of Manhattan over thirty years later, where
+        he once again must confront the ghosts and regrets of his old life.","popularity":61.79,"poster_path":"/r31djHVfrGqOhTan4ov6HTCA7lr.jpg","release_date":"1984-05-23","title":"Once
+        Upon a Time in America","video":false,"vote_average":8.5,"vote_count":3315},{"adult":false,"backdrop_path":"/qqHQsStV6exghCM7zbObuYBiYxw.jpg","genre_ids":[18],"id":389,"original_language":"en","original_title":"12
+        Angry Men","overview":"The defense and the prosecution have rested and the
+        jury is filing into the jury room to decide if a young Spanish-American is
+        guilty or innocent of murdering his father. What begins as an open and shut
+        case soon becomes a mini-drama of each of the jurors'' prejudices and preconceptions
+        about the trial, the accused, and each other.","popularity":13.859,"poster_path":"/ppd84D2i9W8jXmsyInGyihiSyqz.jpg","release_date":"1957-04-10","title":"12
+        Angry Men","video":false,"vote_average":8.5,"vote_count":5143},{"adult":false,"backdrop_path":"/bh6yfB6I1N1WuMiX6K5HxGVZnja.jpg","genre_ids":[35,18],"id":42269,"original_language":"it","original_title":"C''eravamo
+        tanto amati","overview":"Gianni, Nicola and Antonio become close friends in
+        1944 while fighting the Nazis. After the end of the war, full of illusions,
+        they settle down. The movie is a the story of the life of these three idealists
+        and how they deal with the inevitable disillusionments of life.","popularity":6.465,"poster_path":"/zGGWYpiKNwjpKxelPxOMqJnUgDs.jpg","release_date":"1974-12-21","title":"We
+        All Loved Each Other So Much","video":false,"vote_average":8.5,"vote_count":289},{"adult":false,"backdrop_path":"/zoVeIgKzGJzpdG6Gwnr7iOYfIMU.jpg","genre_ids":[18,10749],"id":11216,"original_language":"it","original_title":"Nuovo
+        Cinema Paradiso","overview":"A filmmaker recalls his childhood, when he fell
+        in love with the movies at his village''s theater and formed a deep friendship
+        with the theater''s projectionist.","popularity":19.809,"poster_path":"/8SRUfRUi6x4O68n0VCbDNRa6iGL.jpg","release_date":"1988-11-17","title":"Cinema
+        Paradiso","video":false,"vote_average":8.4,"vote_count":2637},{"adult":false,"backdrop_path":"/chrngg9mjM6tSU3BF9VHITgn1Ke.jpg","genre_ids":[18,80],"id":769,"original_language":"en","original_title":"GoodFellas","overview":"The
+        true story of Henry Hill, a half-Irish, half-Sicilian Brooklyn kid who is
+        adopted by neighbourhood gangsters at an early age and climbs the ranks of
+        a Mafia family under the guidance of Jimmy Conway.","popularity":27.319,"poster_path":"/6QMSLvU5ziIL2T6VrkaKzN2YkxK.jpg","release_date":"1990-09-12","title":"GoodFellas","video":false,"vote_average":8.4,"vote_count":8239},{"adult":false,"backdrop_path":"/1IBOXagfmwTvhb8prIfRvt89ePs.jpg","genre_ids":[37],"id":429,"original_language":"it","original_title":"Il
+        buono, il brutto, il cattivo","overview":"While the Civil War rages between
+        the Union and the Confederacy, three men – a quiet loner, a ruthless hit man
+        and a Mexican bandit – comb the American Southwest in search of a strongbox
+        containing $200,000 in stolen gold.","popularity":24.595,"poster_path":"/eWivEg4ugIMAd7d4uWI37b17Cgj.jpg","release_date":"1966-12-23","title":"The
+        Good, the Bad and the Ugly","video":false,"vote_average":8.4,"vote_count":5507},{"adult":false,"backdrop_path":"/re3ZvlKJg04iLpLRf1xTKHS2wLU.jpg","genre_ids":[16,12,35,10751,14,10402,28,18],"id":537061,"original_language":"en","original_title":"Steven
+        Universe: The Movie","overview":"Two years after the events of \"Change Your
+        Mind\", Steven (now 16 years old) and his friends are ready to enjoy the rest
+        of their lives peacefully. However, all of that changes when a new sinister
+        Gem arrives, armed with a giant drill that saps the life force of all living
+        things on Earth. In their biggest challenge ever, the Crystal Gems must work
+        together to save all organic life on Earth within 48 hours.","popularity":87.507,"poster_path":"/8mRgpubxHqnqvENK4Bei30xMDvy.jpg","release_date":"2019-09-02","title":"Steven
+        Universe: The Movie","video":false,"vote_average":8.4,"vote_count":515},{"adult":false,"backdrop_path":"/9xeEGUZjgiKlI69jwIOi0hjKUIk.jpg","genre_ids":[14,28,12,16],"id":664767,"original_language":"en","original_title":"Mortal
+        Kombat Legends: Scorpion''s Revenge","overview":"After the vicious slaughter
+        of his family by stone-cold mercenary Sub-Zero, Hanzo Hasashi is exiled to
+        the torturous Netherrealm. There, in exchange for his servitude to the sinister
+        Quan Chi, he’s given a chance to avenge his family – and is resurrected as
+        Scorpion, a lost soul bent on revenge. Back on Earthrealm, Lord Raiden gathers
+        a team of elite warriors – Shaolin monk Liu Kang, Special Forces officer Sonya
+        Blade and action star Johnny Cage – an unlikely band of heroes with one chance
+        to save humanity. To do this, they must defeat Shang Tsung’s horde of Outworld
+        gladiators and reign over the Mortal Kombat tournament.","popularity":233.4,"poster_path":"/4VlXER3FImHeFuUjBShFamhIp9M.jpg","release_date":"2020-04-12","title":"Mortal
+        Kombat Legends: Scorpion''s Revenge","video":false,"vote_average":8.4,"vote_count":680},{"adult":false,"backdrop_path":"/sJNNMCc6B7KZIY3LH3JMYJJNH5j.jpg","genre_ids":[28,18],"id":346,"original_language":"ja","original_title":"七人の侍","overview":"A
+        samurai answers a village''s request for protection after he falls on hard
+        times. The town needs protection from bandits, so the samurai gathers six
+        others to help him teach the people how to defend themselves, and the villagers
+        provide the soldiers with food. A giant battle occurs when 40 bandits attack
+        the village.","popularity":17.228,"poster_path":"/1wCRVLGI7SoTOoDRzWlbt2dMDuy.jpg","release_date":"1954-04-26","title":"Seven
+        Samurai","video":false,"vote_average":8.4,"vote_count":2111},{"adult":false,"backdrop_path":"/kZGaVeXSkkvrpMYvD97sxHj291k.jpg","genre_ids":[27,18,53],"id":539,"original_language":"en","original_title":"Psycho","overview":"When
+        larcenous real estate clerk Marion Crane goes on the lam with a wad of cash
+        and hopes of starting a new life, she ends up at the notorious Bates Motel,
+        where manager Norman Bates cares for his housebound mother.","popularity":25.467,"poster_path":"/nR4LD4ZJg2n6LZQpcOrLFdMq0cD.jpg","release_date":"1960-06-22","title":"Psycho","video":false,"vote_average":8.4,"vote_count":6862},{"adult":false,"backdrop_path":"/6esNUoXh4xQvucB7o7e3TCfjI65.jpg","genre_ids":[35,18,10749],"id":522924,"original_language":"en","original_title":"The
+        Art of Racing in the Rain","overview":"A family dog—with a near-human soul
+        and a philosopher''s mind—evaluates his life through the lessons learned by
+        his human owner, a race-car driver.","popularity":33.023,"poster_path":"/mi5VN4ww0JZgRFJIaPxxTGKjUg7.jpg","release_date":"2019-08-08","title":"The
+        Art of Racing in the Rain","video":false,"vote_average":8.4,"vote_count":683},{"adult":false,"backdrop_path":"/rr0vFvjbAU7zaLjSRtUAxavH2bv.jpg","genre_ids":[18,80],"id":598,"original_language":"pt","original_title":"Cidade
+        de Deus","overview":"Buscapé was raised in a very violent environment. Despite
+        the feeling that all odds were against him, he finds out that life can be
+        seen with other eyes...","popularity":26.13,"poster_path":"/k7eYdWvhYQyRQoU2TB2A2Xu2TfD.jpg","release_date":"2002-02-05","title":"City
+        of God","video":false,"vote_average":8.4,"vote_count":4700},{"adult":false,"backdrop_path":"/rr7E0NoGKxvbkb89eR1GwfoYjpA.jpg","genre_ids":[18],"id":550,"original_language":"en","original_title":"Fight
+        Club","overview":"A ticking-time-bomb insomniac and a slippery soap salesman
+        channel primal male aggression into a shocking new form of therapy. Their
+        concept catches on, with underground \"fight clubs\" forming in every town,
+        until an eccentric gets in the way and ignites an out-of-control spiral toward
+        oblivion.","popularity":38.272,"poster_path":"/bptfVGEQuv6vDTIMVCHjJ9Dz8PX.jpg","release_date":"1999-10-15","title":"Fight
+        Club","video":false,"vote_average":8.4,"vote_count":20565},{"adult":false,"backdrop_path":"/3KwAmIKMaDcBMonF5wmyNTL0SR6.jpg","genre_ids":[18],"id":510,"original_language":"en","original_title":"One
+        Flew Over the Cuckoo''s Nest","overview":"While serving time for insanity
+        at a state mental hospital, implacable rabble-rouser, Randle Patrick McMurphy,
+        inspires his fellow patients to rebel against the authoritarian rule of head
+        nurse, Mildred Ratched.","popularity":19.081,"poster_path":"/3jcbDmRFiQ83drXNOvRDeKHxS0C.jpg","release_date":"1975-11-18","title":"One
+        Flew Over the Cuckoo''s Nest","video":false,"vote_average":8.4,"vote_count":7258},{"adult":false,"backdrop_path":"/aUVCJ0HkcJIBrTJYPnTXta8h9Co.jpg","genre_ids":[28,12,16,878,35],"id":324857,"original_language":"en","original_title":"Spider-Man:
+        Into the Spider-Verse","overview":"Miles Morales is juggling his life between
+        being a high school student and being a spider-man. When Wilson \"Kingpin\"
+        Fisk uses a super collider, others from across the Spider-Verse are transported
+        to this dimension.","popularity":148.616,"poster_path":"/iiZZdoQBEYBv6id8su7ImL0oCbD.jpg","release_date":"2018-12-06","title":"Spider-Man:
+        Into the Spider-Verse","video":false,"vote_average":8.4,"vote_count":8518},{"adult":false,"backdrop_path":"/sQkRiQo3nLrQYMXZodDjNUJKHZV.jpg","genre_ids":[16,28,12,14,878],"id":618344,"original_language":"en","original_title":"Justice
+        League Dark: Apokolips War","overview":"Earth is decimated after intergalactic
+        tyrant Darkseid has devastated the Justice League in a poorly executed war
+        by the DC Super Heroes. Now the remaining bastions of good – the Justice League,
+        Teen Titans, Suicide Squad and assorted others – must regroup, strategize
+        and take the war to Darkseid in order to save the planet and its surviving
+        inhabitants.","popularity":116.521,"poster_path":"/c01Y4suApJ1Wic2xLmaq1QYcfoZ.jpg","release_date":"2020-05-05","title":"Justice
+        League Dark: Apokolips War","video":false,"vote_average":8.4,"vote_count":822},{"adult":false,"backdrop_path":"/alQqTpmEkxSLgajfEYTsTH6nAKB.jpg","genre_ids":[12,35],"id":40096,"original_language":"pt","original_title":"O
+        Auto da Compadecida","overview":"The lively Jack the Cricket and the sly Chicó
+        are poor guys living in the hinterland who cheat a bunch of people in a small
+        in Northeastern Brazil. When they die, they have to be judged by Christ, the
+        Devil and the Virgin Mary before they are admitted to paradise.","popularity":8.183,"poster_path":"/m8eFedsS7vQCZCS8WGp5n1bVD0q.jpg","release_date":"2000-09-15","title":"A
+        Dog''s Will","video":false,"vote_average":8.4,"vote_count":682},{"adult":false,"backdrop_path":"/vwBa7djy1oxfxUjc7YtVgGNsjrT.jpg","genre_ids":[14,16,12],"id":4935,"original_language":"ja","original_title":"ハウルの動く城","overview":"When
+        Sophie, a shy young woman, is cursed with an old body by a spiteful witch,
+        her only chance of breaking the spell lies with a self-indulgent yet insecure
+        young wizard and his companions in his legged, walking castle.","popularity":34.553,"poster_path":"/TkTPELv4kC3u1lkloush8skOjE.jpg","release_date":"2004-11-19","title":"Howl''s
+        Moving Castle","video":false,"vote_average":8.4,"vote_count":5835},{"adult":false,"backdrop_path":"/tDFvXn4tane9lUvFAFAUkMylwSr.jpg","genre_ids":[16,18,10752],"id":12477,"original_language":"ja","original_title":"火垂るの墓","overview":"In
+        the final months of World War II, 14-year-old Seita and his sister Setsuko
+        are orphaned when their mother is killed during an air raid in Kobe, Japan.
+        After a falling out with their aunt, they move into an abandoned bomb shelter.
+        With no surviving relatives and their emergency rations depleted, Seita and
+        Setsuko struggle to survive.","popularity":0.6,"poster_path":"/wcNkHDbyc290hcWk7KXbBZUuXpq.jpg","release_date":"1988-04-16","title":"Grave
+        of the Fireflies","video":false,"vote_average":8.4,"vote_count":3177}],"total_pages":405,"total_results":8093}'
+  recorded_at: Wed, 09 Dec 2020 22:02:57 GMT
 recorded_with: VCR 6.0.0

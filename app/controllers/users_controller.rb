@@ -16,14 +16,17 @@ class UsersController < ApplicationController
   end
 
   def show
+    render file: 'public/404' unless current_user
     @user = current_user
   end
 
   def addfriend
-    user = current_user
     friend = User.find_by(email: params['friend_email'])
-    if !friend.nil?
-      Friendship.create!(user_id: user.id, friend_id: friend.id)
+    if !friend.nil? && Friendship.exists?(friend.id, current_user.id) || current_user == friend
+      flash[:notice] = "You are already friends!"
+      redirect_to dashboard_path
+    elsif !friend.nil?
+      Friendship.create!(user_id: current_user.id, friend_id: friend.id)
       redirect_to dashboard_path
     else
       flash[:error] = "Your friend isn't here yet! Tell them!"

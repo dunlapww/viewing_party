@@ -1,9 +1,15 @@
 require 'rails_helper'
 
-RSpec.describe 'registration page' do
+RSpec.describe 'Registration page' do
   describe 'As a visitor' do
     before(:each) do
       visit registration_path
+    end
+
+    it 'I see a link to login on the page' do
+      within '.current-user' do
+        expect(page).to have_link('Already a user? Login!')
+      end
     end
 
     it 'I can register as a new user' do
@@ -64,6 +70,17 @@ RSpec.describe 'registration page' do
       click_button('Register')
 
       expect(page).to have_content("Password needs to be 8-70 characters and include: 1 uppercase, 1 lowercase, 1 digit and 1 special character.")
+      expect(current_path).to eq(registration_path)
+    end
+
+    it 'I cannot register with an incorrectly formatted email' do
+      fill_in 'user[email]', with: 'iamanemail'
+      fill_in 'user[password]', with: '1234**USAusa'
+      fill_in 'user[password_confirmation]', with: '1234**USAusa'
+
+      click_button('Register')
+
+      expect(page).to have_content('Email is invalid')
       expect(current_path).to eq(registration_path)
     end
   end

@@ -14,11 +14,6 @@ class MovieService
     parse_data(response)
   end
 
-  def self.top_rated(page)
-    response = connection.get("/3/movie/top_rated?api_key=#{ENV['MDB_API_KEY']}&language=en-US&page=#{page}")
-    parse_data(response)
-  end
-
   def self.connection
     Faraday.new('https://api.themoviedb.org') do |f|
       f.params['api_key'] = ENV['MDB_API_KEY']

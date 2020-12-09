@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-describe 'dashboard' do
-  describe 'as a logged in user' do
+RSpec.describe 'Dashboard' do
+  describe 'As a logged in user' do
     before :each do
       @user = User.create(
         email: 'testing@example.com',
@@ -20,13 +20,18 @@ describe 'dashboard' do
       )
       @user.friends << @friend1
       @user.friends << @friend2
-      @friend1.friends << @user
+
+      VCR.insert_cassette('movie_detail_550_vp_request_generate')
 
       visit login_path
       fill_in 'email', with: 'testing@example.com'
       fill_in 'password', with: '1234**USAusa'
-      click_on 'Login'
+      click_button 'Login'
       visit dashboard_path
+    end
+
+    after :each do
+      VCR.eject_cassette
     end
 
     it "I can click on a button called 'Discover Movies'" do
@@ -36,6 +41,12 @@ describe 'dashboard' do
 
     it 'I see a friends section' do
       expect(page).to have_css('.friends')
+    end
+
+    it 'I cannot see a login link in the nav' do
+      within('.main-nav') do
+        expect(page).to_not have_link('Login')
+      end
     end
 
     it 'I can see a viewing parties section' do
@@ -63,15 +74,15 @@ describe 'dashboard' do
     end
 
     it 'I can see the parties where I am an attendee' do
-      click_on 'Logout'
-
-      visit login_path
-      fill_in 'email', with: 'friend1@example.com'
-      fill_in 'password', with: '1234**USAusa'
-      click_on 'Login'
-
       VCR.use_cassette('movie_detail_550_vp_request_generate') do
         movie_detail = MovieFacade.movie_details(550)
+        click_on 'Logout'
+
+        visit login_path
+        fill_in 'email', with: 'friend1@example.com'
+        fill_in 'password', with: '1234**USAusa'
+        click_button 'Login'
+
         visit movie_path(movie_detail.movie_id)
         click_on 'Create Viewing Party'
 
@@ -88,11 +99,11 @@ describe 'dashboard' do
         visit login_path
         fill_in 'email', with: 'testing@example.com'
         fill_in 'password', with: '1234**USAusa'
-        click_on 'Login'
+        click_button 'Login'
 
         within('.attendee-parties') do
           expect(page).to have_content("#{vp.movie.title} on #{vp.date.strftime('%m/%d/%y')}")
-        end
+        end 
       end
     end
 
