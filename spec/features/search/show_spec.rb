@@ -20,7 +20,7 @@ describe 'Discover Page' do
         expect(current_path).to eq results_path
         expect(page).to have_link('Fight Club')
         expect(page).to have_content("Vote Average: 8.4")
-        expect(page).to have_css(".movie", count: 22)
+        expect(page).to have_css(".movie", count: 20)
       end
     end
     it 'when I click top 40, I see the top 40 search results' do
