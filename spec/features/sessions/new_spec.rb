@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-describe 'login' do
-  describe 'as a visitor' do
-    describe "when I visit the welcome page" do
+RSpec.describe 'Login page' do
+  describe 'As a visitor' do
+    describe "When I visit the welcome page" do
       before :each do
         @user = User.create(
           email: 'testing@example.com',

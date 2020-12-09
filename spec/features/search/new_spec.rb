@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'Discover Page (/discover)' do
+RSpec.describe 'Discover Page (/discover)' do
   describe 'As a logged in user' do
     before :each do
       @user = User.create(

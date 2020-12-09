@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'welcome page' do
+RSpec.describe 'Welcome page' do
   describe 'As a visitor' do
     before(:each) do
       visit welcome_index_path

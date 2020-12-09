@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'Movie Details Page' do
+RSpec.describe 'Movie Details Page' do
   describe 'As a logged in user' do
     before :each do
       @user = User.create(
@@ -22,7 +22,7 @@ describe 'Movie Details Page' do
         expect(current_path).to eq(new_vp_path(550))
     end
 
-    it "shows movie details" do
+    it "I can see movie details" do
         visit movie_path(550)
         expect(page).to have_content(@movie_service.data[:title])
         expect(page).to have_content(@movie_service.data[:vote_average])
