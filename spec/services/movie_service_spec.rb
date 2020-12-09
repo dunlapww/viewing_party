@@ -68,25 +68,5 @@ RSpec.describe MovieService do
         end
       end
     end
-    describe '#cast_data' do
-      it 'can return cast data' do
-        VCR.use_cassette('movie_detail_550_movie_service_cast') do
-          cast = MovieService.cast_data(550)
-          expect(cast).to be_a Hash
-
-          expect(cast).to have_key :id
-          expect(cast[:id]).to be_a Integer
-
-          expect(cast).to have_key :cast
-          expect(cast[:cast]).to be_a Array
-
-          expect(cast[:cast][0]).to have_key :name
-          expect(cast[:cast][0][:name]).to be_a String
-
-          expect(cast[:cast][0]).to have_key :character
-          expect(cast[:cast][0][:character]).to be_a String
-        end
-      end
-    end
   end
 end
