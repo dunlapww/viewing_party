@@ -1,6 +1,6 @@
 class SearchFacade
-  def self.top_rated(uuid)
-    @json = MovieService.top_rated(uuid)
+  def self.top_rated(page)
+    @json = MovieService.top_rated(page)
     parse
   end
 
