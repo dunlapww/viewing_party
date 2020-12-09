@@ -8,11 +8,11 @@
   <%= f.label :party_duration, "Party Duration:" %>
   <%= f.number_field :party_duration, value: @movie.data[:runtime], min: 5, max: 300 %>
   <br>
-  <%= f.label :party_date, "Party Date:" %>
-  <%= f.date_field :party_date, min: Date.today.day %>
+  <%= f.label :party_date, "Party Date:"  %>
+  <%= f.date_field :party_date, value: Date.today, min: Date.today %>
   <br>
-  <%= f.label :party_time, "Party Time:" %>
-  <%= f.time_field :party_time %>
+  <%= f.label :party_time, "Party Time:"%>
+  <%= f.time_field :party_time, value: Time.now %>
   <br>
   <p>My Friends: </p>
   <% if current_user.friends.empty? %>
