@@ -34,7 +34,7 @@ RSpec.describe 'Create New Viewing Party' do
       VCR.use_cassette('movie_detail_550_vp_request') do
         movie_detail = MovieFacade.movie_details(550)
 
-        visit movie_path(movie_detail.movie_id)
+        visit movie_path(movie_detail.uuid)
         click_on 'Create Viewing Party'
         expect(page).to have_content(movie_detail.title)
       end
@@ -44,7 +44,7 @@ RSpec.describe 'Create New Viewing Party' do
       VCR.use_cassette('movie_detail_550_vp_request') do
         movie_detail = MovieFacade.movie_details(550)
 
-        visit movie_path(movie_detail.movie_id)
+        visit movie_path(movie_detail.uuid)
         click_on 'Create Viewing Party'
         expect(find_field('party_duration').value).to eq "#{movie_detail.runtime}"
       end
@@ -54,7 +54,7 @@ RSpec.describe 'Create New Viewing Party' do
       VCR.use_cassette('movie_detail_550_vp_request') do
         movie_detail = MovieFacade.movie_details(550)
 
-        visit movie_path(movie_detail.movie_id)
+        visit movie_path(movie_detail.uuid)
         click_on 'Create Viewing Party'
         page.find_field('party_date')
         #fill_in :party_date, with: "12/05/2020"
@@ -65,7 +65,7 @@ RSpec.describe 'Create New Viewing Party' do
       VCR.use_cassette('movie_detail_550_vp_request') do
         movie_detail = MovieFacade.movie_details(550)
 
-        visit movie_path(movie_detail.movie_id)
+        visit movie_path(movie_detail.uuid)
         click_on 'Create Viewing Party'
         page.find_field(:party_time)
       end
@@ -75,7 +75,7 @@ RSpec.describe 'Create New Viewing Party' do
       VCR.use_cassette('movie_detail_550_vp_request') do
         movie_detail = MovieFacade.movie_details(550)
 
-        visit movie_path(movie_detail.movie_id)
+        visit movie_path(movie_detail.uuid)
         click_on 'Create Viewing Party'
         expect(page).to have_content('My Friends:')
         check "#{@friend1.email}"
@@ -87,7 +87,7 @@ RSpec.describe 'Create New Viewing Party' do
       VCR.use_cassette('movie_detail_550_vp_request_generate') do
         movie_detail = MovieFacade.movie_details(550)
 
-        visit movie_path(movie_detail.movie_id)
+        visit movie_path(movie_detail.uuid)
         click_on 'Create Viewing Party'
 
         fill_in :party_duration, with: 200
@@ -117,7 +117,7 @@ RSpec.describe 'Create New Viewing Party' do
       VCR.use_cassette('movie_detail_550_vp_request_generate') do
         movie_detail = MovieFacade.movie_details(550)
 
-        visit movie_path(movie_detail.movie_id)
+        visit movie_path(movie_detail.uuid)
         click_on 'Create Viewing Party'
 
         fill_in :party_date, with: nil
@@ -135,7 +135,7 @@ RSpec.describe 'Create New Viewing Party' do
       VCR.use_cassette('default_date') do
         movie_detail = MovieFacade.movie_details(550)
 
-        visit movie_path(movie_detail.movie_id)
+        visit movie_path(movie_detail.uuid)
         click_on 'Create Viewing Party'
 
         check "#{@friend1.email}"
@@ -150,7 +150,7 @@ RSpec.describe 'Create New Viewing Party' do
       VCR.use_cassette('no_attendees') do
         movie_detail = MovieFacade.movie_details(550)
 
-        visit movie_path(movie_detail.movie_id)
+        visit movie_path(movie_detail.uuid)
         click_on 'Create Viewing Party'
         
         fill_in :party_duration, with: 200
@@ -179,7 +179,7 @@ RSpec.describe 'Create New Viewing Party' do
         fill_in 'password', with: '1234**USAusa'
         click_button 'Login'
 
-        visit movie_path(movie_detail.movie_id)
+        visit movie_path(movie_detail.uuid)
         click_on 'Create Viewing Party'
 
         fill_in :party_duration, with: 200

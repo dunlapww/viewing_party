@@ -14,7 +14,7 @@ RSpec.describe 'Movie Details Page' do
     it "I see a button to 'create viewing party'" do
       VCR.use_cassette("movie_detail_550_m_request") do
         movie_detail = MovieFacade.movie_details(550)
-        visit movie_path(movie_detail.movie_id)
+        visit movie_path(movie_detail.uuid)
         expect(page).to have_button 'Create Viewing Party'
       end
     end
@@ -22,9 +22,9 @@ RSpec.describe 'Movie Details Page' do
     it "when I click on Create Viewing Party i'm redirected to movies/:id/viewing-party/new" do
       VCR.use_cassette("movie_detail_550_viewing_party_2") do
         movie_detail = MovieFacade.movie_details(550)
-        visit movie_path(movie_detail.movie_id)
+        visit movie_path(movie_detail.uuid)
         click_on 'Create Viewing Party'
-        expect(current_path).to eq(new_vp_path(movie_detail.movie_id))
+        expect(current_path).to eq(new_vp_path(movie_detail.uuid))
       end
     end
 
@@ -36,7 +36,7 @@ RSpec.describe 'Movie Details Page' do
         reviews = MovieFacade.review_details(550)
         review = reviews.second
 
-        visit movie_path(movie_detail.movie_id)
+        visit movie_path(movie_detail.uuid)
         expect(page).to have_content(movie_detail.title)
         expect(page).to have_content(movie_detail.vote_average)
         expect(page).to have_content('2:19')

@@ -4,8 +4,8 @@
 <%= @movie_detail.vote_average %>
 
 <%= film_length(@movie_detail.runtime) %>
-<% @movie_detail.genres.each do |genre| %>
-  <%= genre[:name] %>
+<% @movie_detail.genres.each do |genre_name| %>
+  <%= genre_name %>
 <% end %>
 <%= @movie_detail.summary %>
   <% @cast.first(10).each do |actor| %>

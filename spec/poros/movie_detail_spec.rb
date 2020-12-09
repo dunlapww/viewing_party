@@ -100,7 +100,7 @@ RSpec.describe MovieDetail do
     expect(movie_detail.runtime).to eq(139)
     description = "A ticking-time-bomb insomniac and a slippery soap salesman channel primal male aggression into a shocking new form of therapy. Their concept catches on, with underground \"fight clubs\" forming in every town, until an eccentric gets in the way and ignites an out-of-control spiral toward oblivion."
     expect(movie_detail.summary).to eq(description)
-    expect(movie_detail.movie_id).to eq(550)
+    expect(movie_detail.uuid).to eq(550)
     expect(movie_detail.poster).to eq('/bptfVGEQuv6vDTIMVCHjJ9Dz8PX.jpg')
   end
 end

@@ -13,7 +13,7 @@ class MovieDetail
     @poster = movie_data[:poster_path]
     @uuid = movie_data[:id]
     @summary = movie_data[:overview]
-    @genres = genre_names(movie_data[:genres])
+    @genres = movie_data[:genres].nil? ? [] : genre_names(movie_data[:genres])
   end
 
   private

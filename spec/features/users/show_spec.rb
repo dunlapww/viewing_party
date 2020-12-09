@@ -56,7 +56,7 @@ RSpec.describe 'Dashboard' do
     it 'I can see the parties where I am the host' do
       VCR.use_cassette('movie_detail_550_vp_request_generate_2') do
         movie_detail = MovieFacade.movie_details(550)
-        visit movie_path(movie_detail.movie_id)
+        visit movie_path(movie_detail.uuid)
         click_on 'Create Viewing Party'
 
         fill_in :party_duration, with: 200
@@ -83,7 +83,7 @@ RSpec.describe 'Dashboard' do
         fill_in 'password', with: '1234**USAusa'
         click_button 'Login'
 
-        visit movie_path(movie_detail.movie_id)
+        visit movie_path(movie_detail.uuid)
         click_on 'Create Viewing Party'
 
         fill_in :party_duration, with: 200

@@ -14,6 +14,6 @@
 
 <% @movies.each do |movie| %>
   <p class="movie">
-    Movie Title: <%= link_to "#{movie.title}",  movie_path("#{movie.movie_id}") %><br>
+    Movie Title: <%= link_to "#{movie.title}",  movie_path("#{movie.uuid}") %><br>
     Vote Average: <%= movie.vote_average %></p>
 <% end%>
