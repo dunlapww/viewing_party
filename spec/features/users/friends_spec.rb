@@ -54,6 +54,13 @@ describe 'Friends' do
       expect(page).to have_content("You are already friends!")
     end
 
+    it 'I cannot add myself as a friend' do
+      fill_in :friend_email, with: @user.email
+      click_on 'Add Friend'
+      
+      expect(page).to have_content("You are already friends!")
+    end
+
     it 'I cannot add a friend with no email' do
       fill_in :friend_email, with: ' '
       click_on 'Add Friend'
