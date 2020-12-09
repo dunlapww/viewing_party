@@ -10,4 +10,5 @@ class ViewingParty < ApplicationRecord
   validates :date, presence: true
   validates :time, presence: true
   validates :date, inclusion: {in: (Date.today..Date.today+5.years)}
+  validates :duration, numericality: {greater_than_or_equal_to: 5}
 end
