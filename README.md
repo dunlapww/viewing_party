@@ -58,7 +58,7 @@ As an example, The below feature test ensures a user can successfully login
 ### Model Tests
 Ensures the backend database and classes work properly
 
-As an example, the below test ensures that the User table has the proper validations and relationships, and ensures our validations are working properly:
+As an example, the below test ensures that the User table has the proper validations and relationships, and ensures our instance and class methods are working properly:
 ![](/read_me_images/user_spec.png)
 
 ## Example Usage
