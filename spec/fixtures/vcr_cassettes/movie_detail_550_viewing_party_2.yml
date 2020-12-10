@@ -54,13 +54,13 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 e158a5cd644f102abc630a9f56b59d78.cloudfront.net (CloudFront)
+      - 1.1 788f6ff13e09a712f5227945fa34a519.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       X-Amz-Cf-Id:
-      - mhJUzseX7wCMffZzjLIRIv73J3yjGHnQWEy_2xKYyCf7bclwvTYgyQ==
+      - ckkz4AB0UdEUs8mpZe6Gj6k9aqry80sp_1THV-95ZnwDTjXoA_vaMQ==
       Age:
-      - '2514'
+      - '2507'
     body:
       encoding: UTF-8
       string: '{"adult":false,"backdrop_path":"/rr7E0NoGKxvbkb89eR1GwfoYjpA.jpg","belongs_to_collection":null,"budget":63000000,"genres":[{"id":18,"name":"Drama"}],"homepage":"http://www.foxmovies.com/movies/fight-club","id":550,"imdb_id":"tt0137523","original_language":"en","original_title":"Fight
@@ -77,7 +77,7 @@ http_interactions:
         Linson Company","origin_country":""}],"production_countries":[{"iso_3166_1":"DE","name":"Germany"},{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1999-10-15","revenue":100853753,"runtime":139,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Mischief.
         Mayhem. Soap.","title":"Fight Club","video":false,"vote_average":8.4,"vote_count":20570}'
-  recorded_at: Thu, 10 Dec 2020 03:28:32 GMT
+  recorded_at: Thu, 10 Dec 2020 03:28:25 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/550?api_key=<DONT_USE_MY_API_KEY>
@@ -132,13 +132,13 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 9c7e5857d78c5dc89042979317de5843.cloudfront.net (CloudFront)
+      - 1.1 045f1e1f031241f3808c557a2b5d6b0a.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       X-Amz-Cf-Id:
-      - TDSFpbGmlLYuwFCBRIBwp5QFuy2FcZFgCpE01uyV0WeEpbe42NgwiA==
+      - ErzkPTFRinka7kjb1IsNzHCd7uF5g_nuNQ_XvLSJa04QKlSr9W1KDg==
       Age:
-      - '2514'
+      - '2507'
     body:
       encoding: UTF-8
       string: '{"adult":false,"backdrop_path":"/rr7E0NoGKxvbkb89eR1GwfoYjpA.jpg","belongs_to_collection":null,"budget":63000000,"genres":[{"id":18,"name":"Drama"}],"homepage":"http://www.foxmovies.com/movies/fight-club","id":550,"imdb_id":"tt0137523","original_language":"en","original_title":"Fight
@@ -155,7 +155,7 @@ http_interactions:
         Linson Company","origin_country":""}],"production_countries":[{"iso_3166_1":"DE","name":"Germany"},{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1999-10-15","revenue":100853753,"runtime":139,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Mischief.
         Mayhem. Soap.","title":"Fight Club","video":false,"vote_average":8.4,"vote_count":20570}'
-  recorded_at: Thu, 10 Dec 2020 03:28:32 GMT
+  recorded_at: Thu, 10 Dec 2020 03:28:25 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/550/credits?api_key=<DONT_USE_MY_API_KEY>
@@ -210,13 +210,13 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 e7ff4a714a3b1f464db9c76ee954a565.cloudfront.net (CloudFront)
+      - 1.1 4d0ecb5905192435c3fd204705c9fc24.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       X-Amz-Cf-Id:
-      - ZDhvNUmD0QG5oB__LKpPfjLTfnUUAI-h8PimqjdHfE5NNSVWOB_3YQ==
+      - 2O2UtgwxPzle-LI5Sog13cl5M2LcnOJa5QJRT1LSF9z_3gbhw33xwg==
       Age:
-      - '2761'
+      - '2754'
     body:
       encoding: UTF-8
       string: '{"id":550,"cast":[{"adult":false,"gender":2,"id":819,"known_for_department":"Acting","name":"Edward
@@ -647,7 +647,7 @@ http_interactions:
         Assistant"},{"adult":false,"gender":0,"id":2254363,"known_for_department":"Production","name":"Shaun
         Ryan","original_name":"Shaun Ryan","popularity":0.6,"profile_path":null,"credit_id":"5c7a4f7c0e0a2637cb0e9e97","department":"Production","job":"Production
         Driver"}]}'
-  recorded_at: Thu, 10 Dec 2020 03:28:32 GMT
+  recorded_at: Thu, 10 Dec 2020 03:28:25 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/550/reviews?api_key=<DONT_USE_MY_API_KEY>
@@ -702,13 +702,13 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 38059ba65876500c040fb73e2cbaebf5.cloudfront.net (CloudFront)
+      - 1.1 d29afc70fc2fdadee440493854714224.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       X-Amz-Cf-Id:
-      - 9aqexm6o7Vi_F4sDJgYhOl1QbeMVxdF01zfaqMlYQxm5XPJkKaAemg==
+      - lSRIlG61SgT0zx0naODbSRpNtUh4kgFBSG5TKkRRRZwQjyj1xi287A==
       Age:
-      - '2513'
+      - '2506'
     body:
       encoding: UTF-8
       string: '{"id":550,"page":1,"results":[{"author":"Goddard","author_details":{"name":"","username":"Goddard","avatar_path":"/https://secure.gravatar.com/avatar/f248ec34f953bc62cafcbdd81fddd6b6.jpg","rating":null},"content":"Pretty
@@ -844,7 +844,7 @@ http_interactions:
         so much with their ridiculously outstanding performances that these small
         issues don’t keep me away from highly recommending one of the most memorable,
         iconic films of all-time.\r\n\r\nRating: A-","created_at":"2020-11-22T17:13:46.301Z","id":"5fba9c4a0792e1003f3a1294","updated_at":"2020-11-22T17:50:48.889Z","url":"https://www.themoviedb.org/review/5fba9c4a0792e1003f3a1294"}],"total_pages":1,"total_results":3}'
-  recorded_at: Thu, 10 Dec 2020 03:28:32 GMT
+  recorded_at: Thu, 10 Dec 2020 03:28:25 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/550/recommendations?api_key=<DONT_USE_MY_API_KEY>
@@ -899,13 +899,13 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 ce4b35590464ed34415a13badd946ebb.cloudfront.net (CloudFront)
+      - 1.1 c29390732f5bc4b2c7832623ae6e492f.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       X-Amz-Cf-Id:
-      - MOqtJbA59twByb8x0iFnW8crtREACEzJ1YHlos4YMFSRwgvSyg9eSA==
+      - MEe4qesr4YF_D20GBEQFlwfy1O2oH3sk3s-j5fowAJ9NrhGB_j6vOQ==
       Age:
-      - '2744'
+      - '2737'
     body:
       encoding: UTF-8
       string: '{"page":1,"results":[{"id":807,"vote_average":8.3,"overview":"Two homicide
@@ -1026,7 +1026,7 @@ http_interactions:
         serving time for insanity at a state mental hospital, implacable rabble-rouser,
         Randle Patrick McMurphy, inspires his fellow patients to rebel against the
         authoritarian rule of head nurse, Mildred Ratched.","release_date":"1975-11-18","popularity":19.081}],"total_pages":2,"total_results":40}'
-  recorded_at: Thu, 10 Dec 2020 03:28:32 GMT
+  recorded_at: Thu, 10 Dec 2020 03:28:25 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/550/similar?api_key=<DONT_USE_MY_API_KEY>
@@ -1081,13 +1081,13 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 cddde15c11afac53ac9fe7978dcfecd7.cloudfront.net (CloudFront)
+      - 1.1 264cccdb967e804907074b11d3a83242.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       X-Amz-Cf-Id:
-      - KEW3do0SYwPICl31ccm0MhJvuD1-BSRqB4TzIe1-vLcajkMFwNohcw==
+      - Y6KPie31cWyOhXYXLvkLRT2QpsrqqI7BOgv5YFlk0iPt0ED9VEum-g==
       Age:
-      - '2417'
+      - '2410'
     body:
       encoding: UTF-8
       string: '{"page":1,"results":[{"video":false,"vote_average":7.0,"overview":"After
@@ -1203,7 +1203,7 @@ http_interactions:
         the massive invasion of the machines as Neo fights to end the war at another
         front while also opposing the rogue Agent Smith.","poster_path":"/8IpEO76zc1GuHiFVE5aCEL03qJs.jpg","release_date":"2003-11-03","title":"The
         Matrix Revolutions","video":false,"vote_average":6.6,"vote_count":6614,"popularity":31.265}],"total_pages":23,"total_results":458}'
-  recorded_at: Thu, 10 Dec 2020 03:28:32 GMT
+  recorded_at: Thu, 10 Dec 2020 03:28:25 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/550?api_key=<DONT_USE_MY_API_KEY>
@@ -1258,13 +1258,13 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 824a5d9ed02451bcb68b15ae5991dce0.cloudfront.net (CloudFront)
+      - 1.1 f0b290c4e2273a7586bc6f080031d9bc.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       X-Amz-Cf-Id:
-      - IzOKHvwoqJeric-ItyoJYFL3HuBwfNeBslw3F-uSL2h8ydaz9AqDIw==
+      - K54rmNR5flZ1eHx6xM5MNvt9qiH2kc8INznuLc_au90DBPvdx425RQ==
       Age:
-      - '2514'
+      - '2507'
     body:
       encoding: UTF-8
       string: '{"adult":false,"backdrop_path":"/rr7E0NoGKxvbkb89eR1GwfoYjpA.jpg","belongs_to_collection":null,"budget":63000000,"genres":[{"id":18,"name":"Drama"}],"homepage":"http://www.foxmovies.com/movies/fight-club","id":550,"imdb_id":"tt0137523","original_language":"en","original_title":"Fight
@@ -1281,83 +1281,5 @@ http_interactions:
         Linson Company","origin_country":""}],"production_countries":[{"iso_3166_1":"DE","name":"Germany"},{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1999-10-15","revenue":100853753,"runtime":139,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Mischief.
         Mayhem. Soap.","title":"Fight Club","video":false,"vote_average":8.4,"vote_count":20570}'
-  recorded_at: Thu, 10 Dec 2020 03:28:32 GMT
-- request:
-    method: get
-    uri: https://api.themoviedb.org/3/movie/550?api_key=<DONT_USE_MY_API_KEY>
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v1.0.1
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json;charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Date:
-      - Thu, 10 Dec 2020 02:46:38 GMT
-      Server:
-      - openresty
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET, HEAD, POST, PUT, DELETE, OPTIONS
-      Access-Control-Expose-Headers:
-      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
-        Content-Length, Content-Range
-      Cache-Control:
-      - public, max-age=21600
-      X-Memc:
-      - HIT
-      X-Memc-Key:
-      - ade4da0c2a4d430121774a5494398f64a3949dda
-      X-Memc-Age:
-      - '13503'
-      X-Memc-Expires:
-      - '8097'
-      Etag:
-      - W/"ed9ac49df90764f25977b80862723181"
-      Last-Modified:
-      - Thu, 10 Dec 2020 02:46:38 GMT
-      Vary:
-      - Accept-Encoding
-      X-Cache:
-      - Hit from cloudfront
-      Via:
-      - 1.1 48ea53c7edffa2cdbdc32f7d94966344.cloudfront.net (CloudFront)
-      X-Amz-Cf-Pop:
-      - DEN50-C2
-      X-Amz-Cf-Id:
-      - _b05NtgJhBCAmBmqgrtx5_kEYOyZMqPtXu6VCWgWwIhLfIqLo8hOSg==
-      Age:
-      - '2514'
-    body:
-      encoding: UTF-8
-      string: '{"adult":false,"backdrop_path":"/rr7E0NoGKxvbkb89eR1GwfoYjpA.jpg","belongs_to_collection":null,"budget":63000000,"genres":[{"id":18,"name":"Drama"}],"homepage":"http://www.foxmovies.com/movies/fight-club","id":550,"imdb_id":"tt0137523","original_language":"en","original_title":"Fight
-        Club","overview":"A ticking-time-bomb insomniac and a slippery soap salesman
-        channel primal male aggression into a shocking new form of therapy. Their
-        concept catches on, with underground \"fight clubs\" forming in every town,
-        until an eccentric gets in the way and ignites an out-of-control spiral toward
-        oblivion.","popularity":38.272,"poster_path":"/bptfVGEQuv6vDTIMVCHjJ9Dz8PX.jpg","production_companies":[{"id":508,"logo_path":"/7PzJdsLGlR7oW4J0J5Xcd0pHGRg.png","name":"Regency
-        Enterprises","origin_country":"US"},{"id":711,"logo_path":"/tEiIH5QesdheJmDAqQwvtN60727.png","name":"Fox
-        2000 Pictures","origin_country":"US"},{"id":20555,"logo_path":"/hD8yEGUBlHOcfHYbujp71vD8gZp.png","name":"Taurus
-        Film","origin_country":"DE"},{"id":54051,"logo_path":null,"name":"Atman Entertainment","origin_country":""},{"id":54052,"logo_path":null,"name":"Knickerbocker
-        Films","origin_country":"US"},{"id":25,"logo_path":"/qZCc1lty5FzX30aOCVRBLzaVmcp.png","name":"20th
-        Century Fox","origin_country":"US"},{"id":4700,"logo_path":"/A32wmjrs9Psf4zw0uaixF0GXfxq.png","name":"The
-        Linson Company","origin_country":""}],"production_countries":[{"iso_3166_1":"DE","name":"Germany"},{"iso_3166_1":"US","name":"United
-        States of America"}],"release_date":"1999-10-15","revenue":100853753,"runtime":139,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Mischief.
-        Mayhem. Soap.","title":"Fight Club","video":false,"vote_average":8.4,"vote_count":20570}'
-  recorded_at: Thu, 10 Dec 2020 03:28:32 GMT
+  recorded_at: Thu, 10 Dec 2020 03:28:25 GMT
 recorded_with: VCR 6.0.0

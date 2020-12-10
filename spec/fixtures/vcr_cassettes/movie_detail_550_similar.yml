@@ -52,13 +52,15 @@ http_interactions:
       Vary:
       - Accept-Encoding
       X-Cache:
-      - Miss from cloudfront
+      - Hit from cloudfront
       Via:
-      - 1.1 235fa9476ee502b13c0801d1fa3b57a2.cloudfront.net (CloudFront)
+      - 1.1 9cefde3a3c84cc779d3c26a39c2e4430.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       X-Amz-Cf-Id:
-      - 7i0d2ChgE7KSCryLCO-j4t6CHE7F0q-3H8OFZw_O5w6HE7FjTSCg0Q==
+      - 9q7B8sOwLe8WE3BVyE4RcC102fihMZ1OqJlQQPGF2T8SgnJ5soNFdQ==
+      Age:
+      - '2421'
     body:
       encoding: UTF-8
       string: '{"page":1,"results":[{"video":false,"vote_average":7.0,"overview":"After
@@ -174,5 +176,5 @@ http_interactions:
         the massive invasion of the machines as Neo fights to end the war at another
         front while also opposing the rogue Agent Smith.","poster_path":"/8IpEO76zc1GuHiFVE5aCEL03qJs.jpg","release_date":"2003-11-03","title":"The
         Matrix Revolutions","video":false,"vote_average":6.6,"vote_count":6614,"popularity":31.265}],"total_pages":23,"total_results":458}'
-  recorded_at: Thu, 10 Dec 2020 02:48:15 GMT
+  recorded_at: Thu, 10 Dec 2020 03:28:36 GMT
 recorded_with: VCR 6.0.0

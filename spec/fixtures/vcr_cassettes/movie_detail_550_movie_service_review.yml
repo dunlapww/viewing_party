@@ -52,13 +52,15 @@ http_interactions:
       Vary:
       - Accept-Encoding
       X-Cache:
-      - RefreshHit from cloudfront
+      - Hit from cloudfront
       Via:
-      - 1.1 a44b9db7a2d103360945ab52619e5016.cloudfront.net (CloudFront)
+      - 1.1 4d0ecb5905192435c3fd204705c9fc24.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       X-Amz-Cf-Id:
-      - 4RIHt3Zx1tn8Pta7HBKNzxdKWqw8fcZi5_O_wTfI7hlS2T13ScXasw==
+      - UJDmcHcpSlE_J4zishkRoMDwWp7B4kFoRmeObHbalIa77vgMGCAhfQ==
+      Age:
+      - '2517'
     body:
       encoding: UTF-8
       string: '{"id":550,"page":1,"results":[{"author":"Goddard","author_details":{"name":"","username":"Goddard","avatar_path":"/https://secure.gravatar.com/avatar/f248ec34f953bc62cafcbdd81fddd6b6.jpg","rating":null},"content":"Pretty
@@ -194,5 +196,5 @@ http_interactions:
         so much with their ridiculously outstanding performances that these small
         issues don’t keep me away from highly recommending one of the most memorable,
         iconic films of all-time.\r\n\r\nRating: A-","created_at":"2020-11-22T17:13:46.301Z","id":"5fba9c4a0792e1003f3a1294","updated_at":"2020-11-22T17:50:48.889Z","url":"https://www.themoviedb.org/review/5fba9c4a0792e1003f3a1294"}],"total_pages":1,"total_results":3}'
-  recorded_at: Thu, 10 Dec 2020 02:46:39 GMT
+  recorded_at: Thu, 10 Dec 2020 03:28:36 GMT
 recorded_with: VCR 6.0.0

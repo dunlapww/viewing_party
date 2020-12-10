@@ -54,13 +54,13 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 e1b5abb53c407f0a057625c46693461d.cloudfront.net (CloudFront)
+      - 1.1 0dfe6f02dbba7c39906cae47653ae6b3.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       X-Amz-Cf-Id:
-      - QVIcKrKdVYWWrS5wZyeFcHwMoSOa7o_3kqyHK6M37meK8l0Uv-H-kw==
+      - lbEpF9fayDWrK1nPeYOzt8elHgRB6gUXPGDa1N-Ji-M8xxUaETvbkA==
       Age:
-      - '248'
+      - '2765'
     body:
       encoding: UTF-8
       string: '{"id":550,"cast":[{"adult":false,"gender":2,"id":819,"known_for_department":"Acting","name":"Edward
@@ -491,5 +491,5 @@ http_interactions:
         Assistant"},{"adult":false,"gender":0,"id":2254363,"known_for_department":"Production","name":"Shaun
         Ryan","original_name":"Shaun Ryan","popularity":0.6,"profile_path":null,"credit_id":"5c7a4f7c0e0a2637cb0e9e97","department":"Production","job":"Production
         Driver"}]}'
-  recorded_at: Thu, 10 Dec 2020 02:46:39 GMT
+  recorded_at: Thu, 10 Dec 2020 03:28:36 GMT
 recorded_with: VCR 6.0.0

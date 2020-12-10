@@ -25,7 +25,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 10 Dec 2020 02:55:47 GMT
+      - Thu, 10 Dec 2020 03:28:24 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -46,9 +46,9 @@ http_interactions:
       X-Amz-Cf-Pop:
       - DEN50-C2
       X-Amz-Cf-Id:
-      - Ln3e2WcimtvZpN7YbjDQCYcLIXi41X1_3Eo3O87TF_T9NO0oF3UbPw==
+      - DaIxczVkxj69NPBNJEI_HPz5vkG3hfmSsmmoPxRRat82DJveJIpQoQ==
       Age:
-      - '21'
+      - '13'
     body:
       encoding: UTF-8
       string: '{"page":1,"results":[{"adult":false,"backdrop_path":"/rr7E0NoGKxvbkb89eR1GwfoYjpA.jpg","genre_ids":[18],"id":550,"original_language":"en","original_title":"Fight
@@ -151,7 +151,7 @@ http_interactions:
         face of adversity. In order to stay alive, she struggles with Andy to flee
         danger.","popularity":3.246,"poster_path":"/u8u3KVq0qfJYmNDsaTVOXy4So6f.jpg","release_date":"2014-10-23","title":"Zombie
         Fight Club","video":false,"vote_average":3.7,"vote_count":21}],"total_pages":2,"total_results":22}'
-  recorded_at: Thu, 10 Dec 2020 02:56:08 GMT
+  recorded_at: Thu, 10 Dec 2020 03:28:37 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/search/movie?api_key=<DONT_USE_MY_API_KEY>&page=2&query=Fight%20Club
@@ -177,7 +177,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 10 Dec 2020 02:55:48 GMT
+      - Thu, 10 Dec 2020 03:28:24 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -194,13 +194,13 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 e1b5abb53c407f0a057625c46693461d.cloudfront.net (CloudFront)
+      - 1.1 cddde15c11afac53ac9fe7978dcfecd7.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       X-Amz-Cf-Id:
-      - Q-hOYDpx8wBQP0tcDxz4kByawR2ApLhrMKsbv2i9xOnadAabeky8hA==
+      - "--Pw6HhX7BaEquB3RnU_gT0EnMVLPesHs-vYq_BPoMImV3539dap5g=="
       Age:
-      - '20'
+      - '13'
     body:
       encoding: UTF-8
       string: '{"page":2,"results":[{"adult":false,"backdrop_path":null,"genre_ids":[35,18],"id":323667,"original_language":"ru","original_title":"Вставай
@@ -210,5 +210,5 @@ http_interactions:
         Brawler","overview":"A martial arts instructor must enter the world of illegal
         pit fighting in order to save his family and his dojo.","popularity":0.6,"poster_path":"/8tKjqaAHnIkVYjbvf4tgefSyOZN.jpg","release_date":"2013-08-27","title":"Barrio
         Brawler","video":false,"vote_average":4,"vote_count":4}],"total_pages":2,"total_results":22}'
-  recorded_at: Thu, 10 Dec 2020 02:56:08 GMT
+  recorded_at: Thu, 10 Dec 2020 03:28:37 GMT
 recorded_with: VCR 6.0.0

@@ -22,3 +22,16 @@
   <%= review.author %><br>
   <%= review.content %><br>
 <% end %>
+<section class='similar-movies'>
+  <p>Below are movies similar to <%= @movie_detail.title %></p>
+  <% @similar.each do |movie| %>
+    <%= link_to movie.title, movie_path("#{movie.uuid}") %>
+  <% end %>
+</section>
+
+<section class='recommended-movies'>
+  <p>Want more? Here are some recommended movies!</p>
+  <% @recos.each do |movie| %>
+    <%= link_to movie.title, movie_path("#{movie.uuid}") %>
+  <% end %>
+</section>

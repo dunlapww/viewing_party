@@ -42,13 +42,13 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 23241b9c368643949e3bb1a1ba4e97c3.cloudfront.net (CloudFront)
+      - 1.1 e7ff4a714a3b1f464db9c76ee954a565.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       X-Amz-Cf-Id:
-      - _bnhmk9itFAM0shhnwOaoS3_vh-_bu0V_-cBwHWtTkC-OrWhP2Ssmg==
+      - TgGwifQOwmEDqYWLj8Cua8gTTfplI14m8Ui5SL5wP9bs4gR_VsOeEg==
       Age:
-      - '17'
+      - '1967'
     body:
       encoding: UTF-8
       string: '{"page":1,"results":[{"adult":false,"backdrop_path":"/fQq1FWp1rC89xDrRMuyFJdFUdMd.jpg","genre_ids":[],"id":761053,"original_language":"en","original_title":"Gabriel''s
@@ -158,7 +158,7 @@ http_interactions:
         exceeding what anyone imagined he could do. But despite all he has achieved,
         his one true love eludes him.","popularity":40.163,"poster_path":"/h5J4W4veyxMXDMjeNxZI46TsHOb.jpg","release_date":"1994-07-06","title":"Forrest
         Gump","video":false,"vote_average":8.5,"vote_count":19385}],"total_pages":405,"total_results":8093}'
-  recorded_at: Thu, 10 Dec 2020 02:56:05 GMT
+  recorded_at: Thu, 10 Dec 2020 03:28:35 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/top_rated?api_key=<DONT_USE_MY_API_KEY>&language=en-US&page=2
@@ -201,13 +201,13 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 e4ca364cc5959e3bf697ae231c5b56b0.cloudfront.net (CloudFront)
+      - 1.1 38059ba65876500c040fb73e2cbaebf5.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       X-Amz-Cf-Id:
-      - wQoFyrIcmxYpwYWVPLtummc4uLMHZSZa5NYKrw52CD2rVE55KaBrpA==
+      - 0kNOAQp7gcBRr6n5nQGSP4TdLe_gk3h83llT_52lYgvdZscqcj_uMg==
       Age:
-      - '17'
+      - '1967'
     body:
       encoding: UTF-8
       string: '{"page":2,"results":[{"adult":false,"backdrop_path":"/hkBaDkMWbLaf8B1lsWsKX7Ew3Xq.jpg","genre_ids":[18,28,80,53],"id":155,"original_language":"en","original_title":"The
@@ -317,5 +317,5 @@ http_interactions:
         With no surviving relatives and their emergency rations depleted, Seita and
         Setsuko struggle to survive.","popularity":0.6,"poster_path":"/wcNkHDbyc290hcWk7KXbBZUuXpq.jpg","release_date":"1988-04-16","title":"Grave
         of the Fireflies","video":false,"vote_average":8.4,"vote_count":3178}],"total_pages":405,"total_results":8093}'
-  recorded_at: Thu, 10 Dec 2020 02:56:05 GMT
+  recorded_at: Thu, 10 Dec 2020 03:28:35 GMT
 recorded_with: VCR 6.0.0

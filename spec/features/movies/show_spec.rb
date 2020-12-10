@@ -29,7 +29,7 @@ RSpec.describe 'Movie Details Page' do
     end
 
     it "I can see movie details" do
-      VCR.insert_cassette("movie_all_details") do
+      VCR.use_cassette("movie_all_details") do
         movie_detail = MovieFacade.movie_details(550)
         cast = MovieFacade.cast_details(550)
         cast_member = cast.first
@@ -41,6 +41,7 @@ RSpec.describe 'Movie Details Page' do
         sim1 = similar.first
 
         visit movie_path(movie_detail.uuid)
+        save_and_open_page
         expect(page).to have_content(movie_detail.title)
         expect(page).to have_content(movie_detail.vote_average)
         expect(page).to have_content('2:19')
