@@ -1,0 +1,180 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/550/similar?api_key=<DONT_USE_MY_API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 10 Dec 2020 02:48:15 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=21600
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 35e75e3eebffcdc5597847ae9f66c0fabd154fc7
+      X-Memc-Age:
+      - '11606'
+      X-Memc-Expires:
+      - '9994'
+      Etag:
+      - W/"b21d93cdc01ae3f99ee17d048d851c00"
+      Last-Modified:
+      - Thu, 10 Dec 2020 02:48:15 GMT
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 9cefde3a3c84cc779d3c26a39c2e4430.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      X-Amz-Cf-Id:
+      - 9q7B8sOwLe8WE3BVyE4RcC102fihMZ1OqJlQQPGF2T8SgnJ5soNFdQ==
+      Age:
+      - '2421'
+    body:
+      encoding: UTF-8
+      string: '{"page":1,"results":[{"video":false,"vote_average":7.0,"overview":"After
+        a disease kills 98% of America''s children, the surviving 2% develop superpowers
+        and are placed in internment camps. A 16-year-old girl escapes her camp and
+        joins a group of other teens on the run from the government.","release_date":"2018-07-25","adult":false,"backdrop_path":"/5BxrMNGl3YDiWgHCVJu8iLQoJDM.jpg","vote_count":1908,"genre_ids":[878,28,18,10749,12,53],"title":"The
+        Darkest Minds","original_language":"en","original_title":"The Darkest Minds","poster_path":"/94RaS52zmsqaiAe1TG20pdbJCZr.jpg","id":445651,"popularity":42.554},{"video":false,"id":10437,"overview":"A
+        retelling of the classic Dickens tale of Ebenezer Scrooge, miser extraordinaire.
+        He is held accountable for his dastardly ways during night-time visitations
+        by the Ghosts of Christmas Past, Present, and future.","release_date":"1992-12-10","adult":false,"backdrop_path":"/fJQO9YzdufR8QbEOD1sWIHcgyKA.jpg","vote_count":555,"genre_ids":[10402,35,10751,14,18],"vote_average":7.4,"original_language":"en","original_title":"The
+        Muppet Christmas Carol","poster_path":"/by3MSAOvy6O80SJU6BnbSSyv4v.jpg","title":"The
+        Muppet Christmas Carol","popularity":15.755},{"adult":false,"backdrop_path":"/keblhZFIZYiWflmURWNHEuS2jqL.jpg","genre_ids":[878,18],"id":185,"original_language":"en","original_title":"A
+        Clockwork Orange","overview":"In a near-future Britain, young Alexander DeLarge
+        and his pals get their kicks beating and raping anyone they please. When not
+        destroying the lives of others, Alex swoons to the music of Beethoven. The
+        state, eager to crack down on juvenile crime, gives an incarcerated Alex the
+        option to undergo an invasive procedure that''ll rob him of all personal agency.
+        In a time when conscience is a commodity, can Alex change his tune?","poster_path":"/4sHeTAp65WrSSuc05nRBKddhBxO.jpg","release_date":"1971-12-19","title":"A
+        Clockwork Orange","video":false,"vote_average":8.2,"vote_count":8983,"popularity":25.448},{"video":false,"vote_average":7.9,"overview":"In
+        the smog-choked dystopian Los Angeles of 2019, blade runner Rick Deckard is
+        called out of retirement to terminate a quartet of replicants who have escaped
+        to Earth seeking their creator for a way to extend their short life spans.","release_date":"1982-06-25","vote_count":9769,"adult":false,"backdrop_path":"/eIi3klFf7mp3oL5EEF4mLIDs26r.jpg","title":"Blade
+        Runner","genre_ids":[878,18,53],"id":78,"original_language":"en","original_title":"Blade
+        Runner","poster_path":"/vfzE3pjE5G7G7kcZWrA3fnbZo7V.jpg","popularity":29.481},{"adult":false,"backdrop_path":"/r8pUcom5Mw8igtBpj3AHSAUvH0R.jpg","genre_ids":[18,878],"id":19,"original_language":"de","original_title":"Metropolis","overview":"In
+        a futuristic city sharply divided between the working class and the city planners,
+        the son of the city''s mastermind falls in love with a working class prophet
+        who predicts the coming of a savior to mediate their differences.","poster_path":"/hUK9rewffKGqtXynH5SW3v9hzcu.jpg","release_date":"1927-03-06","title":"Metropolis","video":false,"vote_average":8.2,"vote_count":1637,"popularity":17.516},{"vote_average":6.9,"overview":"In
+        a world divided into factions based on personality types, Tris learns that
+        she''s been classified as Divergent and won''t fit in. When she discovers
+        a plot to destroy Divergents, Tris and the mysterious Four must find out what
+        makes Divergents dangerous before it''s too late.","release_date":"2014-03-14","adult":false,"backdrop_path":"/ipikQozG6cAtLqhaFqRneA0LI4o.jpg","title":"Divergent","genre_ids":[28,12,878],"vote_count":10089,"original_language":"en","original_title":"Divergent","poster_path":"/lmIh6aeCQXA4sLt58l6qB1o54BE.jpg","id":157350,"video":false,"popularity":72.036},{"adult":false,"backdrop_path":"/q7fXcrDPJcf6t3rzutaNwTzuKP1.jpg","genre_ids":[12,878],"original_language":"en","original_title":"Ready
+        Player One","poster_path":"/pU1ULUq8D3iRxl1fdX2lZIzdHuI.jpg","vote_count":10518,"video":false,"id":333339,"vote_average":7.6,"overview":"When
+        the creator of a popular video game system dies, a virtual contest is created
+        to compete for his fortune.","release_date":"2018-03-28","title":"Ready Player
+        One","popularity":99.093},{"adult":false,"backdrop_path":"/kf0Cyf6nqWlbuqlyhUQg8ipy9sn.jpg","genre_ids":[18,878],"id":227156,"original_language":"en","original_title":"The
+        Giver","overview":"In a seemingly perfect community, without war, pain, suffering,
+        differences or choice, a young boy is chosen to learn from an elderly man
+        about the true pain and pleasure of the \"real\" world.","poster_path":"/ckchcez2u40myIAgkfdVyzofX2T.jpg","release_date":"2014-08-11","title":"The
+        Giver","video":false,"vote_average":6.5,"vote_count":3655,"popularity":11.897},{"adult":false,"backdrop_path":"/cFqIyetmPceAXbDmD87ZYvz2pQ0.jpg","genre_ids":[12,37,35,18],"id":11040,"original_language":"en","original_title":"Little
+        Big Man","overview":"Jack Crabb, looking back from extreme old age, tells
+        of his life being raised by Indians and fighting with General Custer.","poster_path":"/pLvUVqadEI9cPrRlTru6ee71EWU.jpg","release_date":"1970-12-14","title":"Little
+        Big Man","video":false,"vote_average":7.6,"vote_count":352,"popularity":7.338},{"original_title":"The
+        Hunger Games","poster_path":"/1ewwtjqAcwZ5abr2X7coGN0UwaI.jpg","video":false,"vote_average":7.1,"overview":"Every
+        year in the ruins of what was once North America, the nation of Panem forces
+        each of its twelve districts to send a teenage boy and girl to compete in
+        the Hunger Games.  Part twisted entertainment, part government intimidation
+        tactic, the Hunger Games are a nationally televised event in which “Tributes”
+        must fight with one another until one survivor remains.  Pitted against highly-trained
+        Tributes who have prepared for these Games their entire lives, Katniss is
+        forced to rely upon her sharp instincts as well as the mentorship of drunken
+        former victor Haymitch Abernathy.  If she’s ever to return home to District
+        12, Katniss must make impossible choices in the arena that weigh survival
+        against humanity and life against love. The world will be watching.","release_date":"2012-03-12","id":70160,"adult":false,"backdrop_path":"/yVBQ65YBYZ9UhzJ4NGdRgeXtyTL.jpg","vote_count":17182,"genre_ids":[878,12,14],"title":"The
+        Hunger Games","original_language":"en","popularity":24.506},{"adult":false,"backdrop_path":"/omoWcwdARBsGHdMdHUk0AQhS2Lp.jpg","genre_ids":[12,28,878],"original_language":"en","original_title":"The
+        Hunger Games: Catching Fire","poster_path":"/7c1JtraYsjMMnk8Md0IMoyRzqZJ.jpg","id":101299,"video":false,"title":"The
+        Hunger Games: Catching Fire","vote_count":13341,"overview":"Katniss Everdeen
+        has returned home safe after winning the 74th Annual Hunger Games along with
+        fellow tribute Peeta Mellark. Winning means that they must turn around and
+        leave their family and close friends, embarking on a \"Victor''s Tour\" of
+        the districts. Along the way Katniss senses that a rebellion is simmering,
+        but the Capitol is still very much in control as President Snow prepares the
+        75th Annual Hunger Games (The Quarter Quell) - a competition that could change
+        Panem forever.","release_date":"2013-11-15","vote_average":7.4,"popularity":35.39},{"id":131634,"vote_average":6.9,"overview":"With
+        the nation of Panem in a full scale war, Katniss confronts President Snow
+        in the final showdown. Teamed with a group of her closest friends – including
+        Gale, Finnick, and Peeta – Katniss goes off on a mission with the unit from
+        District 13 as they risk their lives to stage an assassination attempt on
+        President Snow who has become increasingly obsessed with destroying her. The
+        mortal traps, enemies, and moral choices that await Katniss will challenge
+        her more than any arena she faced in The Hunger Games.","release_date":"2015-11-18","title":"The
+        Hunger Games: Mockingjay - Part 2","adult":false,"backdrop_path":"/2l5qmfxDN98JFKpUy1n4vcLUPmv.jpg","vote_count":9271,"genre_ids":[28,12,878],"video":false,"original_language":"en","original_title":"The
+        Hunger Games: Mockingjay - Part 2","poster_path":"/lImKHDfExAulp16grYm8zD5eONE.jpg","popularity":42.995},{"id":299687,"video":false,"vote_count":4517,"vote_average":5.9,"title":"The
+        5th Wave","release_date":"2016-01-14","original_language":"en","original_title":"The
+        5th Wave","genre_ids":[12,878,28],"backdrop_path":"/iaLu7WlCaK3jy2wz0uDcqiJxCd9.jpg","adult":false,"overview":"16-year-old
+        Cassie Sullivan tries to survive in a world devastated by the waves of an
+        alien invasion that has already decimated the population and knocked mankind
+        back to the Stone Age.","poster_path":"/37vpRkrD4OxQN0MQ7C59eszkylh.jpg","popularity":28.602},{"overview":"A
+        zombie outbreak has fallen upon the land in this reimagining of Jane Austen''s
+        classic tale of the tangled relationships between lovers from different social
+        classes in 19th century England. Feisty heroine Elizabeth Bennet is a master
+        of martial arts and weaponry and the handsome Mr. Darcy is a fierce zombie
+        killer, yet the epitome of upper class prejudice. As the zombie outbreak intensifies,
+        they must swallow their pride and join forces on the blood-soaked battlefield
+        in order to conquer the undead once and for all.","release_date":"2016-02-04","adult":false,"backdrop_path":"/1HdBV5te8Hjj093JlnX4kmZBOqN.jpg","vote_count":1569,"genre_ids":[10749,27,35,53],"id":58431,"original_language":"en","original_title":"Pride
+        and Prejudice and Zombies","poster_path":"/jsJlOhVHiz1xXr36616EI8tJ4b2.jpg","title":"Pride
+        and Prejudice and Zombies","video":false,"vote_average":6.0,"popularity":24.833},{"original_title":"The
+        Hunger Games: Mockingjay - Part 1","poster_path":"/ezHakxJHVXdPI6h3TKssEwXYtsg.jpg","video":false,"vote_average":6.8,"overview":"Katniss
+        Everdeen reluctantly becomes the symbol of a mass rebellion against the autocratic
+        Capitol.","release_date":"2014-11-19","id":131631,"adult":false,"backdrop_path":"/rYsdoUqkltpKZQWwCWXf55csXvL.jpg","vote_count":12091,"genre_ids":[878,12,53],"title":"The
+        Hunger Games: Mockingjay - Part 1","original_language":"en","popularity":64.571},{"vote_average":6.7,"overview":"Thomas
+        and his fellow Gladers face their greatest challenge yet: searching for clues
+        about the mysterious and powerful organization known as WCKD. Their journey
+        takes them to the Scorch, a desolate landscape filled with unimaginable obstacles.
+        Teaming up with resistance fighters, the Gladers take on WCKD’s vastly superior
+        forces and uncover its shocking plans for them all.","release_date":"2015-09-09","adult":false,"backdrop_path":"/4mcOCiR06dqQ5eoEJcG3zvonjOa.jpg","title":"Maze
+        Runner: The Scorch Trials","genre_ids":[28,878,53],"vote_count":7682,"original_language":"en","original_title":"Maze
+        Runner: The Scorch Trials","poster_path":"/mYw7ZyejqSCPFlrT2jHZOESZDU3.jpg","id":294254,"video":false,"popularity":57.748},{"id":198663,"original_title":"The
+        Maze Runner","poster_path":"/ode14q7WtDugFDp78fo9lCsmay9.jpg","video":false,"vote_average":7.1,"overview":"Set
+        in a post-apocalyptic world, young Thomas is deposited in a community of boys
+        after his memory is erased, soon learning they''re all trapped in a maze that
+        will require him to join forces with fellow “runners” for a shot at escape.","release_date":"2014-09-10","vote_count":12798,"adult":false,"backdrop_path":"/1pDhqGQvseyHC3dWllucgmOyBo5.jpg","title":"The
+        Maze Runner","genre_ids":[28,9648,878,53],"original_language":"en","popularity":89.77},{"adult":false,"backdrop_path":"/qGqlWb5izTPtFngBWdbJAEmninR.jpg","genre_ids":[878,28,12],"original_language":"en","original_title":"Ender''s
+        Game","poster_path":"/tBgkQqrO2RMgGQR6zod3bSjcPWx.jpg","id":80274,"video":false,"title":"Ender''s
+        Game","vote_count":4289,"overview":"Based on the classic novel by Orson Scott
+        Card, Ender''s Game is the story of the Earth''s most gifted children training
+        to defend their homeplanet in the space wars of the future.","release_date":"2013-10-24","vote_average":6.6,"popularity":43.758},{"id":82654,"video":false,"vote_count":4873,"vote_average":6.4,"title":"Warm
+        Bodies","release_date":"2013-01-31","original_language":"en","original_title":"Warm
+        Bodies","genre_ids":[27,35,10749],"backdrop_path":"/bDSskX0djG4K9yLDWFaFe1cFiaB.jpg","adult":false,"overview":"After
+        a zombie becomes involved with the girlfriend of one of his victims, their
+        romance sets in motion a sequence of events that might transform the entire
+        lifeless world.","poster_path":"/pvVpl38YOBDOANb0pWbXFb8X3iZ.jpg","popularity":18.229},{"adult":false,"backdrop_path":"/t9dumNakkt6yL9wreEp35T4Lwny.jpg","genre_ids":[12,28,53,878],"id":605,"original_language":"en","original_title":"The
+        Matrix Revolutions","overview":"The human city of Zion defends itself against
+        the massive invasion of the machines as Neo fights to end the war at another
+        front while also opposing the rogue Agent Smith.","poster_path":"/8IpEO76zc1GuHiFVE5aCEL03qJs.jpg","release_date":"2003-11-03","title":"The
+        Matrix Revolutions","video":false,"vote_average":6.6,"vote_count":6614,"popularity":31.265}],"total_pages":23,"total_results":458}'
+  recorded_at: Thu, 10 Dec 2020 03:28:36 GMT
+recorded_with: VCR 6.0.0

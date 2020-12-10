@@ -1,0 +1,21 @@
+h1 {
+  font-size: 3em;
+}
+
+a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+.welcome-login, .new_user {
+  background-color: red;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: underline;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 12px;
+  font-family: monospace;
+}
