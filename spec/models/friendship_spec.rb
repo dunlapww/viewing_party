@@ -6,25 +6,27 @@ RSpec.describe Friendship, type: :model do
     it { should belong_to :friend }
   end
 
+  before :each do
+    @user = User.create!(
+      email: 'testing@example.com',
+      password: '1234**USAusa',
+      password_confirmation: '1234**USAusa'
+    )
+    @friend = User.create!(
+      email: 'friend@example.com',
+      password: '1234**USAusa',
+      password_confirmation: '1234**USAusa'
+    )
+    @user.friends << @friend
+    @loser = User.create!(
+      email: 'loser@example.com',
+      password: '1234**USAusa',
+      password_confirmation: '1234**USAusa'
+    )
+  end
+
   describe 'class methods' do
     it '#exists?' do
-      @user = User.create!(
-        email: 'testing@example.com',
-        password: '1234**USAusa',
-        password_confirmation: '1234**USAusa'
-      )
-      @friend = User.create!(
-        email: 'friend@example.com',
-        password: '1234**USAusa',
-        password_confirmation: '1234**USAusa'
-      )
-      @user.friends << @friend
-      @loser = User.create!(
-        email: 'loser@example.com',
-        password: '1234**USAusa',
-        password_confirmation: '1234**USAusa'
-      )
-
       current_user = @user
       expect(Friendship.exists?(@friend.id, current_user.id)).to eq(true)
       current_user = @friend

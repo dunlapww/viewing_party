@@ -9,6 +9,6 @@ class ApplicationController < ActionController::Base
   def film_length(minutes)
     hrs = (minutes / 60).to_s
     mins = (minutes % 60).to_s.rjust(2, '0')
-    hrs + ':' + mins
+    "#{hrs}:#{mins}"
   end
 end
