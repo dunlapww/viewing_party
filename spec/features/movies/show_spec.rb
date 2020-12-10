@@ -41,11 +41,11 @@ RSpec.describe 'Movie Details Page' do
         sim1 = similar.first
 
         visit movie_path(movie_detail.uuid)
-      
+
         expect(page).to have_content(movie_detail.title)
         expect(page).to have_content(movie_detail.vote_average)
         expect(page).to have_content('2:19')
-        expect(page).to have_content(movie_detail.genres.first[:name])
+        expect(page).to have_content(movie_detail.genres.first)
         expect(page).to have_content(movie_detail.summary)
         expect(page).to have_content(cast_member.name)
         expect(page).to have_content(cast_member.character)
