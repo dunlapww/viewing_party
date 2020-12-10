@@ -34,7 +34,7 @@ RSpec.describe 'Results Page (/results)' do
         expect(page).to have_link('Fight Club')
         expect(page).to have_content('Vote Average: 8.4')
         expect(page).to have_css('.movie', count: 40)
-        expect(page).to have_content("Top 40 Movies:")
+        expect(page).to have_content("Top 40 Movies")
       end
     end
 

@@ -21,9 +21,9 @@ body {
   flex-direction: column;
   min-height: 100vh;
   background-image: url("https://i.pinimg.com/736x/ce/5a/73/ce5a73c6a4e7a08f069a344245dd0159.jpg");
-  background-repeat: no-repeat;
+  background-repeat: repeat-y;
   background-color: black;
-  background-size: 100% 100%;
+  background-size: 100%;
 }
 
 main {

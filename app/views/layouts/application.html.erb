@@ -10,9 +10,8 @@
 
   <body>
     <nav class="main-nav">
-      <p><%= link_to "Our Viewing Party", welcome_index_path %><br>
-        <%= link_to "My Dashboard", dashboard_path if current_user %>
-      </p>
+      <p><%= link_to "Our Viewing Party", welcome_index_path %></p>
+      <p><%= link_to "My Dashboard", dashboard_path if current_user %></p>
       <div class="logging">
         <%= link_to "Login", "/login" unless current_user %>
         <%= link_to "Logout", "/logout", method: :delete if current_user %>
