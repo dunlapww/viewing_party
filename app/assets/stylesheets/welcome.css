@@ -7,7 +7,7 @@ a:visited {
   text-decoration: none;
 }
 
-.welcome-login, .new_user {
+.button, .new_user {
   background-color: red;
   border: none;
   color: white;

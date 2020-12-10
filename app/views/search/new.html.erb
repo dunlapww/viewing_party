@@ -1,7 +1,20 @@
-<%= button_to 'Discover Top 40', results_path, method: :get%>
+<h1>Discover a Movie to Watch</h1>
+<p>Ready to plan a night of fun and excitement? Find a movie and create your party!</p>
 
-<%= form_tag results_path, method: :get, local: true do %>
-  <%= label_tag :search %>
-  <%= search_field_tag :search %>
-  <%= submit_tag 'Search' %>
-<% end%>
+<h2>Choose One: Top Movies or Search</h2>
+<div class="columns">
+  <section class="movies">
+    <h3>Top Movies</h3>
+    <%= button_to 'Discover Top 40', results_path, method: :get, class: "button" %>
+  </section>
+
+  <section class="movies">
+    <h3>Search for a Movie</h3>
+    <p>Search for anything. A topic, an idea, a title, you name it.</p>
+    <%= form_tag results_path, method: :get, local: true do %>
+      <%= label_tag :search %>
+      <%= search_field_tag :search %>
+      <%= submit_tag 'Search', class: "small-button" %>
+    <% end%>
+  </section>
+</div>

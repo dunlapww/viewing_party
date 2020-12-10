@@ -1,0 +1,18 @@
+.error-flash {
+  background-color: red;
+  color: white;
+  padding: 20px;
+  border: 5px dashed black;
+}
+.success-flash {
+  background-color: green;
+  color: white;
+  padding: 20px;
+  border: 5px dashed black;
+}
+.notice-flash {
+  background-color: brown;
+  color: white;
+  padding: 20px;
+  border: 5px dashed black;
+}
