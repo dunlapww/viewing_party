@@ -76,36 +76,40 @@ As an example, the below test ensures that the User table has the proper validat
 #### Welcome: 
 When you first visit, the user is greeted with the login page where they can either login or register as a new user.
 
-![](/read_me_images/welcome.png)
+<img src="/read_me_images/welcome.png" width="600">
 
 #### Dashboard
 * The user can invite some friends who are also users by typing their email and clicking 'Add Friend'
 * Alternatively, they can begin perusing movie titles by clicking 'Discover Movies'
 
-![](/read_me_images/dashboard.png)
-
+<img src="/read_me_images/dashboard.png" width="400">
 #### Discover
 * From the discover page the user has the option to view the top 40 movies or to perform a keyword search for movie titles.
 
-![](/read_me_images/discover.png)
+<img src="/read_me_images/discover.png" width="400">
 
 #### Results
 * Searching by either option will send the user to the results page where they will see a list of movies.  They can click on any title to see more details about the movie.
 
-![](/read_me_images/results.png)
+<img src="/read_me_images/results.png" width="400">
 
 #### Movie Details
 * On the movie Details page they are given the option to schedule a viewing party.  Clicking 'Create Viewing Party' allows them to scheduling a viewing party
 
+<img src="/read_me_images/movie_details.png" width="400">
+
 #### Scheduling a Viewing Party
 * To schedule a viewing party, a user must select a party duration, date, time, and select some friends to invite.  In this case we'll invite only a selection of our friends.  Clicking 'Create Viewing Party' schedules the event and returns the user to their dashboard.
 
-![](/read_me_images/viewing_party.png)
+<img src="/read_me_images/viewing_party.png" width="400">
 
 #### Dashboard with parties
 * Now the party has been scheduled, the party appears on both the user's dashboard and their invited friends' dashboard.  The user now has the option to schedule more parties or to logout.
 
-![](/read_me_images/friend_dashboard_success.png)
+User Dashboard | Friend Dashboard | 
+--- | --- |
+<img src="/read_me_images/dashboard_vp_success.png" width="300"> | <img src="/read_me_images/friend_dashboard_success.png" width="300"> | 
+
 
 
 ## Licenses
