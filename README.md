@@ -1,8 +1,17 @@
 
-# Viewing Party
+# Our Viewing Party
 [![Build Status](https://travis-ci.com/dunlapww/viewing_party.svg?branch=main)](https://travis-ci.com/dunlapww/viewing_party)
 
 This web application allows a user to view movie titles and schedule viewing parties with their friends.
+
+## Table of Contents
+  - [What it does](#what-it-does)
+  - [How to Install](#how-to-install)
+  - [Testing](#testing)
+  - [Example Usage](#feature-tests)
+  - [Licenses](#licenses)
+  - [Project Leads](#project-leads)
+  - [Acknowledgments](#acknowledgments)
 
 
 ## What it does
@@ -33,6 +42,7 @@ $rails s
 
 You should now see the welcome page for the application!
 https://developers.themoviedb.org/
+
 ## Testing
 This application uses the below test suite:
 ```
@@ -58,7 +68,7 @@ As an example, The below feature test ensures a user can successfully login
 ### Model Tests
 Ensures the backend database and classes work properly
 
-As an example, the below test ensures that the User table has the proper validations and relationships, and ensures our instance and class methods are working properly:
+As an example, the below test ensures that the User table has the proper validations and relationships, and ensures our validations are working properly:
 ![](/read_me_images/user_spec.png)
 
 ## Example Usage
@@ -109,3 +119,11 @@ This application was created
 * George Soderholm
 * Kate Tester
 * Will Dunlap
+
+## Acknowledgements
+These are the resources and people that helped us along the way!
+* [Complex Passwords](https://github.com/heartcombo/devise/wiki/How-To:-Set-up-simple-password-complexity-requirements)
+* [Email Validation](https://blog.mailtrap.io/rails-email-validation/)
+* [Flexbox Guide](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+* Our Instructors, Dione and Ian
+* 2008 BE Cohort!
