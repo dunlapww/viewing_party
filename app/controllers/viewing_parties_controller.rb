@@ -4,23 +4,52 @@ class ViewingPartiesController < ApplicationController
     @movie_detail = MovieFacade.movie_details(params[:uuid])
   end
 
+  # def create
+  #   @movie_detail = MovieFacade.movie_details(params[:uuid])
+  #   vp = viewing_party(params)
+  #   if !friends(params).empty? && vp.save
+  #     attendees(vp, params)
+  #     flash[:success] = 'You have successfully created a party!!'
+  #     redirect_to dashboard_path
+  #   elsif friends(params).empty?
+  #     flash.now[:error] = 'You need friends. Add some! Seriously.'
+  #     render :new
+  #   else
+  #     flash.now[:error] = vp.errors.full_messages.to_sentence
+  #     render :new
+  #   end
+  # end
+
+  # new
   def create
     @movie_detail = MovieFacade.movie_details(params[:uuid])
-    vp = viewing_party(params)
-    if !friends(params).empty? && vp.save
-      attendees(vp, params)
-      flash[:success] = 'You have successfully created a party!!'
-      redirect_to dashboard_path
+    viewing_party = viewing_party(params)
+    if !friends(params).empty? && viewing_party.save
+      attendees(viewing_party, params)
+      message_success
     elsif friends(params).empty?
-      flash.now[:error] = 'You need friends. Add some! Seriously.'
-      render :new
+      message_error
     else
-      flash.now[:error] = vp.errors.full_messages.to_sentence
-      render :new
+      message_fail(viewing_party)
     end
   end
 
   private
+
+  def message_success
+    flash[:success] = 'You have successfully created a party!!'
+    redirect_to dashboard_path
+  end
+
+  def message_error
+    flash.now[:error] = 'You need friends. Add some! Seriously.'
+    render :new
+  end
+
+  def message_fail(viewing_party)
+    flash.now[:error] = viewing_party.errors.full_messages.to_sentence
+    render :new
+  end
 
   def friends(params)
     params.select do |_email, invite|
