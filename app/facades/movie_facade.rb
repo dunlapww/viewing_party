@@ -19,16 +19,15 @@ class MovieFacade
 
   def self.reco_details(uuid)
     results =  MovieService.reco_data(uuid)
-    require "pry"; binding.pry
-    results[:cast].map do |cast_detail|
-      CastMember.new(cast_detail)
+    results[:results].map do |reco|
+      MovieDetail.new(reco)
     end
   end
 
-  # def self.similiar_details(uuid)
-  #   results =  MovieService.similiar_data(uuid)
-  #   results[:cast].map do |cast_detail|
-  #     CastMember.new(cast_detail)
-  #   end
-  # end
+  def self.similar_details(uuid)
+    results =  MovieService.similar_data(uuid)
+    results[:results].map do |movie|
+      MovieDetail.new(movie)
+    end
+  end
 end

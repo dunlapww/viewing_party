@@ -1,0 +1,105 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/search/movie?api_key=<DONT_USE_MY_API_KEY>&page=1&query=jmkls
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '57'
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 10 Dec 2020 02:55:52 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Etag:
+      - a8d277d2d95f2ea20f792a48c43093dc
+      Cache-Control:
+      - public, max-age=600
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 b2e880ac67c1fba390623b9fc04bd63a.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      X-Amz-Cf-Id:
+      - SyC-lLNcNJGkw5kVSXcc6KUi669h6Ae3rEVeqXA_u030T7MpLGHXSg==
+    body:
+      encoding: UTF-8
+      string: '{"page":1,"results":[],"total_pages":0,"total_results":0}'
+  recorded_at: Thu, 10 Dec 2020 02:55:52 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/search/movie?api_key=<DONT_USE_MY_API_KEY>&page=2&query=jmkls
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '57'
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 10 Dec 2020 02:55:52 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Etag:
+      - daeb628883c68203dc276731d4722f32
+      Cache-Control:
+      - public, max-age=600
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 e7ff4a714a3b1f464db9c76ee954a565.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      X-Amz-Cf-Id:
+      - Zd8xHPGAboTfjiU-YSmdlFRSZE4F9r8ZYQQ7Mg5SB9hD_5czBdElRQ==
+    body:
+      encoding: UTF-8
+      string: '{"page":2,"results":[],"total_pages":0,"total_results":0}'
+  recorded_at: Thu, 10 Dec 2020 02:55:52 GMT
+recorded_with: VCR 6.0.0
