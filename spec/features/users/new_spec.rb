@@ -20,6 +20,9 @@ RSpec.describe 'Registration page' do
       click_button('Register')
 
       expect(current_path).to eq(dashboard_path)
+      new_user = User.last
+      expect(new_user.email).to eq('testing@example.com')
+      expect(page).to have_content('testing@example.com')
     end
 
     it 'I cannot register with a used email' do
