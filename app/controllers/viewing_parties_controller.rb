@@ -2,13 +2,13 @@ class ViewingPartiesController < ApplicationController
 
   def new
     render file: 'public/404' unless current_user
-    @movie = MovieService.new(params[:uuid])
+    @movie_detail = MovieFacade.movie_details(params[:uuid])
   end
 
   def create
-    @movie = MovieService.new(params[:uuid])
+    @movie_detail = MovieFacade.movie_details(params[:uuid])
     vp = viewing_party(params)
-    if vp.save && !friends(params).empty?
+    if !friends(params).empty? && vp.save 
       attendees(vp, params)
       flash[:success] = 'You have successfully created a party!!'
       redirect_to dashboard_path

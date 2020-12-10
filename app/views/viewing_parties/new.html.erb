@@ -1,12 +1,12 @@
-<h3><%= "Movie title: #{@movie.data[:original_title]}" %></h3>
+<h3><%= "Movie title: #{@movie_detail.title}" %></h3>
 
 <%= form_with model: @viewing_party, url: create_vp_path, local: true do |f| %>
 
   <%= f.label :movie_title, "Movie Title" %>
-  <%= f.text_field :movie_title, value: @movie.data[:original_title], readonly: true %>
+  <%= f.text_field :movie_title, value: @movie_detail.title, readonly: true %>
   <br>
   <%= f.label :party_duration, "Party Duration:" %>
-  <%= f.number_field :party_duration, value: @movie.data[:runtime], min: 5, max: 300 %>
+  <%= f.number_field :party_duration, value: @movie_detail.runtime, min: 5, max: 300  %>
   <br>
   <%= f.label :party_date, "Party Date:"  %>
   <%= f.date_field :party_date, value: Date.today, min: Date.today %>

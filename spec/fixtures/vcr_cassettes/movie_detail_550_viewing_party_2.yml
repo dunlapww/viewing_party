@@ -54,13 +54,13 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 91f1c114eac2b00f07286bc49dddd7e5.cloudfront.net (CloudFront)
+      - 1.1 c55bfc9d9a95cdee8e23989feddaa4b3.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       X-Amz-Cf-Id:
-      - E5ZCbvragYDpsYHVJ6DD1ti6JOV5XTEfgnoJQFdACI44946_DFS3OA==
+      - 8DPn_YPVh4cDpm1xvbRewX8KrpaKO6WTNyPIydi2mAvitnQYiy6C3Q==
       Age:
-      - '6448'
+      - '6449'
     body:
       encoding: UTF-8
       string: '{"adult":false,"backdrop_path":"/rr7E0NoGKxvbkb89eR1GwfoYjpA.jpg","belongs_to_collection":null,"budget":63000000,"genres":[{"id":18,"name":"Drama"}],"homepage":"http://www.foxmovies.com/movies/fight-club","id":550,"imdb_id":"tt0137523","original_language":"en","original_title":"Fight
@@ -77,7 +77,7 @@ http_interactions:
         Linson Company","origin_country":""}],"production_countries":[{"iso_3166_1":"DE","name":"Germany"},{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1999-10-15","revenue":100853753,"runtime":139,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Mischief.
         Mayhem. Soap.","title":"Fight Club","video":false,"vote_average":8.4,"vote_count":20568}'
-  recorded_at: Wed, 09 Dec 2020 22:22:14 GMT
+  recorded_at: Wed, 09 Dec 2020 22:22:15 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/550?api_key=<DONT_USE_MY_API_KEY>
@@ -132,11 +132,11 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 824a5d9ed02451bcb68b15ae5991dce0.cloudfront.net (CloudFront)
+      - 1.1 ec4d04f2befcd6652834fd368a8b671e.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       X-Amz-Cf-Id:
-      - b0_c6WNlmxMiscPhGqnRw_8wmMKEeQSoA7uEZLTWG972MTII4ZLCLg==
+      - sTZSKWWHEmYR2rqWtT9qEOUirhW8Vvjz3zbcx0HBDaqAqrjrVqnzeA==
       Age:
       - '6449'
     body:
@@ -210,11 +210,11 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 0dfe6f02dbba7c39906cae47653ae6b3.cloudfront.net (CloudFront)
+      - 1.1 264cccdb967e804907074b11d3a83242.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       X-Amz-Cf-Id:
-      - gpwB6b6JVm28QVIC6fsIfSXQe-ohEJjvHgirXI-XWkf0ZdC5oz4yyA==
+      - rknf9Qz-rifjdfpuck5cXAywCjyxhsE49s4CZH4lV6wbrmrbn5Du9w==
       Age:
       - '6449'
     body:
@@ -702,11 +702,11 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 788f6ff13e09a712f5227945fa34a519.cloudfront.net (CloudFront)
+      - 1.1 0dfe6f02dbba7c39906cae47653ae6b3.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       X-Amz-Cf-Id:
-      - neeBFuK2b6jbN1MQCl5Z6CmGzduhSMhYCAiRwCrrfprVdOTpGf4GdQ==
+      - B-d8HTJFeVY3gDvKj26hSriaaUL84aNQRuBmwJAG6A_nUMOnqaE_RQ==
       Age:
       - '6448'
     body:
@@ -845,4 +845,82 @@ http_interactions:
         issues don’t keep me away from highly recommending one of the most memorable,
         iconic films of all-time.\r\n\r\nRating: A-","created_at":"2020-11-22T17:13:46.301Z","id":"5fba9c4a0792e1003f3a1294","updated_at":"2020-11-22T17:50:48.889Z","url":"https://www.themoviedb.org/review/5fba9c4a0792e1003f3a1294"}],"total_pages":1,"total_results":3}'
   recorded_at: Wed, 09 Dec 2020 22:22:15 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/550?api_key=<DONT_USE_MY_API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 09 Dec 2020 20:34:46 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=21600
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - ade4da0c2a4d430121774a5494398f64a3949dda
+      X-Memc-Age:
+      - '12795'
+      X-Memc-Expires:
+      - '8805'
+      Etag:
+      - W/"5e0192a233b77ccfa6d1ada85ac7201b"
+      Last-Modified:
+      - Wed, 09 Dec 2020 20:34:46 GMT
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 7d885ba806a1846198f8b666005bec93.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      X-Amz-Cf-Id:
+      - kMyCsbHPb7s-JQVVrpmkz8jFJ6M-7EwKHieiRyhVUi7N6raCZg3Byg==
+      Age:
+      - '6449'
+    body:
+      encoding: UTF-8
+      string: '{"adult":false,"backdrop_path":"/rr7E0NoGKxvbkb89eR1GwfoYjpA.jpg","belongs_to_collection":null,"budget":63000000,"genres":[{"id":18,"name":"Drama"}],"homepage":"http://www.foxmovies.com/movies/fight-club","id":550,"imdb_id":"tt0137523","original_language":"en","original_title":"Fight
+        Club","overview":"A ticking-time-bomb insomniac and a slippery soap salesman
+        channel primal male aggression into a shocking new form of therapy. Their
+        concept catches on, with underground \"fight clubs\" forming in every town,
+        until an eccentric gets in the way and ignites an out-of-control spiral toward
+        oblivion.","popularity":38.272,"poster_path":"/bptfVGEQuv6vDTIMVCHjJ9Dz8PX.jpg","production_companies":[{"id":508,"logo_path":"/7PzJdsLGlR7oW4J0J5Xcd0pHGRg.png","name":"Regency
+        Enterprises","origin_country":"US"},{"id":711,"logo_path":"/tEiIH5QesdheJmDAqQwvtN60727.png","name":"Fox
+        2000 Pictures","origin_country":"US"},{"id":20555,"logo_path":"/hD8yEGUBlHOcfHYbujp71vD8gZp.png","name":"Taurus
+        Film","origin_country":"DE"},{"id":54051,"logo_path":null,"name":"Atman Entertainment","origin_country":""},{"id":54052,"logo_path":null,"name":"Knickerbocker
+        Films","origin_country":"US"},{"id":25,"logo_path":"/qZCc1lty5FzX30aOCVRBLzaVmcp.png","name":"20th
+        Century Fox","origin_country":"US"},{"id":4700,"logo_path":"/A32wmjrs9Psf4zw0uaixF0GXfxq.png","name":"The
+        Linson Company","origin_country":""}],"production_countries":[{"iso_3166_1":"DE","name":"Germany"},{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1999-10-15","revenue":100853753,"runtime":139,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Mischief.
+        Mayhem. Soap.","title":"Fight Club","video":false,"vote_average":8.4,"vote_count":20568}'
+  recorded_at: Wed, 09 Dec 2020 22:22:16 GMT
 recorded_with: VCR 6.0.0

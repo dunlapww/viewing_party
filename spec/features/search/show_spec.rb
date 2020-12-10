@@ -11,6 +11,7 @@ RSpec.describe 'Results Page (/results)' do
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
       visit discover_path
     end
+
     it 'I see < 40 results after a keyword search' do
       VCR.use_cassette('movie_search_fight_club') do
         fill_in :search, with: 'Fight Club'
@@ -23,8 +24,12 @@ RSpec.describe 'Results Page (/results)' do
         expect(page).to have_css(".movie", count: 22)
       end
     end
+
     it 'I see the top 40 movies' do
       VCR.use_cassette('movies_top_40') do
+        movie_details = SearchFacade.top_rated
+        movie_detail = movie_details.first
+
         click_on 'Discover Top 40'
         expect(page).to have_link('Fight Club')
         expect(page).to have_content('Vote Average: 8.4')
@@ -32,12 +37,14 @@ RSpec.describe 'Results Page (/results)' do
         expect(page).to have_content("Top 40 Movies:")
       end
     end
+
     it 'I see no results when searching an empty string' do
       VCR.use_cassette('movies_empty_feature_search') do
         click_on 'Search'
         expect(page).to have_content("Your search for '' returned 0 results")
       end
     end
+
     it 'I see a message there are no results when none exist' do
       VCR.use_cassette('movies_jmkls_feature_search') do
         fill_in :search, with: 'jmkls'
@@ -45,6 +52,7 @@ RSpec.describe 'Results Page (/results)' do
         expect(page).to have_content("Your search for 'jmkls' returned 0 results")
       end
     end
+
     it 'I can search for something with fewer than 20 results' do
       VCR.use_cassette('hello_dolly_search') do
         fill_in :search, with: 'hello dolly'
