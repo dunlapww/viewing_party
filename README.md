@@ -76,23 +76,23 @@ As an example, the below test ensures that the User table has the proper validat
 #### Welcome: 
 When you first visit, the user is greeted with the login page where they can either login or register as a new user.
 
-[screenshot]
+![](/read_me_images/welcome.png)
 
 #### Dashboard
 * The user can invite some friends who are also users by typing their email and clicking 'Add Friend'
 * Alternatively, they can begin perusing movie titles by clicking 'Discover Movies'
 
-[screenshot]
+![](/read_me_images/dashboard.png)
 
 #### Discover
 * From the discover page the user has the option to view the top 40 movies or to perform a keyword search for movie titles.
 
-[screenshot]
+![](/read_me_images/discover.png)
 
 #### Results
 * Searching by either option will send the user to the results page where they will see a list of movies.  They can click on any title to see more details about the movie.
 
-[screenshot]
+![](/read_me_images/results.png)
 
 #### Movie Details
 * On the movie Details page they are given the option to schedule a viewing party.  Clicking 'Create Viewing Party' allows them to scheduling a viewing party
@@ -100,12 +100,12 @@ When you first visit, the user is greeted with the login page where they can eit
 #### Scheduling a Viewing Party
 * To schedule a viewing party, a user must select a party duration, date, time, and select some friends to invite.  In this case we'll invite only a selection of our friends.  Clicking 'Create Viewing Party' schedules the event and returns the user to their dashboard.
 
-[screenshot]
+![](/read_me_images/viewing_party.png)
 
 #### Dashboard with parties
 * Now the party has been scheduled, the party appears on both the user's dashboard and their invited friends' dashboard.  The user now has the option to schedule more parties or to logout.
 
-[users dashboard screenshot] [friends dashboard screenshot]
+![](/read_me_images/friend_dashboard_success.png)
 
 
 ## Licenses
