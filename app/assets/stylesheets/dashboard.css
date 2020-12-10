@@ -3,14 +3,14 @@
   flex-direction: row;
   justify-content: center;
 }
-.friends, .viewing-parties {
+.friends, .viewing-parties, .movies {
   width: 40%;
   padding: 20px;
   border-width: thin;
   border-style: inset;
   border-color: black;
 }
-.add-friend {
+.small-button {
   background-color: red;
   border: none;
   color: white;

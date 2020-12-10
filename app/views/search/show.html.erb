@@ -1,19 +1,35 @@
-<%= button_to 'Discover Top 40', results_path, method: :get %>
+<h1>Discover a Movie to Watch</h1>
+<p>Ready to plan a night of fun and excitement? Find a movie and create your party!</p>
 
-<%= form_tag results_path, method: :get, local: true do %>
-  <%= label_tag :search %>
-  <%= search_field_tag :search %>
-  <%= submit_tag 'Search' %>
-<% end%>
-<br>
+<h2>Choose One: Top Movies or Search</h2>
+<div class="columns">
+  <section class="movies">
+    <h3>Top Movies</h3>
+    <%= button_to 'Discover Top 40', results_path, method: :get, class: "button" %>
+  </section>
+
+  <section class="movies">
+    <h3>Search for a Movie</h3>
+    <p>Search for anything. A topic, an idea, a title, you name it.</p>
+    <%= form_tag results_path, method: :get, local: true do %>
+      <%= label_tag :search %>
+      <%= search_field_tag :search %>
+      <%= submit_tag 'Search', class: "small-button" %>
+    <% end%>
+  </section>
+</div>
+
 <% if @search %>
-<%= "Your search for #{@search} returned #{@movies.count} results:" %><br>
+  <h2><%= "Your search for #{@search} returned #{@movies.count} results:" %></h2>
 <% else %>
-<%= "Top 40 Movies:" %><br>
+  <h2>Top 40 Movies</h2>
 <% end %>
 
-<% @movies.each do |movie| %>
-  <p class="movie">
-    Movie Title: <%= link_to "#{movie.title}",  movie_path("#{movie.uuid}") %><br>
-    Vote Average: <%= movie.vote_average %></p>
-<% end%>
+<ol>
+  <% @movies.each do |movie| %>
+    <li class="movie">
+      <p>Movie Title: <%= link_to "#{movie.title}",  movie_path("#{movie.uuid}") %></p>
+      <p>Vote Average: <%= movie.vote_average %></p>
+    </li>
+  <% end%>
+</ol>
