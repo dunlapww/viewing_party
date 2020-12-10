@@ -1,55 +1,60 @@
 <h1>Welcome <%= @user.email %>!</h1>
 
-<%= button_to "Discover Movies", discover_path, method: :get %>
+<h2>Start by Finding a Movie</h2>
+<%= button_to "Discover Movies", discover_path, method: :get, class: "button" %>
+<h2>Party Central</h2>
+<div class="columns">
+  <section class="friends">
+    <h2>Friends</h2>
+    <h3>Add a friend</h3>
+    <%= form_tag dashboard_path, method: :post do %>
+      <%= label_tag :friend_email %>
+      <%= text_field_tag :friend_email, 'friend@email.com' %>
+      <%= submit_tag 'Add Friend', class: "add-friend" %>
+    <% end %>
 
-<section class='friends'>
-  <h2>Add a friend</h2>
-  <%= form_tag dashboard_path, method: :post do %>
-    <%= label_tag :friend_email %>
-    <%= text_field_tag :friend_email, 'friend@email.com' %>
-    <%= submit_tag 'Add Friend' %>
-  <% end %>
+    <h3>My Friends</h3>
+    <% if @user.friends.empty? && @user.inverse_friends.empty?  %>
+      <p>We can't find any friends, add one!</p>
+    <% else %>
+      <ul>
+        <% @user.friends.each do |friend| %>
+          <li><%= friend.email %></li>
+        <% end %>
+        <% @user.inverse_friends.each do |friend| %>
+          <li><%= friend.email %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  </section>
 
-  <h2>Friends</h2>
-  <% if @user.friends.empty? && @user.inverse_friends.empty?  %>
-    <p>We can't find any friends, add one!</p>
-  <% else %>
-    <ul>
-      <% @user.friends.each do |friend| %>
-        <li><%= friend.email %></li>
-      <% end %>
-      <% @user.inverse_friends.each do |friend| %>
-        <li><%= friend.email %></li>
-      <% end %>
-    </ul>
-  <% end %>
-</section>
-
-<section class='viewing-parties'>
-  <h2>Viewing Parties: Host</h2>
-    <div class="host-parties">
-      <% if @user.viewing_parties.empty? %>
-        <p>No parties yet!</p>
-      <% else %>
-        <% @user.viewing_parties.each do |vp| %>
-          <p><%= vp.movie.title %> on <%= vp.date.strftime('%m/%d/%y') %> at <%= vp.time.strftime('%I:%M %p') %></p>
-          <ul>
-          <% vp.friends.each do |friend| %>
-            <li><%= friend.email %></li>
+  <section class="viewing-parties">
+  <h2>Viewing Parties</h2>
+    <h3>Host</h3>
+      <div class="host-parties">
+        <% if @user.viewing_parties.empty? %>
+          <p>No parties yet!</p>
+        <% else %>
+          <% @user.viewing_parties.each do |vp| %>
+            <p><%= vp.movie.title %> on <%= vp.date.strftime('%m/%d/%y') %> at <%= vp.time.strftime('%I:%M %p') %></p>
+            <ul>
+            <% vp.friends.each do |friend| %>
+              <li><%= friend.email %></li>
+            <% end %>
+            </ul>
           <% end %>
-          </ul>
         <% end %>
-      <% end %>
-    </div>
+      </div>
 
-  <h2>Viewing Parties: Attendee</h2>
-    <div class="attendee-parties">
-      <% if @user.parties.empty? %>
-        <p>No parties yet!</p>
-      <% else %>
-        <% @user.parties.each do |vp| %>
-          <p><%= vp.movie.title %> on <%= vp.date.strftime('%m/%d/%y') %> at <%= vp.time.strftime('%I:%M %p') %></p>
+    <h3>Attendee</h3>
+      <div class="attendee-parties">
+        <% if @user.parties.empty? %>
+          <p>No parties yet!</p>
+        <% else %>
+          <% @user.parties.each do |vp| %>
+            <p><%= vp.movie.title %> on <%= vp.date.strftime('%m/%d/%y') %> at <%= vp.time.strftime('%I:%M %p') %></p>
+          <% end %>
         <% end %>
-      <% end %>
-    </div>
-</section>
+      </div>
+  </section>
+</div>
