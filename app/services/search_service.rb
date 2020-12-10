@@ -1,13 +1,11 @@
 class SearchService
   def self.search(search_term)
-    consolidate_results("keyword", search_term)
+    consolidate_results('keyword', search_term)
   end
 
   def self.top_forty
-    consolidate_results("top")
+    consolidate_results('top')
   end
-
-  private
 
   def self.connection
     Faraday.new('https://api.themoviedb.org') do |f|
@@ -16,11 +14,11 @@ class SearchService
   end
 
   def self.parse_data(page, type, search_term)
-    if type == "keyword"
-      response = keyword_search(search_term, page)
-    else
-      response = top_rated(page)
-    end
+    response = if type == 'keyword'
+                 keyword_search(search_term, page)
+               else
+                 top_rated(page)
+               end
     json_body = JSON.parse(response.body, symbolize_names: true)
     json_body[:results].nil? ? [] : json_body[:results]
   end

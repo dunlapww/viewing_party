@@ -6,6 +6,7 @@ class MovieDetail
               :uuid,
               :summary,
               :genres
+
   def initialize(movie_data)
     @title = movie_data[:original_title]
     @vote_average = movie_data[:vote_average]
@@ -17,6 +18,7 @@ class MovieDetail
   end
 
   private
+
   def genre_names(data)
     data.map do |genre|
       genre[:name]

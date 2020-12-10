@@ -9,8 +9,6 @@ class SearchFacade
     get_results(results)
   end
 
-  private
-
   def self.get_results(results)
     results.map do |movie_detail|
       MovieDetail.new(movie_detail)
