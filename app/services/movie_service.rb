@@ -1,4 +1,5 @@
 class MovieService
+
   def self.movie_data(uuid)
     response = connection.get("/3/movie/#{uuid}")
     parse_data(response)
@@ -14,6 +15,18 @@ class MovieService
     parse_data(response)
   end
 
+  def self.reco_data(uuid)
+    response = connection.get("/3/movie/#{uuid}/recommendations")
+    parse_data(response)
+  end
+
+  def self.similar_data(uuid)
+    response = connection.get("/3/movie/#{uuid}/similar")
+    parse_data(response)
+  end
+
+  private
+
   def self.connection
     Faraday.new('https://api.themoviedb.org') do |f|
       f.params['api_key'] = ENV['MDB_API_KEY']
@@ -23,20 +36,4 @@ class MovieService
   def self.parse_data(response)
     JSON.parse(response.body, symbolize_names: true)
   end
-
-
-  # def self.movie_details(uuid)
-  #   response = conn.get("/3/movie/#{uuid}?api_key=#{ENV['MDB_API_KEY']}")
-  #   JSON.parse(response.body, symbolize_names: true)
-  # end
-  #
-  # def self.reviews(uuid)
-  #   response = conn.get("/3/movie/#{uuid}?api_key=#{ENV['MDB_API_KEY']}")
-  #   JSON.parse(response.body, symbolize_names: true)
-  # end
-  #
-  # def self.movie_credits(uuid)
-  #   response = conn.get("/3/movie/#{uuid}?api_key=#{ENV['MDB_API_KEY']}")
-  #   JSON.parse(response.body, symbolize_names: true)
-  # end
 end
