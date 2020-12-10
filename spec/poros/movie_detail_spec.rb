@@ -102,5 +102,6 @@ RSpec.describe MovieDetail do
     expect(movie_detail.summary).to eq(description)
     expect(movie_detail.uuid).to eq(550)
     expect(movie_detail.poster).to eq('/bptfVGEQuv6vDTIMVCHjJ9Dz8PX.jpg')
+    expect(movie_detail.genres).to eq(["Drama"])
   end
 end
