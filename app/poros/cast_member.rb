@@ -4,11 +4,12 @@ class CastMember
               :picture,
               :gender,
               :id
+
   def initialize(cast_member)
     @name = cast_member[:name]
     @character = cast_member[:character]
     @picture = cast_member[:profile_path]
-    @gender = format_gender(cast_member[:gender]) 
+    @gender = format_gender(cast_member[:gender])
     @id = cast_member[:id]
   end
 

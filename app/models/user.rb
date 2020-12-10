@@ -7,15 +7,15 @@ class User < ApplicationRecord
   validate :password_complexity
   # Friendships
   has_many :friendships
-  has_many :friends, :through => :friendships
+  has_many :friends, through: :friendships
   # Inverse friendships
-  has_many :inverse_friendships, :class_name => "Friendship", :foreign_key => "friend_id"
-  has_many :inverse_friends, :through => :inverse_friendships, :source => :user
+  has_many :inverse_friendships, class_name: 'Friendship', foreign_key: 'friend_id'
+  has_many :inverse_friends, through: :inverse_friendships, source: :user
   # Parties as Host
   has_many :viewing_parties
   # Parties as Attendee
-  has_many :invitations, :class_name => "Attendee", :foreign_key => "friend_id"
-  has_many :parties, :through => :invitations, :source => :viewing_party
+  has_many :invitations, class_name: 'Attendee', foreign_key: 'friend_id'
+  has_many :parties, through: :invitations, source: :viewing_party
 
   def password_complexity
     # Regexp extracted from https://stackoverflow.com/questions/19605150/regex-for-password-must-contain-at-least-eight-characters-at-least-one-number-at-least-one-capital-at-least-one-lower-case-at-least-one-special-character

@@ -1,5 +1,6 @@
 class TopMovieSet
   attr_reader :results
+
   def initialize
     @results = consolidate_results
   end
@@ -15,6 +16,7 @@ class TopMovieSet
     results << parse_data(2)
     results.flatten
   end
+
   def connection
     Faraday.new('https://api.themoviedb.org')
   end
