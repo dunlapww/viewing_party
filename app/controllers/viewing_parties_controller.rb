@@ -41,9 +41,9 @@ class ViewingPartiesController < ApplicationController
     )
   end
 
-  def attendees(vp, params)
+  def attendees(viewing_party, params)
     friends(params).each do |friend_email|
-      vp.attendees.create!(friend_id: User.find_by(email: friend_email).id)
+      viewing_party.attendees.create!(friend_id: User.find_by(email: friend_email).id)
     end
   end
 end

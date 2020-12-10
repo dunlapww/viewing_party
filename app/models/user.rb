@@ -9,12 +9,20 @@ class User < ApplicationRecord
   has_many :friendships, dependent: :destroy
   has_many :friends, through: :friendships
   # Inverse friendships
-  has_many :inverse_friendships, class_name: 'Friendship', foreign_key: 'friend_id', dependent: :destroy
+  has_many :inverse_friendships,
+           class_name: 'Friendship',
+           foreign_key: 'friend_id',
+           dependent: :destroy,
+           inverse_of: :friend
   has_many :inverse_friends, through: :inverse_friendships, source: :user, dependent: :destroy
   # Parties as Host
   has_many :viewing_parties, dependent: :destroy
   # Parties as Attendee
-  has_many :invitations, class_name: 'Attendee', foreign_key: 'friend_id', dependent: :destroy
+  has_many :invitations,
+           class_name: 'Attendee',
+           foreign_key: 'friend_id',
+           dependent: :destroy,
+           inverse_of: :friend
   has_many :parties, through: :invitations, source: :viewing_party, dependent: :destroy
 
   def password_complexity
