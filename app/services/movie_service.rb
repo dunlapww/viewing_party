@@ -23,20 +23,4 @@ class MovieService
   def self.parse_data(response)
     JSON.parse(response.body, symbolize_names: true)
   end
-
-
-  # def self.movie_details(uuid)
-  #   response = conn.get("/3/movie/#{uuid}?api_key=#{ENV['MDB_API_KEY']}")
-  #   JSON.parse(response.body, symbolize_names: true)
-  # end
-  #
-  # def self.reviews(uuid)
-  #   response = conn.get("/3/movie/#{uuid}?api_key=#{ENV['MDB_API_KEY']}")
-  #   JSON.parse(response.body, symbolize_names: true)
-  # end
-  #
-  # def self.movie_credits(uuid)
-  #   response = conn.get("/3/movie/#{uuid}?api_key=#{ENV['MDB_API_KEY']}")
-  #   JSON.parse(response.body, symbolize_names: true)
-  # end
 end
