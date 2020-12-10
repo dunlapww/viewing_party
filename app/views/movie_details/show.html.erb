@@ -1,37 +1,51 @@
 <h1><%= @movie_detail.title %></h1>
+<p><%= @movie_detail.summary %></p>
 
-<%= button_to 'Create Viewing Party', new_vp_path, method: :get %>
-<%= @movie_detail.vote_average %>
+<%= button_to 'Create Viewing Party', new_vp_path, method: :get, class: "button" %>
 
-<%= film_length(@movie_detail.runtime) %>
-<% @movie_detail.genres.each do |genre_name| %>
-  <%= genre_name %>
-<% end %>
-<%= @movie_detail.summary %>
+<h3>More Movie Details</h3>
+<p>Vote Average: <%= @movie_detail.vote_average %></p>
+<p>Film Length: <%= film_length(@movie_detail.runtime) %></p>
+<p>Genres:</p>
+<ul>
+  <% @movie_detail.genres.each do |genre_name| %>
+    <li><%= genre_name %></li>
+  <% end %>
+</ul>
+
+<h3>Some of the Cast</h3>
+<ul>
   <% @cast.first(10).each do |actor| %>
     <div class="actor">
-      <%= actor.name %>
-      <%= actor.character %>
+      <li><%= actor.name %> as <%= actor.character %></li>
     </div>
   <% end %>
-<p>Total Reviews:</p>
-<%= @reviews.count %>
+</ul>
+
+<h3>Review Info</h3>
+<p>Total Reviews: <%= @reviews.count %></p>
 <p>Review Results:</p>
-<% @reviews.each do |review|%>
-  <%= review.rating %><br>
-  <%= review.author %><br>
-  <%= review.content %><br>
-<% end %>
+<ul>
+  <% @reviews.each do |review|%>
+    <li><%= review.rating %> from <%= review.author %></li>
+    <div class="review">
+      <%= review.content %><br>
+    </div>
+  <% end %>
+</ul>
+
 <section class='similar-movies'>
+  <h3>Similar Movies</h3>
   <p>Below are movies similar to <%= @movie_detail.title %></p>
   <% @similar.each do |movie| %>
-    <%= link_to movie.title, movie_path("#{movie.uuid}") %>
+    <%= link_to movie.title, movie_path("#{movie.uuid}") %> | 
   <% end %>
 </section>
 
 <section class='recommended-movies'>
+  <h3>Recommended Movies</h3>
   <p>Want more? Here are some recommended movies!</p>
   <% @recos.each do |movie| %>
-    <%= link_to movie.title, movie_path("#{movie.uuid}") %>
+    <%= link_to movie.title, movie_path("#{movie.uuid}") %> |
   <% end %>
 </section>
