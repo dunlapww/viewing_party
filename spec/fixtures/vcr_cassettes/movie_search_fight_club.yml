@@ -25,7 +25,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Wed, 09 Dec 2020 22:24:50 GMT
+      - Thu, 10 Dec 2020 03:28:24 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -40,13 +40,15 @@ http_interactions:
       Vary:
       - Accept-Encoding
       X-Cache:
-      - Miss from cloudfront
+      - Hit from cloudfront
       Via:
-      - 1.1 0dfe6f02dbba7c39906cae47653ae6b3.cloudfront.net (CloudFront)
+      - 1.1 29f1da35ce271d2cdc88184ed0c1f86d.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       X-Amz-Cf-Id:
-      - i4OfL93Ei5OChxmkAd8DBZMLsQ305_i3F_P6DQBWrGFVSRj1YZfPPw==
+      - VpOG5wm3pEw3lBVQkKPwIyNgKgm7MH8HfT0qgWUnddD-O3B_fIh7rQ==
+      Age:
+      - '2'
     body:
       encoding: UTF-8
       string: '{"page":1,"results":[{"adult":false,"backdrop_path":"/rr7E0NoGKxvbkb89eR1GwfoYjpA.jpg","genre_ids":[18],"id":550,"original_language":"en","original_title":"Fight
@@ -54,14 +56,25 @@ http_interactions:
         channel primal male aggression into a shocking new form of therapy. Their
         concept catches on, with underground \"fight clubs\" forming in every town,
         until an eccentric gets in the way and ignites an out-of-control spiral toward
-        oblivion.","popularity":38.272,"poster_path":"/bptfVGEQuv6vDTIMVCHjJ9Dz8PX.jpg","release_date":"1999-10-15","title":"Fight
-        Club","video":false,"vote_average":8.4,"vote_count":20565},{"adult":false,"backdrop_path":null,"genre_ids":[28,14],"id":722482,"original_language":"en","original_title":"Superhero
-        Fight Club 2.0","overview":"","popularity":3.707,"poster_path":"/j2cA1s0OLvSVVbqqHk1a7aZotCy.jpg","release_date":"2016-09-29","title":"Superhero
+        oblivion.","popularity":34.842,"poster_path":"/bptfVGEQuv6vDTIMVCHjJ9Dz8PX.jpg","release_date":"1999-10-15","title":"Fight
+        Club","video":false,"vote_average":8.4,"vote_count":20570},{"adult":false,"backdrop_path":null,"genre_ids":[28,14],"id":722482,"original_language":"en","original_title":"Superhero
+        Fight Club 2.0","overview":"","popularity":5.19,"poster_path":"/j2cA1s0OLvSVVbqqHk1a7aZotCy.jpg","release_date":"2016-09-29","title":"Superhero
         Fight Club 2.0","video":false,"vote_average":7,"vote_count":4},{"adult":false,"backdrop_path":"/u0a4CSy73GP11wVPz8hm0tHQwci.jpg","genre_ids":[28,878],"id":466848,"original_language":"en","original_title":"Superhero
         Fight Club","overview":"Oliver introduces Barry to his own little fight club
         which features such members as Roy Harper, Laurel Lance, Malcolm Merlyn and
-        Ra''s Al Ghul.","popularity":1.953,"poster_path":"/zjPn7JUg2tsxlRWp4luK0YVX48Y.jpg","release_date":"2015-04-13","title":"Superhero
-        Fight Club","video":false,"vote_average":7.3,"vote_count":25},{"adult":false,"backdrop_path":null,"genre_ids":[28,80,18],"id":51021,"original_language":"en","original_title":"Lure:
+        Ra''s Al Ghul.","popularity":2.734,"poster_path":"/zjPn7JUg2tsxlRWp4luK0YVX48Y.jpg","release_date":"2015-04-13","title":"Superhero
+        Fight Club","video":false,"vote_average":7.3,"vote_count":25},{"adult":false,"backdrop_path":null,"genre_ids":[99],"id":259016,"original_language":"en","original_title":"Insane
+        Fight Club","overview":"A group of friends have created a brand new subculture
+        that is taking over the streets of Glasgow. They''ve established their very
+        own fight club, but this is no ordinary wrestling event - this is brutal,
+        riotous chaos. Fights don''t always stay inside the ring, people are bounced
+        off the side of buses and thrown off balconies in pubs. They now plan the
+        biggest show of their lives. The stakes are high, will it bring them the fame
+        and recognition they need to survive?","popularity":2.337,"poster_path":null,"release_date":"2014-03-11","title":"Insane
+        Fight Club","video":false,"vote_average":0,"vote_count":0},{"adult":false,"backdrop_path":null,"genre_ids":[28],"id":347807,"original_language":"hi","original_title":"Fight
+        Club: Members Only","overview":"Four friends head off to Bombay and get involved
+        in the mother and father of all gang wars.","popularity":2.292,"poster_path":"/aXFmWfWYCCxQTkCn7K86RvDiMHZ.jpg","release_date":"2006-02-17","title":"Fight
+        Club: Members Only","video":false,"vote_average":3.4,"vote_count":9},{"adult":false,"backdrop_path":null,"genre_ids":[28,80,18],"id":51021,"original_language":"en","original_title":"Lure:
         Teen Fight Club","overview":"A community is under siege as three Belmont Highschool
         coed students go missing with no trace of their whereabouts. The pressure
         is on the police to capture the culprits responsible. Scouring the school
@@ -70,28 +83,17 @@ http_interactions:
         the hideous disappearance of the students. Maggie makes a few new friends,
         and gets invited to a private rave in the country. Just as the group begins
         to suspect that they''ve taken a wrong turn, however, the trap is sprung and
-        Maggie finds out firsthand what fate has befallen the missing girls.","popularity":3.052,"poster_path":"/ipl6NdM0LwyakzLH9gKBDn8YhmZ.jpg","release_date":"2010-11-16","title":"Lure:
-        Teen Fight Club","video":false,"vote_average":5,"vote_count":7},{"adult":false,"backdrop_path":null,"genre_ids":[99],"id":259016,"original_language":"en","original_title":"Insane
-        Fight Club","overview":"A group of friends have created a brand new subculture
-        that is taking over the streets of Glasgow. They''ve established their very
-        own fight club, but this is no ordinary wrestling event - this is brutal,
-        riotous chaos. Fights don''t always stay inside the ring, people are bounced
-        off the side of buses and thrown off balconies in pubs. They now plan the
-        biggest show of their lives. The stakes are high, will it bring them the fame
-        and recognition they need to survive?","popularity":2.208,"poster_path":null,"release_date":"2014-03-11","title":"Insane
-        Fight Club","video":false,"vote_average":0,"vote_count":0},{"adult":false,"backdrop_path":null,"genre_ids":[28],"id":347807,"original_language":"hi","original_title":"Fight
-        Club: Members Only","overview":"Four friends head off to Bombay and get involved
-        in the mother and father of all gang wars.","popularity":1.802,"poster_path":"/aXFmWfWYCCxQTkCn7K86RvDiMHZ.jpg","release_date":"2006-02-17","title":"Fight
-        Club: Members Only","video":false,"vote_average":3.4,"vote_count":9},{"adult":false,"backdrop_path":null,"genre_ids":[28,12,99],"id":104782,"original_language":"it","original_title":"Florence
+        Maggie finds out firsthand what fate has befallen the missing girls.","popularity":2.672,"poster_path":"/ipl6NdM0LwyakzLH9gKBDn8YhmZ.jpg","release_date":"2010-11-16","title":"Lure:
+        Teen Fight Club","video":false,"vote_average":5,"vote_count":7},{"adult":false,"backdrop_path":null,"genre_ids":[99],"id":322772,"original_language":"en","original_title":"Insane
+        Fight Club II - This Time It’s Personal","overview":"Insane Fight Club is
+        back. This year the boys are taking their unique form of entertainment to
+        England as they stage fight nights in Birmingham, Leeds, Liverpool and Newcastle.","popularity":2.676,"poster_path":null,"release_date":"2015-01-21","title":"Insane
+        Fight Club II - This Time It’s Personal","video":false,"vote_average":0,"vote_count":0},{"adult":false,"backdrop_path":null,"genre_ids":[28,12,99],"id":104782,"original_language":"it","original_title":"Florence
         Fight Club","overview":"Four men decided to enter in the oldest Fight Club
         of the History, The Florentine Football tournament. A father and son, a black
         guy, an old champion and outsider clerk will enter in an arena of the time
-        to win their fears, to go over their limits, to be heroes for a day.","popularity":1.179,"poster_path":null,"release_date":"2010-01-01","title":"Florence
-        Fight Club","video":false,"vote_average":0,"vote_count":0},{"adult":false,"backdrop_path":null,"genre_ids":[99],"id":322772,"original_language":"en","original_title":"Insane
-        Fight Club II - This Time It’s Personal","overview":"Insane Fight Club is
-        back. This year the boys are taking their unique form of entertainment to
-        England as they stage fight nights in Birmingham, Leeds, Liverpool and Newcastle.","popularity":2.792,"poster_path":null,"release_date":"2015-01-21","title":"Insane
-        Fight Club II - This Time It’s Personal","video":false,"vote_average":0,"vote_count":0},{"adult":false,"backdrop_path":null,"genre_ids":[],"id":289100,"original_language":"en","original_title":"Girls
+        to win their fears, to go over their limits, to be heroes for a day.","popularity":0.93,"poster_path":null,"release_date":"2010-01-01","title":"Florence
+        Fight Club","video":false,"vote_average":0,"vote_count":0},{"adult":false,"backdrop_path":null,"genre_ids":[],"id":289100,"original_language":"en","original_title":"Girls
         Fight Club","overview":"The best women''s wrestling competition of all time...and
         if you think it''s fake you''re in for a big surprise See LEGENDARY Mixed
         Martial Arts fighters coach their teams to victory in the cage! aka Chuck
@@ -119,7 +121,7 @@ http_interactions:
         cred.","popularity":0.6,"poster_path":null,"title":"Brooklyn Girls Fight Club","video":false,"vote_average":7,"vote_count":1},{"adult":false,"backdrop_path":null,"genre_ids":[99],"id":468371,"original_language":"en","original_title":"Nixon
         Newell: First Female of Fight Club","overview":"Since 2013, Nixon Newell has
         travelled the world as a professional wrestler. This is the story of her goodbye
-        to independent wrestling.","popularity":0.6,"poster_path":null,"release_date":"2017-07-26","title":"Nixon
+        to independent wrestling.","popularity":0.604,"poster_path":null,"release_date":"2017-07-26","title":"Nixon
         Newell: First Female of Fight Club","video":false,"vote_average":0,"vote_count":0},{"adult":false,"backdrop_path":null,"genre_ids":[16,35],"id":615408,"original_language":"en","original_title":"Fight
         Club But With Tennis And No Fight","overview":"Drama descends upon two tennis-obsessed
         women as the tension moves from off the court and into the café.","popularity":0.6,"poster_path":"/8pEQqVtSpgCtb7dzhR55EO1dC3l.jpg","release_date":"2019-07-13","title":"Fight
@@ -141,15 +143,15 @@ http_interactions:
         Club Pro Project Mayhem VIII Night Two","video":false,"vote_average":0,"vote_count":0},{"adult":false,"backdrop_path":"/qziKhMyrVqj567jlbj55GpBdKf9.jpg","genre_ids":[28],"id":440777,"original_language":"en","original_title":"Female
         Fight Squad","overview":"A former fighter reluctantly returns to the life
         she abandoned in order to help her sister survive the sadistic world of illegal
-        fighting and the maniac who runs it.","popularity":12.283,"poster_path":"/iI9c8XNdPuwB4RYbHMd62QNhoRK.jpg","release_date":"2017-03-16","title":"Female
+        fighting and the maniac who runs it.","popularity":14.374,"poster_path":"/iI9c8XNdPuwB4RYbHMd62QNhoRK.jpg","release_date":"2017-03-16","title":"Female
         Fight Squad","video":false,"vote_average":6.7,"vote_count":59},{"adult":false,"backdrop_path":"/1VqE5z4VIOcNcajJuHLk4fDkY9G.jpg","genre_ids":[28,27],"id":289732,"original_language":"zh","original_title":"屍城","overview":"It''s
         the end of the century at a corner of the city in a building riddled with
         crime - Everyone in the building has turned into zombies. After Jenny''s boyfriend
         is killed in a zombie attack, she faces the challenge of surviving in the
         face of adversity. In order to stay alive, she struggles with Andy to flee
-        danger.","popularity":2.395,"poster_path":"/u8u3KVq0qfJYmNDsaTVOXy4So6f.jpg","release_date":"2014-10-23","title":"Zombie
+        danger.","popularity":3.246,"poster_path":"/u8u3KVq0qfJYmNDsaTVOXy4So6f.jpg","release_date":"2014-10-23","title":"Zombie
         Fight Club","video":false,"vote_average":3.7,"vote_count":21}],"total_pages":2,"total_results":22}'
-  recorded_at: Wed, 09 Dec 2020 22:24:50 GMT
+  recorded_at: Thu, 10 Dec 2020 03:28:26 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/search/movie?api_key=<DONT_USE_MY_API_KEY>&page=2&query=Fight%20Club
@@ -175,7 +177,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Wed, 09 Dec 2020 22:24:50 GMT
+      - Thu, 10 Dec 2020 03:28:24 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -190,21 +192,23 @@ http_interactions:
       Vary:
       - Accept-Encoding
       X-Cache:
-      - Miss from cloudfront
+      - Hit from cloudfront
       Via:
-      - 1.1 824a5d9ed02451bcb68b15ae5991dce0.cloudfront.net (CloudFront)
+      - 1.1 c29390732f5bc4b2c7832623ae6e492f.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       X-Amz-Cf-Id:
-      - RruBUQg9eVsi8pFKyUXE1sWfQZIid9iSD4AuZa-vLbOPfOQueLMfHQ==
+      - wc18JvZx0-arUo-lbn2864xmErd_GxxvgqGRAWT8E2pJAi8jTou67g==
+      Age:
+      - '2'
     body:
       encoding: UTF-8
       string: '{"page":2,"results":[{"adult":false,"backdrop_path":null,"genre_ids":[35,18],"id":323667,"original_language":"ru","original_title":"Вставай
         и бейся","overview":"Intertwined stories from the gladiator/athletes participating
-        to the Calcio Storico Fiorentino yearly championship.","popularity":0.885,"poster_path":"/rPCOC0myV3Vr7nYGMAOAOpUXgH3.jpg","release_date":"2015-06-21","title":"Florence
+        to the Calcio Storico Fiorentino yearly championship.","popularity":0.641,"poster_path":"/rPCOC0myV3Vr7nYGMAOAOpUXgH3.jpg","release_date":"2015-06-21","title":"Florence
         Fight Club","video":false,"vote_average":0,"vote_count":0},{"adult":false,"backdrop_path":null,"genre_ids":[28,18,80],"id":219897,"original_language":"en","original_title":"Barrio
         Brawler","overview":"A martial arts instructor must enter the world of illegal
         pit fighting in order to save his family and his dojo.","popularity":0.6,"poster_path":"/8tKjqaAHnIkVYjbvf4tgefSyOZN.jpg","release_date":"2013-08-27","title":"Barrio
         Brawler","video":false,"vote_average":4,"vote_count":4}],"total_pages":2,"total_results":22}'
-  recorded_at: Wed, 09 Dec 2020 22:24:50 GMT
+  recorded_at: Thu, 10 Dec 2020 03:28:26 GMT
 recorded_with: VCR 6.0.0

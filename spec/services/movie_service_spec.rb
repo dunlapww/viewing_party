@@ -68,5 +68,43 @@ RSpec.describe MovieService do
         end
       end
     end
+
+    describe '#reco_data' do
+      it 'can return recommended movies data' do
+        VCR.use_cassette('movie_detail_550_recos') do
+          recos = MovieService.reco_data(550)
+
+          expect(recos).to be_a Hash
+
+          expect(recos).to have_key :results
+          expect(recos[:results]).to be_a Array
+
+          expect(recos[:results][0]).to have_key :title
+          expect(recos[:results][0][:title]).to be_a String
+
+          expect(recos[:results][0]).to have_key :id
+          expect(recos[:results][0][:id]).to be_a Integer
+        end
+      end
+    end
+
+    describe '#similar_data' do
+      it 'can return similar movies data' do
+        VCR.use_cassette('movie_detail_550_similar') do
+          similiar = MovieService.similar_data(550)
+
+          expect(similiar).to be_a Hash
+
+          expect(similiar).to have_key :results
+          expect(similiar[:results]).to be_a Array
+
+          expect(similiar[:results][0]).to have_key :title
+          expect(similiar[:results][0][:title]).to be_a String
+
+          expect(similiar[:results][0]).to have_key :id
+          expect(similiar[:results][0][:id]).to be_a Integer
+        end
+      end
+    end
   end
 end

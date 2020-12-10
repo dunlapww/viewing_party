@@ -10,7 +10,9 @@ class SearchService
   private
 
   def self.connection
-    Faraday.new('https://api.themoviedb.org')
+    Faraday.new('https://api.themoviedb.org') do |f|
+      f.params['api_key'] = ENV['MDB_API_KEY']
+    end
   end
 
   def self.parse_data(page, type, search_term)
@@ -24,11 +26,11 @@ class SearchService
   end
 
   def self.keyword_search(search_term, page)
-    connection.get("/3/search/movie?api_key=#{ENV['MDB_API_KEY']}&query=#{search_term}&page=#{page}")
+    connection.get("/3/search/movie?query=#{search_term}&page=#{page}")
   end
 
   def self.top_rated(page)
-    connection.get("/3/movie/top_rated?api_key=#{ENV['MDB_API_KEY']}&language=en-US&page=#{page}")
+    connection.get("/3/movie/top_rated?language=en-US&page=#{page}")
   end
 
   def self.consolidate_results(type, search_term = nil)

@@ -16,4 +16,18 @@ class MovieFacade
       Review.new(review_detail)
     end
   end
+
+  def self.reco_details(uuid)
+    results =  MovieService.reco_data(uuid)
+    results[:results].map do |reco|
+      MovieDetail.new(reco)
+    end
+  end
+
+  def self.similar_details(uuid)
+    results =  MovieService.similar_data(uuid)
+    results[:results].map do |movie|
+      MovieDetail.new(movie)
+    end
+  end
 end

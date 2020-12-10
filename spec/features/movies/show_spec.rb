@@ -29,24 +29,31 @@ RSpec.describe 'Movie Details Page' do
     end
 
     it "I can see movie details" do
-      VCR.insert_cassette("movie_cast_reviews") do
+      VCR.use_cassette("movie_all_details") do
         movie_detail = MovieFacade.movie_details(550)
         cast = MovieFacade.cast_details(550)
         cast_member = cast.first
         reviews = MovieFacade.review_details(550)
         review = reviews.second
+        recos = MovieFacade.reco_details(550)
+        reco = recos.second
+        similar = MovieFacade.similar_details(550)
+        sim1 = similar.first
 
         visit movie_path(movie_detail.uuid)
+
         expect(page).to have_content(movie_detail.title)
         expect(page).to have_content(movie_detail.vote_average)
         expect(page).to have_content('2:19')
-        expect(page).to have_content(movie_detail.genres.first[:name])
+        expect(page).to have_content(movie_detail.genres.first)
         expect(page).to have_content(movie_detail.summary)
         expect(page).to have_content(cast_member.name)
         expect(page).to have_content(cast_member.character)
         expect(page).to have_content(reviews.count)
         expect(page).to have_content(review.rating)
         expect(page).to have_content(review.author)
+        expect(page).to have_content(reco.title)
+        expect(page).to have_content(sim1.title)
       end
     end
   end
