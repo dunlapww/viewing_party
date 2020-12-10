@@ -14,9 +14,10 @@ class CastMember
   end
 
   def format_gender(info)
-    if info == 1
+    case info
+    when 1
       'female'
-    elsif info == 2
+    when 2
       'male'
     else
       'n/a'
