@@ -1,4 +1,9 @@
 <h1>Welcome to Viewing Party!</h1>
 <p>A place to get your friends together to watch a movie.</p>
-<%= button_to "Login", login_path, method: :get %>
-<%= link_to "Register", registration_path %>
+<section class="new_user">
+  <%= link_to "Register", registration_path %>
+</section>
+<section>
+  <p>If you are already signed up with us, click below to login.</p>
+  <%= button_to "Login", login_path, method: :get, class: "welcome-login" %>
+</section>
