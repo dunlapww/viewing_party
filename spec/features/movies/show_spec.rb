@@ -41,7 +41,7 @@ RSpec.describe 'Movie Details Page' do
         sim1 = similar.first
 
         visit movie_path(movie_detail.uuid)
-        save_and_open_page
+      
         expect(page).to have_content(movie_detail.title)
         expect(page).to have_content(movie_detail.vote_average)
         expect(page).to have_content('2:19')
