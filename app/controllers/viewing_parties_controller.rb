@@ -4,23 +4,6 @@ class ViewingPartiesController < ApplicationController
     @movie_detail = MovieFacade.movie_details(params[:uuid])
   end
 
-  # def create
-  #   @movie_detail = MovieFacade.movie_details(params[:uuid])
-  #   vp = viewing_party(params)
-  #   if !friends(params).empty? && vp.save
-  #     attendees(vp, params)
-  #     flash[:success] = 'You have successfully created a party!!'
-  #     redirect_to dashboard_path
-  #   elsif friends(params).empty?
-  #     flash.now[:error] = 'You need friends. Add some! Seriously.'
-  #     render :new
-  #   else
-  #     flash.now[:error] = vp.errors.full_messages.to_sentence
-  #     render :new
-  #   end
-  # end
-
-  # new
   def create
     @movie_detail = MovieFacade.movie_details(params[:uuid])
     viewing_party = viewing_party(params)
