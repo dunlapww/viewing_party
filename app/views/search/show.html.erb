@@ -33,7 +33,7 @@
     <% else %>
       <%= image_tag "https://image.tmdb.org/t/p/w500/#{movie.poster}", class: "grid-box-img" %>
     <% end %>
-      <div class="grid-box-title">Movie Title: <%= link_to "#{movie.title}",  movie_path("#{movie.uuid}") %></div>
+      <div class="grid-box-title"><%= link_to "#{movie.title}",  movie_path("#{movie.uuid}") %></div>
       <div class="grid-box-rating">Vote Average: <%= movie.vote_average %></div>
     </div>
   <% end%>
