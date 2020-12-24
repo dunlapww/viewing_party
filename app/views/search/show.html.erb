@@ -25,11 +25,16 @@
   <h2>Top 40 Movies</h2>
 <% end %>
 
-<ol>
+<div class="movies-container">
   <% @movies.each do |movie| %>
-    <li class="movie">
-      <p>Movie Title: <%= link_to "#{movie.title}",  movie_path("#{movie.uuid}") %></p>
-      <p>Vote Average: <%= movie.vote_average %></p>
-    </li>
+    <div class="movie">
+    <% if movie.poster.nil? %>
+      <%= image_tag "movies/default-movie.jpg", class: "grid-box-img" %>
+    <% else %>
+      <%= image_tag "https://image.tmdb.org/t/p/w500/#{movie.poster}", class: "grid-box-img" %>
+    <% end %>
+      <div class="grid-box-title">Movie Title: <%= link_to "#{movie.title}",  movie_path("#{movie.uuid}") %></div>
+      <div class="grid-box-rating">Vote Average: <%= movie.vote_average %></div>
+    </div>
   <% end%>
-</ol>
+</div>

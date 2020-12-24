@@ -64,7 +64,7 @@ RSpec.describe 'Results Page (/results)' do
       VCR.use_cassette('hello_dolly_search') do
         fill_in :search, with: 'hello dolly'
         click_on 'Search'
-        expect(page).to have_css(".movie-img")
+        expect(page).to have_css(".grid-box-img")
       end
     end
   end
