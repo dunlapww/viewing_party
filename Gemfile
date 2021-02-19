@@ -19,6 +19,7 @@ gem 'bcrypt'
 gem 'figaro'
 gem 'faraday'
 gem 'email_validator'
+gem 'railties'
 
 group :development, :test do
   gem 'pry'
