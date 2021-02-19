@@ -25,6 +25,7 @@ gem 'rspec-core'
 group :development, :test do
   gem 'pry'
   gem 'travis'
+  gem 'rspec-rails'
 end
 
 group :development do
@@ -34,7 +35,7 @@ group :development do
 end
 
 group :test do
-  gem 'rspec-rails'
+  
   gem 'capybara'
   gem 'launchy'
   gem 'simplecov'
