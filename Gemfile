@@ -20,6 +20,7 @@ gem 'figaro'
 gem 'faraday'
 gem 'email_validator'
 gem 'railties'
+gem 'rspec-core'
 
 group :development, :test do
   gem 'pry'
